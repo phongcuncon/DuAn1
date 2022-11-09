@@ -16,6 +16,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     public QLKhachHangJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setTitle("QL Khách hàng");
     }
 
     /**
