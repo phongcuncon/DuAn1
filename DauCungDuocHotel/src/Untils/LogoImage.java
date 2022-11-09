@@ -8,6 +8,6 @@ package Untils;
  *
  * @author ps22004_taquocphong
  */
-public class Xnxx {
+public class LogoImage {
     
 }
