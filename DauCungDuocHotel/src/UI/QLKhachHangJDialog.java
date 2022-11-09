@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package UI;
-
+//đaaaaaa
 /**
  *
  * @author ps22004_taquocphong
@@ -16,6 +16,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     public QLKhachHangJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setTitle("QL Khách hàng");
     }
 
     /**
