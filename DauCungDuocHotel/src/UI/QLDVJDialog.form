@@ -145,7 +145,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -279,9 +279,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton5">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon/search-icon.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="SEARCH"/>
           </Properties>
         </Component>
