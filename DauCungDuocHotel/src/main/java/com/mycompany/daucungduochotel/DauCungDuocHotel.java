@@ -18,5 +18,6 @@ public class DauCungDuocHotel {
         System.out.println("Hello Canh");
         System.out.println("Hello Canh");
         System.out.println("Hello Canh");
+	System.out.println("Hello Phong");
     }
 }
