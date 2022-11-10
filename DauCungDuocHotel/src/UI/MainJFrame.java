@@ -1,7 +1,7 @@
 package UI;
 
 
-import com.formdev.flatlaf.FlatLightLaf;
+//import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -677,11 +677,11 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        try {
-            UIManager.setLookAndFeel(new FlatLightLaf());
-        } catch (Exception ex) {
-            System.err.println("Failed to initialize LaF");
-        }
+//        try {
+//            UIManager.setLookAndFeel(new FlatLightLaf());
+//        } catch (Exception ex) {
+//            System.err.println("Failed to initialize LaF");
+//        }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
