@@ -252,6 +252,9 @@ public class ThongKeJDialog extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cboThongKeNam;
     private javax.swing.JComboBox<String> cboThongKeThang;
     private javax.swing.JComboBox<String> cboThongKeTheo;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
