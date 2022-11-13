@@ -61,8 +61,7 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
         try{
             dao.update(nv);
             this.fillTable();
-//            MsgBox.confirm(this,"Bạn có chắc chắn muốn xóa nhân viên này không?","Xóa nhân viên?",
-//                    );
+//            MsgBox.confirm(this,);
         }catch(Exception e){
             MsgBox.alert(this,"Cập nhật thất bại!");
         }
