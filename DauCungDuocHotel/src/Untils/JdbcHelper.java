@@ -17,9 +17,9 @@ import java.util.logging.Logger;
 public class JdbcHelper {
 
     public static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    public static String dburl = "jdbc:sqlserver://localhost:1433;databaseName=EDUSYS_DATABASE;encrypt=true;trustServerCertificate=true";
+    public static String dburl = "jdbc:sqlserver://localhost:1433;databaseName=QLKS_DB;encrypt=true;trustServerCertificate=true";
     public static String username = "sa";
-    public static String password = "Password.1";
+    public static String password = "123";
 
     static {
         try {
