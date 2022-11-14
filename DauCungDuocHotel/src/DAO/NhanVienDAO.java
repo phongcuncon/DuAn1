@@ -26,13 +26,13 @@ public class NhanVienDAO extends HotelDAO<NhanVien, String>{
 
     @Override
     public void insert(NhanVien enity) {
-	JdbcHelper.update(INSERT_SQL, enity.getMaNV(),enity.getTenNV(),enity.getTenDN(),enity.getAnh(),enity.getMatKhau(),enity.getChucDanh());
+	JdbcHelper.update(INSERT_SQL, enity.getMaNV(),enity.getTenNV(),enity.getTenDN(),enity.getAnh(),enity.getMatKhau(),enity.getChucDanh(),enity.getSdt(),enity.getDiaChi(),enity.getNgaySinh(),enity.isGioiTinh(),enity.getEmail(),enity.getCCCD());
 	
     }
 
     @Override
     public void Update(NhanVien enity) {
-	JdbcHelper.update(UPDATE_SQL, enity.getTenNV(),enity.getTenDN(),enity.getAnh(),enity.getMatKhau(),enity.getChucDanh(),enity.getMaNV());
+	JdbcHelper.update(UPDATE_SQL, enity.getTenNV(),enity.getTenDN(),enity.getAnh(),enity.getMatKhau(),enity.getChucDanh(),enity.getSdt(),enity.getDiaChi(),enity.getNgaySinh(),enity.isGioiTinh(),enity.getEmail(),enity.getCCCD(),enity.getMaNV());
     }
 
     @Override
@@ -65,7 +65,7 @@ public class NhanVienDAO extends HotelDAO<NhanVien, String>{
 		entity.setTenNV(rs.getString("TenNV"));
 		entity.setTenDN(rs.getString("TenDN"));
 		entity.setAnh(rs.getString("Anh"));
-		entity.setMatKhau(rs.getString("Matkhau"));
+		entity.setMatKhau(rs.getString("MatKhau"));
 		entity.setChucDanh(rs.getString("ChucDanh"));
 		entity.setSdt(rs.getString("Sdt"));
 		entity.setDiaChi(rs.getString("DiaChi"));
@@ -83,6 +83,10 @@ public class NhanVienDAO extends HotelDAO<NhanVien, String>{
     }
     public List<NhanVien> selectByKeyWord(String key){
 	String sql = "SELECT * FROM NhanVien WHERE MaNV LIKE ?";
+	return selectBySql(sql, "%" + key + "%");
+    }
+    public List<NhanVien> selectByKey(String key){
+	String sql = "SELECT * FROM NhanVien WHERE ChucDanh LIKE ?";
 	return selectBySql(sql, "%" + key + "%");
     }
    
