@@ -4,80 +4,75 @@
  */
 package DAO;
 
+import Entity.NhanVien;
 import Entity.Phong;
 import Untils.JdbcHelper;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author dieucap
+ * @author Admin
  */
-public class PhongDAO extends DauCungDuocDAO<Phong, String> {
-    final String INSERT_SQL = "INSERT INTO Phong (MaPhong, TrangThai, MaLoaiPhong, Tang, GiaTheoNgay, GiaTheoGio) VALUES (?, ?, ?, ?, ?, ?)";
-    final String UPDATE_SQL = "UPDATE Phong SET TrangThai=?, MaLoaiPhong=?, Tang=?, GiaTheoNgay=?, GiaTheoGio=? WHERE MaPhong=?";
-    final String DELETE_SQL = "DELETE FROM Phong WHERE MaPhong=?";
-    final String SELECT_ALL_SQL = "SELECT * FROM Phong";
-    final String SELECT_BY_ID_SQL = "SELECT * FROM Phong WHERE MaPhong=?";
+public class PhongDAO extends HotelDAO<Phong, String> {
+    String INSERT_SQL = "INSERT INTO Phong(MaPhong,Tang,GiaTheoGio,GiatheoNgay, TrangThai,MaLoaiPhong)VALUES(?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE Phong SET Tang = ?, GiaTheoGio = ?, GiatheoNgay = ?, TrangThai = ?, MaLoaiPhong = ? WHERE MaPhong = ?";
+    String DELETE_SQL = "DELETE FROM Phong WHERE MaPhong = ?";
+    String SELECTALL_SQL = "SELECT * FROM Phong";
+    String SELECT_BY_ID_SQL = "SELECT * FROM Phong WHERE MaPhong = ?";
 
     @Override
-    public void insert(Phong entity) {
-        JdbcHelper.update(INSERT_SQL,
-                entity.getMaPhong(),
-                entity.getTrangThai(),
-                entity.getMaLoaiPhong(),
-                entity.getTang(),
-                entity.getGiaTheoNgay(),
-                entity.getGiaTheoGio());
+    public void insert(Phong enity) {
+	JdbcHelper.update(INSERT_SQL, enity.getMaPhong(),enity.getTang(),enity.getGiaTheoGio(),enity.getGiaTheoNgay(),enity.getTrangThai(),enity.getMaLoaiPhong());
     }
 
     @Override
-    public void update(Phong entity) {
-        JdbcHelper.update(UPDATE_SQL,
-                entity.getTrangThai(),               
-                entity.getMaLoaiPhong(),
-                entity.getTang(),
-                entity.getGiaTheoNgay(),
-                entity.getGiaTheoGio(),
-                entity.getMaPhong());
+    public void Update(Phong enity) {
+	JdbcHelper.update(UPDATE_SQL, enity.getTang(),enity.getGiaTheoGio(),enity.getGiaTheoNgay(),enity.getTrangThai(),enity.getMaLoaiPhong(),enity.getMaPhong());
     }
 
     @Override
-    public void delete(String id) {
-        JdbcHelper.update(DELETE_SQL, id);
+    public void delete(String key) {
+	JdbcHelper.update(DELETE_SQL, key);
     }
-
-    @Override
-    public Phong selectById(String id) {
-        List<Phong> list = selectBySQL(SELECT_BY_ID_SQL, id);
-        return list.size() > 0 ? list.get(0) : null;
-    }
+    
 
     @Override
     public List<Phong> selectAll() {
-        return selectBySQL(SELECT_ALL_SQL);
+	return this.selectBySql(SELECTALL_SQL);
     }
 
     @Override
-    protected List<Phong> selectBySQL(String sql, Object... args) {
-        List<Phong> list = new ArrayList<>();
-        try {
-            ResultSet rs = JdbcHelper.query(sql, args);
-            while (rs.next()) {
-                Phong e = new Phong();
-                e.setMaPhong(rs.getString("MaPhong"));
-                e.setMaPhong(rs.getString("MaPhong"));
-                e.setGiaTheoGio(rs.getDouble("GiaTheoNgay"));
-                e.setGiaTheoNgay(rs.getDouble("GiaTheoGio"));
-                e.setTrangThai(rs.getString("TrangThai"));
-                e.setTang(rs.getInt("Tang"));
-                list.add(e);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return list;   
+    public Phong selectByID(String key) {
+	List<Phong> list = this.selectBySql(SELECT_BY_ID_SQL, key );
+	if(list.isEmpty()){
+	    return null;
+	}
+	 return list.get(0);
     }
-    
+
+    @Override
+    protected List<Phong> selectBySql(String sql, Object... args) {
+	List<Phong> list = new ArrayList<>();
+	try {
+	    ResultSet rs = JdbcHelper.query(sql, args);
+	    while(rs.next()){
+		Phong entity = new Phong();
+		entity.setMaPhong(rs.getString("MaPhong"));
+		entity.setTang(rs.getInt("Tang"));
+		entity.setGiaTheoGio(rs.getDouble("GiaTheoGio"));
+		entity.setGiaTheoNgay(rs.getDouble("GiaTheoNgay"));
+		entity.setTrangThai(rs.getString("TrangThai"));
+		entity.setMaLoaiPhong(rs.getString("MaLoaiPhong"));
+		
+		list.add(entity);
+	    }
+	    rs.getStatement().getConnection().close();
+	    return list;
+	} catch (SQLException e) {
+	    throw new RuntimeException(e);
+	}
+    }
 }

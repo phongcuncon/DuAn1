@@ -11,123 +11,123 @@ import java.util.Date;
  * @author ps22004_taquocphong
  */
 public class NhanVien {
-    String maNV,tenNV,tenDN, Anh,matKhau,chucDanh,email,diachi;
-    private boolean gioitinh;
-    Date ngaysinh= new Date();
-    int cccd,sdt;
-
+    String maNV,tenNV,tenDN, Anh,matKhau,chucDanh,Sdt,DiaChi,Email,CCCD;
+    Date NgaySinh;
+    boolean GioiTinh;
     public NhanVien() {
     }
 
-    public NhanVien(String maNV, String tenNV, String tenDN, String Anh, String matKhau, String chucDanh, String email, String diachi, boolean gioitinh, int cccd, int sdt) {
-        this.maNV = maNV;
-        this.tenNV = tenNV;
-        this.tenDN = tenDN;
-        this.Anh = Anh;
-        this.matKhau = matKhau;
-        this.chucDanh = chucDanh;
-        this.email = email;
-        this.diachi = diachi;
-        this.gioitinh = gioitinh;
-        this.cccd = cccd;
-        this.sdt = sdt;
-    }
-
     public String getMaNV() {
-        return maNV;
+	return maNV;
     }
 
     public void setMaNV(String maNV) {
-        this.maNV = maNV;
+	this.maNV = maNV;
     }
 
     public String getTenNV() {
-        return tenNV;
+	return tenNV;
     }
 
     public void setTenNV(String tenNV) {
-        this.tenNV = tenNV;
+	this.tenNV = tenNV;
     }
 
     public String getTenDN() {
-        return tenDN;
+	return tenDN;
     }
 
     public void setTenDN(String tenDN) {
-        this.tenDN = tenDN;
+	this.tenDN = tenDN;
     }
 
     public String getAnh() {
-        return Anh;
+	return Anh;
     }
 
     public void setAnh(String Anh) {
-        this.Anh = Anh;
+	this.Anh = Anh;
     }
 
     public String getMatKhau() {
-        return matKhau;
+	return matKhau;
     }
 
     public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
+	this.matKhau = matKhau;
     }
 
     public String getChucDanh() {
-        return chucDanh;
+	return chucDanh;
     }
 
     public void setChucDanh(String chucDanh) {
-        this.chucDanh = chucDanh;
+	this.chucDanh = chucDanh;
+    }
+
+    public String getSdt() {
+	return Sdt;
+    }
+
+    public void setSdt(String Sdt) {
+	this.Sdt = Sdt;
+    }
+
+    public String getDiaChi() {
+	return DiaChi;
+    }
+
+    public void setDiaChi(String DiaChi) {
+	this.DiaChi = DiaChi;
     }
 
     public String getEmail() {
-        return email;
+	return Email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String Email) {
+	this.Email = Email;
     }
 
-    public String getDiachi() {
-        return diachi;
+    public String getCCCD() {
+	return CCCD;
     }
 
-    public void setDiachi(String diachi) {
-        this.diachi = diachi;
+    public void setCCCD(String CCCD) {
+	this.CCCD = CCCD;
     }
 
-    public boolean isGioitinh() {
-        return gioitinh;
+    public Date getNgaySinh() {
+	return NgaySinh;
     }
 
-    public void setGioitinh(boolean gioitinh) {
-        this.gioitinh = gioitinh;
+    public void setNgaySinh(Date NgaySinh) {
+	this.NgaySinh = NgaySinh;
     }
 
-    public Date getNgaysinh() {
-        return ngaysinh;
+    public boolean isGioiTinh() {
+	return GioiTinh;
     }
 
-    public void setNgaysinh(Date ngaysinh) {
-        this.ngaysinh = ngaysinh;
+    public void setGioiTinh(boolean GioiTinh) {
+	this.GioiTinh = GioiTinh;
     }
 
-    public int getCccd() {
-        return cccd;
+    public NhanVien(String maNV, String tenNV, String tenDN, String Anh, String matKhau, String chucDanh, String Sdt, String DiaChi, String Email, String CCCD, Date NgaySinh, boolean GioiTinh) {
+	this.maNV = maNV;
+	this.tenNV = tenNV;
+	this.tenDN = tenDN;
+	this.Anh = Anh;
+	this.matKhau = matKhau;
+	this.chucDanh = chucDanh;
+	this.Sdt = Sdt;
+	this.DiaChi = DiaChi;
+	this.Email = Email;
+	this.CCCD = CCCD;
+	this.NgaySinh = NgaySinh;
+	this.GioiTinh = GioiTinh;
     }
 
-    public void setCccd(int cccd) {
-        this.cccd = cccd;
-    }
-
-    public int getSdt() {
-        return sdt;
-    }
-
-    public void setSdt(int sdt) {
-        this.sdt = sdt;
-    }
-
-    
+   
+	    
 }
