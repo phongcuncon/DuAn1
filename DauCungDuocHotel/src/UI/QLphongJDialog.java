@@ -4,6 +4,14 @@
  */
 package UI;
 
+import Untils.Auth;
+import DAO.PhongDAO;
+import Entity.Phong;
+import Untils.MsgBox;
+import java.util.List;
+//import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Admin
@@ -16,6 +24,7 @@ public class QLPhongJDialog extends javax.swing.JDialog {
     public QLPhongJDialog(java.awt.Frame parent, boolean modal) {
 	super(parent, modal);
 	initComponents();
+        init();
     }
 
     /**
@@ -44,7 +53,7 @@ public class QLPhongJDialog extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbl = new javax.swing.JTable();
+        tblPhong = new javax.swing.JTable();
         cboKiHieu = new javax.swing.JComboBox<>();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
@@ -62,13 +71,29 @@ public class QLPhongJDialog extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("Loai Phong:");
 
         btnThem.setText("Them ");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
         btnMoi.setText("Moi");
+        btnMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoiActionPerformed(evt);
+            }
+        });
 
         btnSua.setText("Sua");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
         lblTang.setText("001");
 
@@ -82,14 +107,21 @@ public class QLPhongJDialog extends javax.swing.JDialog {
         jLabel8.setText("Ki Hieu:");
 
         btnXoa.setText("Xoa");
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Phong:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
         jLabel4.setText("Trang Thai:");
 
-        tbl.setModel(new javax.swing.table.DefaultTableModel(
+        tblPhong.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -97,19 +129,21 @@ public class QLPhongJDialog extends javax.swing.JDialog {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Phong", "Loai Phong", "Gia Theo Gio", "Gia Theo Ngay", "Trang Thai", "Ghi Chu"
+                "Phong", "Loai Phong", "Gia Theo Gio", "Gia Theo Ngay", "Trang Thai", "Tang"
             }
         ));
-        jScrollPane1.setViewportView(tbl);
+        jScrollPane1.setViewportView(tblPhong);
 
         cboKiHieu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F", "G", "H" }));
 
         jCheckBox1.setText("Them Nhieu");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
         jLabel6.setText("Tang:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
         jLabel5.setText("Ghi Chu:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -154,8 +188,8 @@ public class QLPhongJDialog extends javax.swing.JDialog {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -194,7 +228,7 @@ public class QLPhongJDialog extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -220,6 +254,22 @@ public class QLPhongJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        them();
+    }//GEN-LAST:event_btnThemActionPerformed
+
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        xoa();
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        sua();
+    }//GEN-LAST:event_btnSuaActionPerformed
+
+    private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
+        clearForm();
+    }//GEN-LAST:event_btnMoiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,9 +336,121 @@ public class QLPhongJDialog extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblTang;
-    private javax.swing.JTable tbl;
+    private javax.swing.JTable tblPhong;
     private javax.swing.JTextField txtLoaiPhong;
     private javax.swing.JTextField txtTang;
     private javax.swing.JTextField txtTrangThai;
     // End of variables declaration//GEN-END:variables
+
+    int row = -1;
+    PhongDAO dao = new PhongDAO();
+    
+    void fillToTable() {
+        DefaultTableModel model = (DefaultTableModel) tblPhong.getModel();
+        model.setRowCount(0);
+        try {
+            List<Phong> list = dao.selectAll();
+            for (Phong p : list) {
+                Object[] row = {
+                    p.getMaPhong(),
+                    p.getTrangThai(),
+                    p.getMaLoaiPhong(),
+                    p.getTang(),
+                    p.getGiaTheoNgay(),
+                    p.getGiaTheoGio()
+                };
+                model.addRow(row);
+            }
+        } 
+        catch (Exception e) {
+            MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
+              
+        }
+    }
+    
+    void init() {
+        setLocationRelativeTo(null);
+        this.fillToTable();
+        this.row = -1;
+        this.update();
+    }
+    
+    void them(){
+        Phong model = getForm();
+        try {
+            dao.insert(model);
+            this.fillToTable();
+            this.clearForm();
+            MsgBox.alert(this, "Thêm mới thành công!");
+        } 
+        catch (Exception e) {
+            MsgBox.alert(this, "Thêm mới thất bại!");
+        }
+    }
+    
+    void sua() {
+        Phong model = getForm();
+        try {
+            dao.Update(model);
+            this.fillToTable();
+            MsgBox.alert(this, "Sửa thành công!");
+        } catch (Exception e) {
+            MsgBox.alert(this, "Sửa thất bại!");
+        }
+    }
+    
+    void xoa() {
+        if(!Auth.isManager()) {
+            MsgBox.alert(this, "Bạn không được xoá");
+        }else{
+            if(MsgBox.confirm(this, "Bạn có muốn xoá không!"));
+            String maPhong = txtLoaiPhong.getText();
+            try {
+                dao.delete(maPhong);
+                this.fillToTable();
+                this.clearForm();
+                MsgBox.alert(this, "Xoá thành công!");
+            } catch (Exception e) {
+                MsgBox.alert(this, "Xoá thất bại!");
+            }
+        }
+        
+    }
+
+    void clearForm() {
+        this.setForm(new Phong());
+        this.row = -1;
+        
+    }
+
+    void update() {
+        
+    }
+    
+    void edit() {
+        String macd = (String) tblPhong.getValueAt(this.row, 0);
+         Phong cd = dao.selectByID(macd);
+         this.setForm(cd);
+         this.update();
+    }
+
+
+    Phong getForm() {
+        Phong p = new Phong();
+        
+        p.setMaPhong(lblTang.getText());
+//        p.setMaLoaiPhong(txtLoaiPhong.getText());
+        p.setTang(Integer.valueOf(txtTang.getText()));
+        p.setTrangThai(txtTrangThai.getText());
+//        p.setGiaTheoGio(Double.valueOf());
+        
+    return p;
+    }
+    
+    void setForm(Phong p) {
+        txtLoaiPhong.setText(p.getMaLoaiPhong());
+//        lblTang.setText(Integer.valueOf(p.getTang()));
+        txtTrangThai.setText(p.getTrangThai());
+//        GhiChu.setText();
+    }
 }
