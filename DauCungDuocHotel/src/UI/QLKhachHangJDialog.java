@@ -50,7 +50,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Họ tên khách hàng", "Tuổi", "Giới tính", "Sô CCCD", "Trạng thái"
+                "Họ tên khách hàng", "Tuổi", "Giới tính", "CCCD", "Trạng thái"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
