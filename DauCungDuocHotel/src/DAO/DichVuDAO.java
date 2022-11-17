@@ -72,5 +72,8 @@ public class DichVuDAO extends HotelDAO<DichVu, String> {
 	    throw new RuntimeException(e);
 	}
     }
-
+    public List<DichVu> selectByKeyword(String keyword) {
+        String SQL = "SELECT * FROM DichVu WHERE MaDV LIKE ?";
+        return this.selectBySql(SQL, "%" + keyword + "%");
+    }
 }
