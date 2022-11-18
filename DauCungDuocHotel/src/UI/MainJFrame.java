@@ -112,6 +112,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LOGO");
 
+        btnPhong.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnPhong.setText("Phòng");
         btnPhong.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnPhong.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -123,31 +124,40 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setText("Loại phòng");
         jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+        jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton3.setText("Dịch vụ");
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+        jButton4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton4.setText("Loại dịch vụ");
         jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+        jButton5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton5.setText("Khách hàng");
         jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+        jButton6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton6.setText("Nhân viên");
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+        jButton7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton7.setText("Thống kê");
         jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+        jButton8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton8.setText("Cài đặt");
         jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton8.setPreferredSize(new java.awt.Dimension(101, 22));
 
+        jButton9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton9.setText("Đổi mật khẩu");
         jButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
+        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setText("Đăng xuất");
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
