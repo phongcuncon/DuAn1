@@ -9,3 +9,5 @@ insert into KhachHang VALUES('KH051',N'Vũ Thị Thanh Như',61,053161053222,N'K
 insert into KhachHang VALUES('KH062',N'Trần Nhật Anh',22,053200003242,N'Vàng',N'Bến Tre',N'0983273413',1,null);
 insert into KhachHang VALUES('KH002',N'Lê Vũ Trung Kiên',26,053196061232,N'Bạc',N'Hậu Giang',N'0981127912',1,null);
 insert into KhachHang VALUES('KH005',N'Cảnh',24,053198064232,N'Bạc',N'Kiên Giang',N'0981263700',1,null);
+insert into KhachHang VALUES('KH003',N'Diệu',24,053198064232,N'Vàng',N'Kiên Giang',N'0981223420',1,N'Đang chờ');
+
