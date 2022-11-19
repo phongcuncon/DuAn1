@@ -63,6 +63,12 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(tblKhachHang);
 
+        cboDoTT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboDoTTActionPerformed(evt);
+            }
+        });
+
         jLabel10.setText("Độ thân thiết:");
 
         btnTimKiem.setText("Tìm kiếm");
@@ -127,6 +133,10 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
         timkiem();
     }//GEN-LAST:event_btnTimKiemActionPerformed
+
+    private void cboDoTTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDoTTActionPerformed
+        cbo();
+    }//GEN-LAST:event_cboDoTTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,6 +224,18 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
 
     }
 
+    void cbo() {
+        String ad = (String) cboDoTT.getSelectedItem();
+        DefaultTableModel model1 = (DefaultTableModel) tblKhachHang.getModel();
+        model1.setRowCount(0);
+        dao.selectByKeyWord(ad);
+        for (KhachHang kh2 : list) {
+            model1.addRow(new Object[]{
+                kh2.getTenKH(), kh2.getTuoi(), kh2.isGioiTinh(), kh2.getCCCD(), kh2.getGhiChu()
+            });
+        }
+    }
+    
     void fillCombo() {
         DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboDoTT.getModel();
         tblmodel.removeAllElements();

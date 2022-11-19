@@ -9,14 +9,14 @@ package Entity;
  * @author Admin
  */
 public class KhachHang {
-    String maKH, tenKH, doThanThiet, diaChi, sdt, ghiChu;
-    int tuoi, CCCD;
+    String maKH, tenKH, doThanThiet, diaChi, sdt, ghiChu, CCCD;
+    int tuoi;
     boolean gioiTinh;
 
     public KhachHang() {
     }
 
-    public KhachHang(String maKH, String tenKH, String doThanThiet, String diaChi, String sdt, String ghiChu, int tuoi, int CCCD, boolean gioiTinh) {
+    public KhachHang(String maKH, String tenKH, String doThanThiet, String diaChi, String sdt, String ghiChu, int tuoi, String CCCD, boolean gioiTinh) {
 	this.maKH = maKH;
 	this.tenKH = tenKH;
 	this.doThanThiet = doThanThiet;
@@ -84,11 +84,11 @@ public class KhachHang {
 	this.tuoi = tuoi;
     }
 
-    public int getCCCD() {
+    public String getCCCD() {
 	return CCCD;
     }
 
-    public void setCCCD(int CCCD) {
+    public void setCCCD(String CCCD) {
 	this.CCCD = CCCD;
     }
 

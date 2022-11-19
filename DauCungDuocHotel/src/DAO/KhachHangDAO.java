@@ -7,6 +7,7 @@ package DAO;
 import Entity.KhachHang;
 import Untils.JdbcHelper;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +63,7 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
                 kh.setMaKH(rs.getString("MaKH"));
                 kh.setTenKH(rs.getString("TenKH"));
                 kh.setTuoi(rs.getInt("Tuoi"));
-                kh.setCCCD(rs.getInt("CCCD"));
+                kh.setCCCD(rs.getString("CCCD"));
                 kh.setDoThanThiet(rs.getString("DoThanThiet"));
                 kh.setDiaChi(rs.getString("DiaChi"));
                 kh.setSdt(rs.getString("Sdt"));
@@ -71,10 +72,12 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
                 
                 list.add(kh);
             }
-        } catch (Exception e) {
+            rs.getStatement().getConnection().close();
+	    return list;
+        } catch (SQLException e) {
             throw new RuntimeException();
         }
-        return list;
+//        return list;
     }
     
     public List<KhachHang> selectByKeyWord(String key){
