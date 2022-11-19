@@ -184,20 +184,20 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     KhachHangDAO dao = new KhachHangDAO();
     List<KhachHang> list = dao.selectAll();
 
-    void init(){
+    void init() {
         setLocationRelativeTo(null);
         this.fillToTable();
         this.fillCombo();
     }
-    
+
     void fillToTable() {
         DefaultTableModel tblmodel = (DefaultTableModel) tblKhachHang.getModel();
         tblmodel.setRowCount(0);
         for (KhachHang kh : list) {
             tblmodel.addRow(new Object[]{
-                    kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh(),
-                    kh.getCCCD(), kh.getGhiChu()
-                    });
+                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh(),
+                kh.getCCCD(), kh.getGhiChu()
+            });
         }
     }
 
@@ -211,21 +211,21 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh(), kh.getCCCD(), kh.getGhiChu()
             });
         }
-        
+
     }
-    
+
     void fillCombo() {
         DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboDoTT.getModel();
         tblmodel.removeAllElements();
         KhachHang kh = (KhachHang) cboDoTT.getSelectedItem();
-        if(kh != null){
+        if (kh != null) {
             dao.selectByKeyWord(kh.getMaKH());
             for (KhachHang kh1 : list) {
                 tblmodel.addElement(kh1);
             }
-            
+
         }
-         this.fillToTable();
+        this.fillToTable();
     }
-    
+
 }
