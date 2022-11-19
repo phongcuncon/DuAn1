@@ -5,7 +5,6 @@
 package DAO;
 
 import Entity.DatPhong;
-import Entity.KhachHang;
 import Untils.JdbcHelper;
 import java.sql.ResultSet;
 import java.sql.SQLException;

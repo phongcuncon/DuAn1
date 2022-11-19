@@ -10,16 +10,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author ps22004_taquocphong
  */
 public class NhanVienDAO extends HotelDAO<NhanVien, String>{
-     String INSERT_SQL = "INSERT INTO NhanVien(MaNV,TenNV,TenDN,Anh, MatKhau,ChucDanh, Sdt, DiaChi, NgaySinh, GioiTinh,Email, CCCD)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE NhanVien SET TenNV = ?, TenDN = ?, Anh = ?, MatKhau = ?, ChucDanh = ?, Sdt = ? , DiaChi = ?, NgaySinh = ?, GioiTinh = ?, Email = ?, CCCD = ?WHERE MaNV = ?";
+    String INSERT_SQL = "INSERT INTO NhanVien(MaNV,TenNV,TenDN,Anh, MatKhau,ChucDanh, Sdt, DiaChi, NgaySinh, GioiTinh,Email, CCCD)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE NhanVien SET TenNV = ?, TenDN = ?, Anh = ?, MatKhau = ?, ChucDanh = ?, Sdt = ? , DiaChi = ?, NgaySinh = ?, GioiTinh = ?, Email = ?, CCCD = ? WHERE MaNV = ?";
     String DELETE_SQL = "DELETE FROM NhanVien WHERE MaNV = ?";
     String SELECTALL_SQL = "SELECT * FROM NhanVien";
     String SELECT_BY_ID_SQL = "SELECT * FROM NhanVien WHERE MaNV = ?";
