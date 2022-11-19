@@ -5,6 +5,9 @@
 package DAO;
 
 import Entity.KhachHang;
+import Untils.JdbcHelper;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,32 +23,62 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
 
     @Override
     public void insert(KhachHang enity) {
-	throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        JdbcHelper.update(INSERT_SQL, enity.getMaKH(), enity.getTenKH(), enity.getTuoi(), enity.getCCCD(),
+                enity.getDoThanThiet(), enity.getDiaChi(), enity.getSdt(), enity.isGioiTinh(), enity.getGhiChu());
     }
 
     @Override
     public void Update(KhachHang enity) {
-	throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        JdbcHelper.update(UPDATE_SQL, enity.getTenKH(), enity.getTuoi(), enity.getCCCD(), enity.getDoThanThiet(),
+                enity.getDiaChi(), enity.getSdt(), enity.isGioiTinh(), enity.getGhiChu(), enity.getMaKH());
     }
 
     @Override
     public void delete(String key) {
-	throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        JdbcHelper.update(DELETE_SQL, key);
     }
 
     @Override
     public List<KhachHang> selectAll() {
-	throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.selectBySql(SELECTALL_SQL);
     }
 
     @Override
     public KhachHang selectByID(String key) {
-	throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<KhachHang> list = this.selectBySql(SELECT_BY_ID_SQL, key);
+        if(list.isEmpty()){
+            return null;
+        }
+        return list.get(0);
     }
 
     @Override
     protected List<KhachHang> selectBySql(String sql, Object... args) {
-	throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<KhachHang> list = new ArrayList<>();
+        try {
+            ResultSet rs = JdbcHelper.query(sql, args);
+            while (rs.next()) {
+                KhachHang kh = new KhachHang();
+                kh.setMaKH(rs.getString("MaKH"));
+                kh.setTenKH(rs.getString("TenKH"));
+                kh.setTuoi(rs.getInt("Tuoi"));
+                kh.setCCCD(rs.getInt("CCCD"));
+                kh.setDoThanThiet(rs.getString("DoThanThiet"));
+                kh.setDiaChi(rs.getString("DiaChi"));
+                kh.setSdt(rs.getString("Sdt"));
+                kh.setGioiTinh(rs.getBoolean("GioiTinh"));
+                kh.setGhiChu(rs.getString("GhiChu"));
+                
+                list.add(kh);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException();
+        }
+        return list;
     }
     
+    public List<KhachHang> selectByKeyWord(String key){
+	String sql = "SELECT * FROM KhachHang WHERE MaKH LIKE ?";
+	return selectBySql(sql, "%" + key + "%");
+    }
 }

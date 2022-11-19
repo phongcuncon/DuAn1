@@ -4,6 +4,13 @@
  */
 package UI;
 //đaaaaaa
+
+import DAO.KhachHangDAO;
+import java.util.List;
+import Entity.KhachHang;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ps22004_taquocphong
@@ -17,6 +24,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setTitle("QL Khách hàng");
+        init();
     }
 
     /**
@@ -31,18 +39,18 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         btnGroupGioiTinhKH = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        tblKhachHang = new javax.swing.JTable();
+        txtTimKiem = new javax.swing.JTextField();
+        cboDoTT = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
+        btnTimKiem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách khách hàng", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Helvetica Neue", 1, 14))); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblKhachHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -53,12 +61,16 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 "Họ tên khách hàng", "Tuổi", "Giới tính", "CCCD", "Trạng thái"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jLabel1.setText("Tìm kiếm");
+        jScrollPane1.setViewportView(tblKhachHang);
 
         jLabel10.setText("Độ thân thiết:");
+
+        btnTimKiem.setText("Tìm kiếm");
+        btnTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimKiemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -69,13 +81,13 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(btnTimKiem)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox2, 0, 257, Short.MAX_VALUE)))
+                        .addComponent(cboDoTT, 0, 245, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -83,10 +95,10 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                    .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboDoTT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(btnTimKiem))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
                 .addContainerGap())
@@ -111,6 +123,10 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
+        timkiem();
+    }//GEN-LAST:event_btnTimKiemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,12 +172,60 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btnGroupGioiTinhKH;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnTimKiem;
+    private javax.swing.JComboBox<String> cboDoTT;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tblKhachHang;
+    private javax.swing.JTextField txtTimKiem;
     // End of variables declaration//GEN-END:variables
+
+    KhachHangDAO dao = new KhachHangDAO();
+    List<KhachHang> list = dao.selectAll();
+
+    void init(){
+        setLocationRelativeTo(null);
+        this.fillToTable();
+        this.fillCombo();
+    }
+    
+    void fillToTable() {
+        DefaultTableModel tblmodel = (DefaultTableModel) tblKhachHang.getModel();
+        tblmodel.setRowCount(0);
+        for (KhachHang kh : list) {
+            tblmodel.addRow(new Object[]{
+                    kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh(),
+                    kh.getCCCD(), kh.getGhiChu()
+                    });
+        }
+    }
+
+    void timkiem() {
+        DefaultTableModel model = (DefaultTableModel) tblKhachHang.getModel();
+        model.setRowCount(0);
+        String tk = txtTimKiem.getText();
+        List<KhachHang> lst = dao.selectByKeyWord(tk);
+        for (KhachHang kh : lst) {
+            model.addRow(new Object[]{
+                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh(), kh.getCCCD(), kh.getGhiChu()
+            });
+        }
+        
+    }
+    
+    void fillCombo() {
+        DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboDoTT.getModel();
+        tblmodel.removeAllElements();
+        KhachHang kh = (KhachHang) cboDoTT.getSelectedItem();
+        if(kh != null){
+            dao.selectByKeyWord(kh.getMaKH());
+            for (KhachHang kh1 : list) {
+                tblmodel.addElement(kh1);
+            }
+            
+        }
+         this.fillToTable();
+    }
+    
 }
