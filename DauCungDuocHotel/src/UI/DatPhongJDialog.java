@@ -74,8 +74,6 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         txtTiendc = new javax.swing.JTextField();
         btnCheckin = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         lbPhong.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbPhong.setText("PHÒNG ...");
 
@@ -113,6 +111,11 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         cboSL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
 
         btnCheckin.setText("Check-In");
+        btnCheckin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckinActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,6 +209,11 @@ public class DatPhongJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCheckinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckinActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnCheckinActionPerformed
 
     /**
      * @param args the command line arguments
