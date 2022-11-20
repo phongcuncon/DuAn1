@@ -9,6 +9,7 @@ import DAO.KhachHangDAO;
 import java.util.List;
 import Entity.KhachHang;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -235,19 +236,26 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
             });
         }
     }
-    
+
     void fillCombo() {
+//        DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboDoTT.getModel();
+//        tblmodel.removeAllElements();
+//        KhachHang kh = (KhachHang) cboDoTT.getSelectedItem();
+//        if (kh != null) {
+//            dao.selectByKeyWord(kh.getMaKH());
+//            for (KhachHang kh1 : list) {
+//                tblmodel.addElement(kh1);
+//            }
+//
+//        }
+//        this.fillToTable();
+//    }
         DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboDoTT.getModel();
         tblmodel.removeAllElements();
-        KhachHang kh = (KhachHang) cboDoTT.getSelectedItem();
-        if (kh != null) {
-            dao.selectByKeyWord(kh.getMaKH());
-            for (KhachHang kh1 : list) {
-                tblmodel.addElement(kh1);
-            }
 
+        for (KhachHang nhanVien : list) {
+                tblmodel.addElement(nhanVien.getDoThanThiet());
         }
-        this.fillToTable();
     }
 
 }
