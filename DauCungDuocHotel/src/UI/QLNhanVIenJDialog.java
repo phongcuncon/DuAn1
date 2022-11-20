@@ -559,17 +559,18 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        NhanVien nv= readForm();
-        String chk= txtManv.getText();
-        if(!chk.equals("")){
-            if(!chk.equals(nv.getMaNV())){
-                insert();
-            }else{
-                MsgBox.alert(this, "Mã nhân viên đã tồn tại!");
-            }
-        }else{
-            MsgBox.alert(this,"Mã nhân viên đang để trống");
-        }
+//        NhanVien nv= readForm();
+//        String chk= txtManv.getText();
+//        if(!chk.equals("")){
+//            if(chk.equals(nv.getMaNV())){
+//                insert();
+//            }else{
+//                MsgBox.alert(this, "Mã nhân viên đã tồn tại!");
+//            }
+//        }else{
+//            MsgBox.alert(this,"Mã nhân viên đang để trống");
+//        }
+        insert();
     }//GEN-LAST:event_btnThemActionPerformed
 
     /**
