@@ -382,23 +382,24 @@ public class QLphongJDialog extends javax.swing.JDialog {
     }
     
     void delete() {
-        if(!Auth.isManager()){
-            MsgBox.alert(this, "Bạn đéo có quyền xoá!");
-        }
-        else{
-            if(MsgBox.confirm(this, "Bạn có muốn xóa hay không?")){
+//        if(!Auth.isManager()){
+//            MsgBox.alert(this, "Bạn đéo có quyền xoá!");
+//        }
+//        else{
+//            if(MsgBox.confirm(this, "Bạn có muốn xóa hay không?")){
                 String maPhong = txtPhong.getText();
                 try {
                     dao.delete(maPhong);
-                    this.fillToTable();
+//                    this.fillToTable();
                     this.clearForm();
                     MsgBox.alert(this, "Xóa thành công!");
+                    this.fillToTable();
                 } 
                 catch (Exception e) {
                     MsgBox.alert(this, "Xóa thất bại!");
                 }
-            }
-        }
+//            }
+//        }
     }
     
     void fillToTable() {
