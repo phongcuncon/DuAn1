@@ -17,20 +17,20 @@ import java.util.List;
  * @author Admin
  */
 public class LoaiPhongDAO extends HotelDAO<LoaiPhong, String>{
-    String INSERT_SQL = "INSERT INTO LoaiPhong(MaLoaiPhong,TenLoaiPhong,DonGia)VALUES(?,?,?)";
-    String UPDATE_SQL = "UPDATE LoaiPhong SET TenLoaiPhong = ?, DonGia = ? WHERE MaLoaiPhong = ?";
+    String INSERT_SQL = "INSERT INTO LoaiPhong(MaLoaiPhong,TenLoaiPhong)VALUES(?,?,?)";
+    String UPDATE_SQL = "UPDATE LoaiPhong SET TenLoaiPhong = ? WHERE MaLoaiPhong = ?";
     String DELETE_SQL = "DELETE FROM LoaiPhong WHERE MaLoaiPhong = ?";
     String SELECTALL_SQL = "SELECT * FROM LoaiPhong";
     String SELECT_BY_ID_SQL = "SELECT * FROM LoaiPhong WHERE MaLoaiPhong = ?";
 
     @Override
     public void insert(LoaiPhong enity) {
-	JdbcHelper.update(INSERT_SQL, enity.getMaLoaiPhong(),enity.getTenLoaiPhong(),enity.getDonGia());
+	JdbcHelper.update(INSERT_SQL, enity.getMaLoaiPhong(),enity.getTenLoaiPhong());
     }
 
     @Override
     public void Update(LoaiPhong enity) {
-	JdbcHelper.update(UPDATE_SQL, enity.getTenLoaiPhong(),enity.getDonGia(),enity.getMaLoaiPhong());
+	JdbcHelper.update(UPDATE_SQL, enity.getTenLoaiPhong(),enity.getMaLoaiPhong());
     }
 
     @Override
@@ -61,7 +61,6 @@ public class LoaiPhongDAO extends HotelDAO<LoaiPhong, String>{
 		LoaiPhong entity = new LoaiPhong();
 		entity.setMaLoaiPhong(rs.getString("MaLoaiPhong"));
 		entity.setTenLoaiPhong(rs.getString("TenLoaiPhong"));
-		entity.setDonGia(rs.getDouble("DonGia"));
 		
 		list.add(entity);
 	    }

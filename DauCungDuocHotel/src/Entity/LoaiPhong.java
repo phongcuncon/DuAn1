@@ -10,15 +10,13 @@ package Entity;
  */
 public class LoaiPhong {
     String maLoaiPhong, tenLoaiPhong;
-    Double donGia;
 
     public LoaiPhong() {
     }
 
-    public LoaiPhong(String maLoaiPhong, String tenLoaiPhong, Double donGia) {
+    public LoaiPhong(String maLoaiPhong, String tenLoaiPhong) {
 	this.maLoaiPhong = maLoaiPhong;
 	this.tenLoaiPhong = tenLoaiPhong;
-	this.donGia = donGia;
     }
 
     public String getMaLoaiPhong() {
@@ -37,12 +35,5 @@ public class LoaiPhong {
 	this.tenLoaiPhong = tenLoaiPhong;
     }
 
-    public Double getDonGia() {
-	return donGia;
-    }
-
-    public void setDonGia(Double donGia) {
-	this.donGia = donGia;
-    }
     
 }
