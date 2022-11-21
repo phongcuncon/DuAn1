@@ -26,6 +26,10 @@ public class QLphongJDialog extends javax.swing.JDialog {
 	super(parent, modal);
 	initComponents();
         init();
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
     }
 
     /**
@@ -74,12 +78,48 @@ public class QLphongJDialog extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+<<<<<<< Updated upstream
         jLabel3.setText("Loại phòng:");
+=======
+        jLabel3.setText("Loai Phong:");
+
+        btnThem.setText("Them ");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
+
+        btnMoi.setText("Moi");
+        btnMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoiActionPerformed(evt);
+            }
+        });
+
+        btnSua.setText("Sua");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
+>>>>>>> Stashed changes
 
         cboTang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tang 1" }));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+<<<<<<< Updated upstream
         jLabel8.setText("Kí Hiệu:");
+=======
+        jLabel8.setText("Ki Hieu:");
+
+        btnXoa.setText("Xoa");
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
+>>>>>>> Stashed changes
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Phòng:");
@@ -98,6 +138,11 @@ public class QLphongJDialog extends javax.swing.JDialog {
                 "Phong", "Loai Phong", "Gia Theo Gio", "Gia Theo Ngay", "Trang Thai", "Tang"
             }
         ));
+        tblPhong.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblPhongMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblPhong);
 
         cboKiHieu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F", "G", "H" }));
@@ -264,18 +309,37 @@ public class QLphongJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnMoiActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+<<<<<<< Updated upstream
         if(checkNull()){
             insert();
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
-    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        update();
-    }//GEN-LAST:event_btnSuaActionPerformed
+=======
+        insert();
+    }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         delete();
     }//GEN-LAST:event_btnXoaActionPerformed
+
+>>>>>>> Stashed changes
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        update();
+    }//GEN-LAST:event_btnSuaActionPerformed
+
+<<<<<<< Updated upstream
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        delete();
+    }//GEN-LAST:event_btnXoaActionPerformed
+=======
+    private void tblPhongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPhongMouseClicked
+        if(evt.getClickCount() == 2){
+            this.row = tblPhong.getSelectedRow();
+            this.edit();
+        }
+    }//GEN-LAST:event_tblPhongMouseClicked
+>>>>>>> Stashed changes
 
     /**
      * @param args the command line arguments
