@@ -459,7 +459,7 @@ public class QLphongJDialog extends javax.swing.JDialog {
                     this.fillToTable();
                     this.clearForm();
                     MsgBox.alert(this, "Xóa thành công!");
-//                    this.fillToTable();
+
                 } 
                 catch (Exception e) {
                     MsgBox.alert(this, "Xóa thất bại!");
