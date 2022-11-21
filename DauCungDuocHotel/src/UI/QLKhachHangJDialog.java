@@ -25,6 +25,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setTitle("QL Khách hàng");
+        fillCombo();
         init();
     }
 
@@ -254,8 +255,21 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         tblmodel.removeAllElements();
 
         for (KhachHang nhanVien : list) {
+            System.out.println(nhanVien.getDoThanThiet());
+            if(check(nhanVien.getDoThanThiet(), cboDoTT) == false){
                 tblmodel.addElement(nhanVien.getDoThanThiet());
+                
+        }else{
+                return;
+            }
         }
     }
-
+    boolean check(Object ob, JComboBox cbo){
+        for(int i = 0; i< list.size();i++){
+            if(ob.equals(cbo.getItemAt(i))){
+                return true;
+            }
+        }
+        return false;
+    }
 }

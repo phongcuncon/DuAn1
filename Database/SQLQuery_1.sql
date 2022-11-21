@@ -1,6 +1,7 @@
 use QLKS_DB
 
-SELECT * from KhachHang
+SELECT * from LoaiPhong
+SELECT * from Phong
 
 insert into KhachHang VALUES('KH001',N'Nguyễn Thành Đạt',18,053203000732,N'Bạc',N'Tp Thủ Đức',N'0981263713',1,null);
 insert into KhachHang VALUES('KH013',N'Nguyễn Thị Anh',27,053195000412,N'Vàng',N'Long Khánh',N'0981296323',0,null);
@@ -11,3 +12,5 @@ insert into KhachHang VALUES('KH002',N'Lê Vũ Trung Kiên',26,053196061232,N'B�
 insert into KhachHang VALUES('KH005',N'Cảnh',24,053198064232,N'Bạc',N'Kiên Giang',N'0981263700',1,null);
 insert into KhachHang VALUES('KH003',N'Diệu',24,053198064232,N'Vàng',N'Kiên Giang',N'0981223420',1,N'Đang chờ');
 
+insert into LoaiPhong VALUEs('1',N'Double',400);
+insert into Phong VALUEs('1',N'Double',400);
