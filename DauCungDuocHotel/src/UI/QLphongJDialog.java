@@ -26,10 +26,6 @@ public class QLphongJDialog extends javax.swing.JDialog {
 	super(parent, modal);
 	initComponents();
         init();
-<<<<<<< Updated upstream
-=======
-        
->>>>>>> Stashed changes
     }
 
     /**
@@ -313,15 +309,15 @@ public class QLphongJDialog extends javax.swing.JDialog {
         if(checkNull()){
             insert();
         }
-    }//GEN-LAST:event_btnThemActionPerformed
+    }                                       
 
 =======
         insert();
     }//GEN-LAST:event_btnThemActionPerformed
 
-    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {                                       
         delete();
-    }//GEN-LAST:event_btnXoaActionPerformed
+    }                                      
 
 >>>>>>> Stashed changes
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed

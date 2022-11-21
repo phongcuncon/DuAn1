@@ -239,18 +239,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     }
 
     void fillCombo() {
-//        DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboDoTT.getModel();
-//        tblmodel.removeAllElements();
-//        KhachHang kh = (KhachHang) cboDoTT.getSelectedItem();
-//        if (kh != null) {
-//            dao.selectByKeyWord(kh.getMaKH());
-//            for (KhachHang kh1 : list) {
-//                tblmodel.addElement(kh1);
-//            }
-//
-//        }
-//        this.fillToTable();
-//    }
+
         DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboDoTT.getModel();
         tblmodel.removeAllElements();
 
@@ -262,10 +251,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 }
                 
         }
-               
-            
-           
-        
+      
     }
     boolean check(Object ob, JComboBox cbo){
         for(int i = 0; i< list.size();i++){
