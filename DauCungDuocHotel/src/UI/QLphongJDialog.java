@@ -395,14 +395,7 @@ public class QLphongJDialog extends javax.swing.JDialog {
                     this.fillToTable();
                     this.clearForm();
                     MsgBox.alert(this, "Xóa thành công!");
-<<<<<<< Updated upstream
-//                    this.fillToTable();
-=======
-<<<<<<< HEAD
-=======
-//                    this.fillToTable();
->>>>>>> 3ddfda4d4e4f87138496e7c5b9159e71885d5188
->>>>>>> Stashed changes
+
                 } 
                 catch (Exception e) {
                     MsgBox.alert(this, "Xóa thất bại!");
