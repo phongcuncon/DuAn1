@@ -411,7 +411,9 @@ public class QLphongJDialog extends javax.swing.JDialog {
                     p.getMaPhong(), p.getMaLoaiPhong(), p.getGiaTheoGio(),
                     p.getGiaTheoNgay(), p.getTrangThai(), p.getTang()
                 };
+                model.addRow(row);
             }
+            
         } catch (Exception e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
         }

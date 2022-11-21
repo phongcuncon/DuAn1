@@ -208,9 +208,9 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
                     .addComponent(jLabel2)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGui)
-                    .addComponent(btnHuy))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHuy)
+                    .addComponent(btnGui))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
