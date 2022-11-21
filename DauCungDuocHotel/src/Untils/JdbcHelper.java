@@ -19,7 +19,11 @@ public class JdbcHelper {
     public static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     public static String dburl = "jdbc:sqlserver://localhost:1433;databaseName=QLKS_DB;encrypt=true;trustServerCertificate=true";
     public static String username = "sa";
-    public static String password = "Password.1";
+<<<<<<< Updated upstream
+//    public static String password = "Password.1";
+=======
+>>>>>>> Stashed changes
+    public static String password = "myPassw0rd";
 
     static {
         try {

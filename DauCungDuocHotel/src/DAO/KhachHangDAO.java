@@ -6,10 +6,16 @@ package DAO;
 
 import Entity.KhachHang;
 import Untils.JdbcHelper;
+<<<<<<< Updated upstream
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+=======
+>>>>>>> Stashed changes
 import java.util.List;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -24,14 +30,24 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
 
     @Override
     public void insert(KhachHang enity) {
+<<<<<<< Updated upstream
         JdbcHelper.update(INSERT_SQL, enity.getMaKH(), enity.getTenKH(), enity.getTuoi(), enity.getCCCD(),
                 enity.getDoThanThiet(), enity.getDiaChi(), enity.getSdt(), enity.isGioiTinh(), enity.getGhiChu());
+=======
+        JdbcHelper.update(INSERT_SQL, enity.getMaKH(), enity.getTenKH(), enity.getCCCD(), enity.getDoThanThiet()
+        , enity.getDiaChi(), enity.getSdt(), enity.isGioiTinh(), enity.getGhiChu());
+>>>>>>> Stashed changes
     }
 
     @Override
     public void Update(KhachHang enity) {
+<<<<<<< Updated upstream
         JdbcHelper.update(UPDATE_SQL, enity.getTenKH(), enity.getTuoi(), enity.getCCCD(), enity.getDoThanThiet(),
                 enity.getDiaChi(), enity.getSdt(), enity.isGioiTinh(), enity.getGhiChu(), enity.getMaKH());
+=======
+        JdbcHelper.update(UPDATE_SQL, enity.getTenKH(), enity.getTuoi(), enity.getCCCD(), enity.getDoThanThiet()
+        , enity.getDiaChi(), enity.getSdt(), enity.isGioiTinh(), enity.getGhiChu(), enity.getMaKH());
+>>>>>>> Stashed changes
     }
 
     @Override
@@ -47,15 +63,23 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
     @Override
     public KhachHang selectByID(String key) {
         List<KhachHang> list = this.selectBySql(SELECT_BY_ID_SQL, key);
+<<<<<<< Updated upstream
         if(list.isEmpty()){
             return null;
         }
         return list.get(0);
+=======
+	if (list.isEmpty()) {
+	    return null;
+	}
+	return list.get(0);
+>>>>>>> Stashed changes
     }
 
     @Override
     protected List<KhachHang> selectBySql(String sql, Object... args) {
         List<KhachHang> list = new ArrayList<>();
+<<<<<<< Updated upstream
         try {
             ResultSet rs = JdbcHelper.query(sql, args);
             while (rs.next()) {
@@ -79,6 +103,29 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
         }
 //        return list;
     }
+=======
+	try {
+	    ResultSet rs = JdbcHelper.query(sql, args);
+	    while (rs.next()) {
+		KhachHang entity = new KhachHang();
+		entity.setMaKH(rs.getString("MaKH"));
+		entity.setTenKH(rs.getString("TenKH"));
+		entity.setTuoi(rs.getInt("Tuoi"));
+		entity.setCCCD(rs.getInt("CCCD"));
+		entity.setDoThanThiet(rs.getString("DoThanThiet"));
+                entity.setDiaChi(rs.getString("DiaChi"));
+                entity.setSdt(rs.getString("Sdt"));
+                entity.setGioiTinh(true);
+                entity.setGhiChu(rs.getString("GhiChu"));
+		list.add(entity);
+	    }
+	    rs.getStatement().getConnection().close();
+	    return list;
+	} catch (SQLException e) {
+	    throw new RuntimeException(e);
+	}
+    }   
+>>>>>>> Stashed changes
     
     public List<KhachHang> selectByKeyWord(String key){
 	String sql = "SELECT * FROM KhachHang WHERE MaKH LIKE ?";

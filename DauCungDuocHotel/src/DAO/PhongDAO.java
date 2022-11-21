@@ -74,5 +74,11 @@ public class PhongDAO extends HotelDAO<Phong, String> {
 	} catch (SQLException e) {
 	    throw new RuntimeException(e);
 	}
+//        return list;
+    }
+    
+    public List<Phong> selectByKeyword(String keyword) {
+        String SQL = "SELECT * FROM Phong WHERE MaPhong LIKE ?";
+        return this.selectBySql(SQL, "%" + keyword + "%");
     }
 }
