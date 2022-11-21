@@ -390,10 +390,12 @@ public class QLphongJDialog extends javax.swing.JDialog {
                 String maPhong = txtPhong.getText();
                 try {
                     dao.delete(maPhong);
-//                    this.fillToTable();
+                    list.removeAll(list);
+                    list.addAll(dao.selectAll());
+                    this.fillToTable();
                     this.clearForm();
                     MsgBox.alert(this, "Xóa thành công!");
-                    this.fillToTable();
+//                    this.fillToTable();
                 } 
                 catch (Exception e) {
                     MsgBox.alert(this, "Xóa thất bại!");
