@@ -2,6 +2,7 @@ use QLKS_DB
 
 SELECT * from LoaiPhong
 SELECT * from Phong
+SELECT * from DichVu
 
 insert into KhachHang VALUES('KH001',N'Nguyễn Thành Đạt',18,053203000732,N'Bạc',N'Tp Thủ Đức',N'0981263713',1,null);
 insert into KhachHang VALUES('KH013',N'Nguyễn Thị Anh',27,053195000412,N'Vàng',N'Long Khánh',N'0981296323',0,null);
