@@ -325,7 +325,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                           <Component id="rdoNu" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                           <Component id="rdoNam" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>

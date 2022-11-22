@@ -25,7 +25,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setTitle("QL Khách hàng");
-        
+
         init();
     }
 
@@ -244,18 +244,19 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         tblmodel.removeAllElements();
 
         for (KhachHang kh : list) {
-                
-                if(check(kh.getDoThanThiet(), cboDoTT) == false){
-                                    tblmodel.addElement(kh.getDoThanThiet());
 
-                }
-                
+            if (check(kh.getDoThanThiet(), cboDoTT) == false) {
+                tblmodel.addElement(kh.getDoThanThiet());
+
+            }
+
         }
-      
+
     }
-    boolean check(Object ob, JComboBox cbo){
-        for(int i = 0; i< list.size();i++){
-            if(ob.equals(cbo.getItemAt(i))){
+
+    boolean check(Object ob, JComboBox cbo) {
+        for (int i = 0; i < list.size(); i++) {
+            if (ob.equals(cbo.getItemAt(i))) {
                 return true;
             }
         }
