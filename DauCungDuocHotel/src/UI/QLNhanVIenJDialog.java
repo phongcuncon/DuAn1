@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ps22004_taquocphong
  */
-public class QLNhanVIenJDialog extends javax.swing.JDialog {
+public class QLNhanVienJDialog extends javax.swing.JDialog {
 
     NhanVienDAO dao = new NhanVienDAO();
     int index = -1;
@@ -34,7 +34,7 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
     /**
      * Creates new form QLNhanVIenJDialog
      */
-    public QLNhanVIenJDialog(java.awt.Frame parent, boolean modal) {
+    public QLNhanVienJDialog(java.awt.Frame parent, boolean modal) {
 	super(parent, modal);
 	initComponents();
         this.setTitle("Quản lý khách sạn");
@@ -109,6 +109,12 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Helvetica Neue", 1, 14))); // NOI18N
+
+        txttimkiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txttimkiemKeyReleased(evt);
+            }
+        });
 
         btnTimKiem.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         btnTimKiem.setText("Tìm kiếm");
@@ -262,7 +268,7 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAnh, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+            .addComponent(lblAnh, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,13 +295,10 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtManv, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(txtCD, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtManv, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -303,19 +306,19 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
                             .addComponent(jLabel8)
                             .addComponent(jLabel4))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(txtcccd, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(107, 107, 107)
-                                .addComponent(rdoNam)
-                                .addGap(18, 18, 18)
-                                .addComponent(rdoNu))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
+                                .addGap(66, 66, 66)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtHoten, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                                     .addComponent(date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(txtcccd, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(70, 70, 70)
+                                .addComponent(rdoNu)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rdoNam)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -573,6 +576,18 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
         insert();
     }//GEN-LAST:event_btnThemActionPerformed
 
+    private void txttimkiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttimkiemKeyReleased
+//        list.clear();
+//        DefaultTableModel model = (DefaultTableModel) tblNhanVien1.getModel();
+//	model.setRowCount(0);
+//	String tk = txttimkiem.getText();
+//	List<NhanVien> list = dao.selectByKeyWords(txttimkiem.getText());
+//	for (NhanVien nhanVien : list) {
+//	    model.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getTenDN(), nhanVien.getMatKhau()});
+//	}
+//        filltable();
+    }//GEN-LAST:event_txttimkiemKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -590,14 +605,16 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
 		}
 	    }
 	} catch (ClassNotFoundException ex) {
-	    java.util.logging.Logger.getLogger(QLNhanVIenJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	    java.util.logging.Logger.getLogger(QLNhanVienJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 	} catch (InstantiationException ex) {
-	    java.util.logging.Logger.getLogger(QLNhanVIenJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	    java.util.logging.Logger.getLogger(QLNhanVienJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 	} catch (IllegalAccessException ex) {
-	    java.util.logging.Logger.getLogger(QLNhanVIenJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	    java.util.logging.Logger.getLogger(QLNhanVienJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 	} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-	    java.util.logging.Logger.getLogger(QLNhanVIenJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	    java.util.logging.Logger.getLogger(QLNhanVienJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 	}
+	//</editor-fold>
+	//</editor-fold>
 	//</editor-fold>
 	//</editor-fold>
         
@@ -610,7 +627,7 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
 	/* Create and display the dialog */
 	java.awt.EventQueue.invokeLater(new Runnable() {
 	    public void run() {
-		QLNhanVIenJDialog dialog = new QLNhanVIenJDialog(new javax.swing.JFrame(), true);
+		QLNhanVienJDialog dialog = new QLNhanVienJDialog(new javax.swing.JFrame(), true);
 		dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 		    @Override
 		    public void windowClosing(java.awt.event.WindowEvent e) {
@@ -648,15 +665,15 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
             if(MsgBox.confirm(this,"Bạn có muốn cập nhật thông tin nhân viên?")){
                 try{
                     dao.Update(nv);
-//                    list.removeAll(list);
-//                    list.addAll(dao.selectAll());
+                    list.removeAll(list);
+                    list.addAll(dao.selectAll());
                     this.filltable();
                     MsgBox.alert(this,"Cập nhật thành công!");
                     clearForm();
                 }catch(Exception e){
                     MsgBox.alert(this,"Cập nhật thất bại!");    
                 }
-            }       
+            }
         }
     }
     void del(){
@@ -694,7 +711,7 @@ public class QLNhanVIenJDialog extends javax.swing.JDialog {
 	List<NhanVien> list2 = dao.selectByKey(cd);
 	for (NhanVien nhanVien : list2) {
 	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getTenDN(), nhanVien.getMatKhau()});
-	}
+	} 
     }
     void filltable() {
 	DefaultTableModel tblmodel = (DefaultTableModel) tblNhanVien1.getModel();
