@@ -52,8 +52,17 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
         lblKH = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         lblGiaPhongTheoNgay = new javax.swing.JLabel();
@@ -157,7 +166,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
         txtDVCT.setText("Dich Vu Can Tim:");
 
-        jPanel5.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel5.setLayout(new java.awt.GridLayout(6, 4, 10, 7));
 
         jButton2.setText("jButton2");
         jPanel5.add(jButton2);
@@ -168,11 +177,38 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         jButton5.setText("jButton5");
         jPanel5.add(jButton5);
 
+        jButton10.setText("jButton10");
+        jPanel5.add(jButton10);
+
         jButton4.setText("jButton4");
         jPanel5.add(jButton4);
 
+        jButton8.setText("jButton8");
+        jPanel5.add(jButton8);
+
+        jButton9.setText("jButton9");
+        jPanel5.add(jButton9);
+
+        jButton13.setText("jButton13");
+        jPanel5.add(jButton13);
+
+        jButton12.setText("jButton12");
+        jPanel5.add(jButton12);
+
+        jButton14.setText("jButton14");
+        jPanel5.add(jButton14);
+
+        jButton7.setText("jButton7");
+        jPanel5.add(jButton7);
+
         jButton6.setText("jButton6");
         jPanel5.add(jButton6);
+
+        jButton11.setText("jButton11");
+        jPanel5.add(jButton11);
+
+        jButton15.setText("jButton15");
+        jPanel5.add(jButton15);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -421,7 +457,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1465, Short.MAX_VALUE)
+            .addGap(0, 1636, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()
@@ -432,7 +468,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 748, Short.MAX_VALUE)
+            .addGap(0, 755, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()
@@ -449,7 +485,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1479, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1642, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
@@ -514,11 +550,20 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
