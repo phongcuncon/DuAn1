@@ -8,6 +8,7 @@ import DAO.NhanVienDAO;
 import Entity.NhanVien;
 import Untils.MsgBox;
 import java.util.Properties;
+import java.util.Random;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -19,6 +20,7 @@ import javax.mail.internet.MimeMessage;
 public class QuenMatKhauJDialog extends javax.swing.JDialog {
     
     NhanVienDAO dao= new NhanVienDAO();
+    int nb=randomNumber();
     
     /**
      * Creates new form QuenMatKhauJDialog
@@ -28,15 +30,6 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
     }
-    
-//    private static final String alpha = "abcdefghijklmnopqrstuvwxyz";
-//    private static final String alphaUpperCase = alpha.toUpperCase();
-//    private static final String digits = "0123456789";
-//    private static final String ALPHA_NUMERIC = alpha + alphaUpperCase + digits;
-//    private static Random generator = new Random();
-//    public static int randomNumber(int min, int max) {
-//        return generator.nextInt((max - min) + 1) + min;
-//    }
     
     void send(){
         try {
@@ -54,7 +47,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
             });
             String to= txtEmail.getText();
             String subject="ĐỔI MẬT KHẨU";
-            String body="Mật khẩu mới của nhân viên " + txtHoten.getText() + "là : " ;
+            String body="Mật khẩu mới của nhân viên " + txtManv.getText() + " là : " + nb;
             Message msg= new MimeMessage(s);
             msg.setFrom(new InternetAddress(name));
             msg.setRecipients(Message.RecipientType.TO,InternetAddress.parse(to));
@@ -70,9 +63,17 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
     
     NhanVien readForm(){
         NhanVien nv = new NhanVien();
-        nv.setTenNV(txtHoten.getText());
-	nv.setTenDN(txtUser.getText());
+        nv.setTenDN(txtUser.getText());
+        nv.setMaNV(txtManv.getText());
         nv.setEmail(txtEmail.getText());
+        nv.setTenNV(nv.getTenNV());
+        nv.setAnh(nv.getAnh());
+        nv.setCCCD(nv.getCCCD());
+        nv.setChucDanh(nv.getChucDanh());
+        nv.setDiaChi(nv.getDiaChi());
+        nv.setEmail(nv.getEmail());
+        nv.setNgaySinh(nv.getNgaySinh());
+        nv.setSdt(nv.getSdt());
         return nv;
     }
     
@@ -80,8 +81,8 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         if(txtUser.getText().equals("")){
             MsgBox.alert(this,"Tên đăng nhập đang để trống");
             return false;
-        }else if(txtHoten.getText().equals("")){
-            MsgBox.alert(this,"Họ tên đang để trống");
+        }else if(txtManv.getText().equals("")){
+            MsgBox.alert(this,"Mã nhân viên đang để trống");
             return false;
         }else if(txtEmail.getText().equals("")){
             MsgBox.alert(this,"Email đang để trống");
@@ -90,21 +91,23 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         return true;
     }
     
-//    String random(int numberOfCharactor){
-//        StringBuilder sb= new StringBuilder();
-//        for(int i = 0; i < numberOfCharactor; i++){
-//            int number= randomNumber(0, ALPHA_NUMERIC.length() - 1);
-//            char ch= ALPHA_NUMERIC.charAt(number);
-//            sb.append(ch);
-//        }
-//        return sb.toString();
-//    }
+    Integer randomNumber(){
+        int min= 100000;
+        int max= 999999;
+        Random rand= new Random();
+        final int x= rand.nextInt(max - min)+min;
+        return x;
+    }
     
-//    void replace(){
-//        int numberOfCharactor=6;
-//        String st= randomAlphaNum;
-//        MsgBox.alert(this,);
-//    }
+    void changePass(){
+        NhanVien nv= readForm();
+        try{
+            nv.setMatKhau(String.valueOf(nb));
+            dao.Update(nv);
+        }catch(Exception e){
+            MsgBox.alert(this, "Lỗi đổi mk");
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -122,7 +125,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         btnGui = new javax.swing.JButton();
         btnHuy = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        txtHoten = new javax.swing.JTextField();
+        txtManv = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -131,6 +134,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
 
         jLabel2.setText("Email:");
 
+        txtEmail.setText("datkala0@gmail.com");
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -138,6 +142,8 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         });
 
         jLabel3.setText("Username:");
+
+        txtUser.setText("date");
 
         btnGui.setText("Gửi");
         btnGui.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +159,9 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
             }
         });
 
-        jLabel4.setText("Họ tên:");
+        jLabel4.setText("Mã NV:");
+
+        txtManv.setText("NV8");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,7 +195,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
                                 .addGap(36, 36, 36)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                            .addComponent(txtHoten))))
+                            .addComponent(txtManv))))
                 .addGap(81, 81, 81))
         );
         layout.setVerticalGroup(
@@ -202,7 +210,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtManv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -229,11 +237,12 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         NhanVien nv= readForm();
         if(!txtUser.getText().equals(nv.getTenDN())){
             MsgBox.alert(this,"Tên đăng nhập không đúng");
-        }else if(!txtHoten.getText().equals(nv.getTenNV())){
-            MsgBox.alert(this,"Tên không đúng");
+        }else if(!txtManv.getText().equals(nv.getMaNV())){
+            MsgBox.alert(this,"Mã nhân viên không đúng");
         }else if(!txtEmail.getText().equals(nv.getEmail())){
             MsgBox.alert(this,"Email không đúng");
         }else{
+            changePass();
             send();
         }
     }//GEN-LAST:event_btnGuiActionPerformed
@@ -288,7 +297,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtHoten;
+    private javax.swing.JTextField txtManv;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }

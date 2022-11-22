@@ -58,7 +58,7 @@
                       </Group>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtUser" pref="190" max="32767" attributes="0"/>
-                          <Component id="txtHoten" max="32767" attributes="0"/>
+                          <Component id="txtManv" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -79,7 +79,7 @@
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="txtHoten" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtManv" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -111,6 +111,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmail">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="datkala0@gmail.com"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmailActionPerformed"/>
       </Events>
@@ -121,6 +124,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUser">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="date"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnGui">
       <Properties>
@@ -140,10 +146,13 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="H&#x1ecd; t&#xea;n:"/>
+        <Property name="text" type="java.lang.String" value="M&#xe3; NV:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtHoten">
+    <Component class="javax.swing.JTextField" name="txtManv">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="NV8"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

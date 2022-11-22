@@ -8,6 +8,10 @@ import DAO.DatPhongDAO;
 import DAO.KhachHangDAO;
 import Entity.DatPhong;
 import Entity.KhachHang;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -26,18 +30,27 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         initComponents();
         setTitle("Đặt phòng");
         setLocationRelativeTo(null);
+        fillcbo();
     }
     
-    KhachHang readForm(){
-        KhachHang kh= new KhachHang();
-        kh.setTenKH((String) cboKh.getSelectedItem());
-        kh.setTuoi(Integer.valueOf(txtTuoi.getText()));
-        kh.setGioiTinh(rdoNam.isSelected());
-        kh.setSdt(txtSdt.getText());
-        kh.setCCCD(txtCccd.getText());
+    DatPhong readForm(){
+        DatPhong dp= new DatPhong();
+//        dp.setTuoi(Integer.valueOf(txtTuoi.getText()));
+//        dp.setGioiTinh(rdoNam.isSelected());
+//        dp.setSdt(txtSdt.getText());
+//        dp.setCCCD(txtCccd.getText());
         
         
-        return kh;
+        return dp;
+    }
+    
+    void fillcbo(){
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cboKh.getModel();
+        model.removeAllElements();
+        List<KhachHang> list = dao1.selectAll();
+        for (KhachHang kh : list) {
+            model.addElement(kh);
+        }
     }
     
     /**

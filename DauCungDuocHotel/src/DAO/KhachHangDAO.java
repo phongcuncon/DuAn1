@@ -87,4 +87,5 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
 	String sql = "SELECT * FROM KhachHang WHERE MaKH LIKE ?";
 	return selectBySql(sql, "%" + key + "%");
     }
+    
 }
