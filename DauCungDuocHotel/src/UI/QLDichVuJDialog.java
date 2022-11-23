@@ -4,6 +4,7 @@
  */
 package UI;
 
+import DAO.*;
 import Entity.DichVu;
 import DAO.DichVuDAO;
 import Untils.Auth;
@@ -18,12 +19,12 @@ import javax.swing.JFileChooser;
  *
  * @author dieucap
  */
-public class QLDVJDialog extends javax.swing.JDialog {
+public class QLDichVuJDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form QLDV
      */
-    public QLDVJDialog(java.awt.Frame parent, boolean modal) {
+    public QLDichVuJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         init();
@@ -55,7 +56,7 @@ public class QLDVJDialog extends javax.swing.JDialog {
         btnMoi = new javax.swing.JButton();
         txtTenDV = new javax.swing.JTextField();
         txtTimKiem = new javax.swing.JTextField();
-        btnTimKiem = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDichVu = new javax.swing.JTable();
@@ -169,10 +170,10 @@ public class QLDVJDialog extends javax.swing.JDialog {
                 .addGap(21, 21, 21))
         );
 
-        btnTimKiem.setText("SEARCH");
-        btnTimKiem.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setText("SEARCH");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTimKiemActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
 
@@ -221,7 +222,7 @@ public class QLDVJDialog extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnTimKiem))
+                        .addComponent(jButton5))
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
@@ -231,7 +232,7 @@ public class QLDVJDialog extends javax.swing.JDialog {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTimKiem))
+                    .addComponent(jButton5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -296,10 +297,10 @@ public class QLDVJDialog extends javax.swing.JDialog {
         clearForm();
     }//GEN-LAST:event_btnMoiActionPerformed
 
-    private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         timkiem();
-    }//GEN-LAST:event_btnTimKiemActionPerformed
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,14 +319,22 @@ public class QLDVJDialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QLDVJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QLDichVuJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QLDVJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QLDichVuJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QLDVJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QLDichVuJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QLDVJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QLDichVuJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -338,7 +347,7 @@ public class QLDVJDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                QLDVJDialog dialog = new QLDVJDialog(new javax.swing.JFrame(), true);
+                QLDichVuJDialog dialog = new QLDichVuJDialog(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -354,8 +363,8 @@ public class QLDVJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnMoi;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
-    private javax.swing.JButton btnTimKiem;
     private javax.swing.JButton btnXoa;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -462,8 +471,8 @@ public class QLDVJDialog extends javax.swing.JDialog {
     }
 
     void edit() {
-        String macd = (String) tblDichVu.getValueAt(this.row, 0);
-        DichVu dv = dao.selectByID(macd);
+        String madv = (String) tblDichVu.getValueAt(this.row, 0);
+        DichVu dv = dao.selectByID(madv);
         this.setForm(dv);
         this.updateStatus();
     }

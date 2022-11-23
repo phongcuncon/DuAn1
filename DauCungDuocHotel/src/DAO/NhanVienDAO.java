@@ -91,4 +91,12 @@ public class NhanVienDAO extends HotelDAO<NhanVien, String>{
 	String sql = "SELECT * FROM NhanVien WHERE ChucDanh LIKE ?";
 	return selectBySql(sql, "%" + key + "%");
     }
+            public NhanVien findNhanVien(String tendn){
+        String sql = "SELECT * FROM NhanVien WHERE TenDN LIKE ?";
+       List<NhanVien> list = this.selectBySql(sql, tendn);
+	if(list.isEmpty()){
+	    return null;
+	}
+	return list.get(0);
+    }
 }
