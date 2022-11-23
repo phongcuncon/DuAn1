@@ -20,6 +20,7 @@ import javax.swing.JFileChooser;
  * @author dieucap
  */
 public class QLDichVuJDialog extends javax.swing.JDialog {
+    int index = -1;
 
     /**
      * Creates new form QLDV
@@ -170,6 +171,12 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
                 .addGap(21, 21, 21))
         );
 
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
+
         jButton5.setText("SEARCH");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,12 +275,11 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
 
     private void tblDichVuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDichVuMouseClicked
         // TODO add your handling code here:
-            if (evt.getClickCount() == 2) {
-            this.row = tblDichVu.getSelectedRow();
-            if (this.row >= 0) {
-                this.edit();
-            }
-        }
+	index = tblDichVu.getSelectedRow();
+	DichVu dv = list.get(index);
+	setForm(dv);
+        
+        
     }//GEN-LAST:event_tblDichVuMouseClicked
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
@@ -301,6 +307,11 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
         timkiem();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        // TODO add your handling code here:
+        timkiem();
+    }//GEN-LAST:event_txtTimKiemKeyReleased
 
     /**
      * @param args the command line arguments
