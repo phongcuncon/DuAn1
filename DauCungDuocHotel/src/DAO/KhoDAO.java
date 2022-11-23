@@ -6,6 +6,7 @@ package DAO;
 
 import Entity.Kho;
 import Entity.LoaiPhong;
+import Entity.NhanVien;
 import Untils.JdbcHelper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -61,7 +62,7 @@ public class KhoDAO extends HotelDAO<Kho, String> {
 		Kho entity = new Kho();
 		entity.setMaLoaiHang(rs.getString("MaLoaiHang"));
 		entity.setTenHang(rs.getString("TenHang"));
-		entity.setNgayNhap(rs.getDate("NgayNhap"));
+		entity.setNgayNhap(rs.getDate("ThoiGianNhap"));
 		entity.setSoLuong(rs.getInt("SoLuong"));
 		entity.setGhiChu(rs.getString("GhiChu"));
 		list.add(entity);
@@ -72,5 +73,8 @@ public class KhoDAO extends HotelDAO<Kho, String> {
 	    throw new RuntimeException(e);
 	}
     }
-    
+    public List<Kho> selectByKeyWord(String key){
+	String sql = "SELECT * FROM Kho WHERE MaLoaiHang LIKE ?";
+	return selectBySql(sql, "%" + key + "%");
+    }
 }
