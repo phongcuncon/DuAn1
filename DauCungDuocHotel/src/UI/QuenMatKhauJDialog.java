@@ -66,14 +66,14 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         nv.setTenDN(txtUser.getText());
         nv.setMaNV(txtManv.getText());
         nv.setEmail(txtEmail.getText());
-        nv.setTenNV(nv.getTenNV());
-        nv.setAnh(nv.getAnh());
-        nv.setCCCD(nv.getCCCD());
-        nv.setChucDanh(nv.getChucDanh());
-        nv.setDiaChi(nv.getDiaChi());
-        nv.setEmail(nv.getEmail());
-        nv.setNgaySinh(nv.getNgaySinh());
-        nv.setSdt(nv.getSdt());
+//        nv.setTenNV(nv.getTenNV());
+//        nv.setAnh(nv.getAnh());
+//        nv.setCCCD(nv.getCCCD());
+//        nv.setChucDanh(nv.getChucDanh());
+//        nv.setDiaChi(nv.getDiaChi());
+//        nv.setEmail(nv.getEmail());
+//        nv.setNgaySinh(nv.getNgaySinh());
+//        nv.setSdt(nv.getSdt());
         return nv;
     }
     
