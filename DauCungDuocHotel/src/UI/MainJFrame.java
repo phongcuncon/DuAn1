@@ -1,10 +1,14 @@
 package UI;
 
 
+import DAO.PhongDAO;
+import Entity.Phong;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
+import javax.swing.JLabel;
 import javax.swing.UIManager;
 
 /*
@@ -25,6 +29,7 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         setTitle("Quản Lý Khách Sạn");
         Time();
+	fillLabel();
         setLocationRelativeTo(null);
     }
     
@@ -74,38 +79,38 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lbTang1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        label1 = new javax.swing.JLabel();
+        label2 = new javax.swing.JLabel();
+        label3 = new javax.swing.JLabel();
+        label4 = new javax.swing.JLabel();
+        label5 = new javax.swing.JLabel();
+        label6 = new javax.swing.JLabel();
+        label7 = new javax.swing.JLabel();
+        label10 = new javax.swing.JLabel();
+        label11 = new javax.swing.JLabel();
+        label12 = new javax.swing.JLabel();
+        label13 = new javax.swing.JLabel();
+        label14 = new javax.swing.JLabel();
+        label15 = new javax.swing.JLabel();
+        label16 = new javax.swing.JLabel();
+        label19 = new javax.swing.JLabel();
+        label20 = new javax.swing.JLabel();
+        label21 = new javax.swing.JLabel();
+        label22 = new javax.swing.JLabel();
         lbTang2 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
+        label23 = new javax.swing.JLabel();
+        label24 = new javax.swing.JLabel();
+        label25 = new javax.swing.JLabel();
+        label26 = new javax.swing.JLabel();
+        label27 = new javax.swing.JLabel();
+        label28 = new javax.swing.JLabel();
+        label29 = new javax.swing.JLabel();
+        label8 = new javax.swing.JLabel();
+        label9 = new javax.swing.JLabel();
+        label17 = new javax.swing.JLabel();
+        label18 = new javax.swing.JLabel();
+        label30 = new javax.swing.JLabel();
+        label31 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -304,113 +309,113 @@ public class MainJFrame extends javax.swing.JFrame {
         lbTang1.setText("Tầng 1");
         lbTang1.setOpaque(true);
 
-        jLabel7.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel7.setToolTipText("");
-        jLabel7.setOpaque(true);
+        label1.setBackground(new java.awt.Color(0, 255, 0));
+        label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label1.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label1.setToolTipText("");
+        label1.setOpaque(true);
 
-        jLabel8.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("<html>102<br>(VIP)<br>Trống"); // NOI18N
-        jLabel8.setToolTipText("");
-        jLabel8.setOpaque(true);
+        label2.setBackground(new java.awt.Color(0, 255, 0));
+        label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label2.setText("<html>102<br>(VIP)<br>Trống"); // NOI18N
+        label2.setToolTipText("");
+        label2.setOpaque(true);
 
-        jLabel9.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel9.setToolTipText("");
-        jLabel9.setOpaque(true);
+        label3.setBackground(new java.awt.Color(0, 255, 0));
+        label3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label3.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label3.setToolTipText("");
+        label3.setOpaque(true);
 
-        jLabel10.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel10.setToolTipText("");
-        jLabel10.setOpaque(true);
+        label4.setBackground(new java.awt.Color(0, 255, 0));
+        label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label4.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label4.setToolTipText("");
+        label4.setOpaque(true);
 
-        jLabel11.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel11.setToolTipText("");
-        jLabel11.setOpaque(true);
+        label5.setBackground(new java.awt.Color(0, 255, 0));
+        label5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label5.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label5.setToolTipText("");
+        label5.setOpaque(true);
 
-        jLabel12.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel12.setToolTipText("");
-        jLabel12.setOpaque(true);
+        label6.setBackground(new java.awt.Color(0, 255, 0));
+        label6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label6.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label6.setToolTipText("");
+        label6.setOpaque(true);
 
-        jLabel13.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel13.setToolTipText("");
-        jLabel13.setOpaque(true);
+        label7.setBackground(new java.awt.Color(0, 255, 0));
+        label7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label7.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label7.setToolTipText("");
+        label7.setOpaque(true);
 
-        jLabel14.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel14.setToolTipText("");
-        jLabel14.setOpaque(true);
+        label10.setBackground(new java.awt.Color(0, 255, 0));
+        label10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label10.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label10.setToolTipText("");
+        label10.setOpaque(true);
 
-        jLabel15.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel15.setToolTipText("");
-        jLabel15.setOpaque(true);
+        label11.setBackground(new java.awt.Color(0, 255, 0));
+        label11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label11.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label11.setToolTipText("");
+        label11.setOpaque(true);
 
-        jLabel16.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel16.setToolTipText("");
-        jLabel16.setOpaque(true);
+        label12.setBackground(new java.awt.Color(0, 255, 0));
+        label12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label12.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label12.setToolTipText("");
+        label12.setOpaque(true);
 
-        jLabel17.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel17.setToolTipText("");
-        jLabel17.setOpaque(true);
+        label13.setBackground(new java.awt.Color(0, 255, 0));
+        label13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label13.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label13.setToolTipText("");
+        label13.setOpaque(true);
 
-        jLabel18.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel18.setToolTipText("");
-        jLabel18.setOpaque(true);
+        label14.setBackground(new java.awt.Color(0, 255, 0));
+        label14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label14.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label14.setToolTipText("");
+        label14.setOpaque(true);
 
-        jLabel19.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel19.setToolTipText("");
-        jLabel19.setOpaque(true);
+        label15.setBackground(new java.awt.Color(0, 255, 0));
+        label15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label15.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label15.setToolTipText("");
+        label15.setOpaque(true);
 
-        jLabel20.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel20.setToolTipText("");
-        jLabel20.setOpaque(true);
+        label16.setBackground(new java.awt.Color(0, 255, 0));
+        label16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label16.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label16.setToolTipText("");
+        label16.setOpaque(true);
 
-        jLabel21.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel21.setToolTipText("");
-        jLabel21.setOpaque(true);
+        label19.setBackground(new java.awt.Color(0, 255, 0));
+        label19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label19.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label19.setToolTipText("");
+        label19.setOpaque(true);
 
-        jLabel22.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel22.setToolTipText("");
-        jLabel22.setOpaque(true);
+        label20.setBackground(new java.awt.Color(0, 255, 0));
+        label20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label20.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label20.setToolTipText("");
+        label20.setOpaque(true);
 
-        jLabel23.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel23.setToolTipText("");
-        jLabel23.setOpaque(true);
+        label21.setBackground(new java.awt.Color(0, 255, 0));
+        label21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label21.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label21.setToolTipText("");
+        label21.setOpaque(true);
 
-        jLabel24.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel24.setToolTipText("");
-        jLabel24.setOpaque(true);
+        label22.setBackground(new java.awt.Color(0, 255, 0));
+        label22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label22.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label22.setToolTipText("");
+        label22.setOpaque(true);
 
         lbTang2.setBackground(new java.awt.Color(255, 255, 0));
         lbTang2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -418,83 +423,83 @@ public class MainJFrame extends javax.swing.JFrame {
         lbTang2.setText("Tầng 2");
         lbTang2.setOpaque(true);
 
-        jLabel25.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel25.setToolTipText("");
-        jLabel25.setOpaque(true);
+        label23.setBackground(new java.awt.Color(0, 255, 0));
+        label23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label23.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label23.setToolTipText("");
+        label23.setOpaque(true);
 
-        jLabel26.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel26.setToolTipText("");
-        jLabel26.setOpaque(true);
+        label24.setBackground(new java.awt.Color(0, 255, 0));
+        label24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label24.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label24.setToolTipText("");
+        label24.setOpaque(true);
 
-        jLabel27.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel27.setToolTipText("");
-        jLabel27.setOpaque(true);
+        label25.setBackground(new java.awt.Color(0, 255, 0));
+        label25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label25.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label25.setToolTipText("");
+        label25.setOpaque(true);
 
-        jLabel28.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel28.setToolTipText("");
-        jLabel28.setOpaque(true);
+        label26.setBackground(new java.awt.Color(0, 255, 0));
+        label26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label26.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label26.setToolTipText("");
+        label26.setOpaque(true);
 
-        jLabel29.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel29.setToolTipText("");
-        jLabel29.setOpaque(true);
+        label27.setBackground(new java.awt.Color(0, 255, 0));
+        label27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label27.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label27.setToolTipText("");
+        label27.setOpaque(true);
 
-        jLabel30.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel30.setToolTipText("");
-        jLabel30.setOpaque(true);
+        label28.setBackground(new java.awt.Color(0, 255, 0));
+        label28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label28.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label28.setToolTipText("");
+        label28.setOpaque(true);
 
-        jLabel31.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel31.setToolTipText("");
-        jLabel31.setOpaque(true);
+        label29.setBackground(new java.awt.Color(0, 255, 0));
+        label29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label29.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label29.setToolTipText("");
+        label29.setOpaque(true);
 
-        jLabel32.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel32.setToolTipText("");
-        jLabel32.setOpaque(true);
+        label8.setBackground(new java.awt.Color(0, 255, 0));
+        label8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label8.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label8.setToolTipText("");
+        label8.setOpaque(true);
 
-        jLabel33.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel33.setToolTipText("");
-        jLabel33.setOpaque(true);
+        label9.setBackground(new java.awt.Color(0, 255, 0));
+        label9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label9.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label9.setToolTipText("");
+        label9.setOpaque(true);
 
-        jLabel34.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel34.setToolTipText("");
-        jLabel34.setOpaque(true);
+        label17.setBackground(new java.awt.Color(0, 255, 0));
+        label17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label17.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label17.setToolTipText("");
+        label17.setOpaque(true);
 
-        jLabel35.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel35.setToolTipText("");
-        jLabel35.setOpaque(true);
+        label18.setBackground(new java.awt.Color(0, 255, 0));
+        label18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label18.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label18.setToolTipText("");
+        label18.setOpaque(true);
 
-        jLabel36.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel36.setToolTipText("");
-        jLabel36.setOpaque(true);
+        label30.setBackground(new java.awt.Color(0, 255, 0));
+        label30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label30.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label30.setToolTipText("");
+        label30.setOpaque(true);
 
-        jLabel37.setBackground(new java.awt.Color(0, 255, 0));
-        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
-        jLabel37.setToolTipText("");
-        jLabel37.setOpaque(true);
+        label31.setBackground(new java.awt.Color(0, 255, 0));
+        label31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label31.setText("<html>101<br>(VIP)<br>Trống"); // NOI18N
+        label31.setToolTipText("");
+        label31.setOpaque(true);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -507,70 +512,70 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
-                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label13, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(label18, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label19, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(label22, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label23, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label24, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label25, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label26, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label27, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label28, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label29, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label30, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(label31, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
@@ -579,45 +584,45 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(lbTang1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label13, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label16, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label18, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label19, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label20, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label21, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label22, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbTang2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label23, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label24, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label25, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label26, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label27, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label28, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label29, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label30, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label31, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -699,6 +704,20 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
     }
+    PhongDAO dao = new PhongDAO();
+    List<Phong> list = dao.selectAll();
+    void fillLabel(){
+	String loaiPhong = null;
+	for (int i = 0; i< list.size();i++) {
+	    if(list.get(i).getMaLoaiPhong() == "1"){
+		 loaiPhong = "(VIP)";
+	    }else{
+		loaiPhong = "(Thuong)";
+	}
+	    JLabel[] label = {label1,label2,label3,label4,label5,label6,label7,label8,label9,label10,label11,label12,label13,label14,label15,label16,label17,label18,label19,label20,label21,label22,label23,label24,label25,label26,label27,label28,label29,label30,label31};
+	    label[i].setText( "<html>"+ list.get(i).getMaPhong()+ "<br>" +loaiPhong+ "<br>" +list.get(i).getTrangThai());
+	}
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPhong;
@@ -712,48 +731,48 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel label1;
+    private javax.swing.JLabel label10;
+    private javax.swing.JLabel label11;
+    private javax.swing.JLabel label12;
+    private javax.swing.JLabel label13;
+    private javax.swing.JLabel label14;
+    private javax.swing.JLabel label15;
+    private javax.swing.JLabel label16;
+    private javax.swing.JLabel label17;
+    private javax.swing.JLabel label18;
+    private javax.swing.JLabel label19;
+    private javax.swing.JLabel label2;
+    private javax.swing.JLabel label20;
+    private javax.swing.JLabel label21;
+    private javax.swing.JLabel label22;
+    private javax.swing.JLabel label23;
+    private javax.swing.JLabel label24;
+    private javax.swing.JLabel label25;
+    private javax.swing.JLabel label26;
+    private javax.swing.JLabel label27;
+    private javax.swing.JLabel label28;
+    private javax.swing.JLabel label29;
+    private javax.swing.JLabel label3;
+    private javax.swing.JLabel label30;
+    private javax.swing.JLabel label31;
+    private javax.swing.JLabel label4;
+    private javax.swing.JLabel label5;
+    private javax.swing.JLabel label6;
+    private javax.swing.JLabel label7;
+    private javax.swing.JLabel label8;
+    private javax.swing.JLabel label9;
     private javax.swing.JLabel lbTang1;
     private javax.swing.JLabel lbTang2;
     private javax.swing.JLabel lblTime;
