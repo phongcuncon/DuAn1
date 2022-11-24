@@ -18,7 +18,7 @@ import java.util.List;
 public class DangNhapJDialog extends javax.swing.JFrame {
 NhanVienDAO dao = new NhanVienDAO();
 List<NhanVien> list = new ArrayList<>();
-
+int c=0;
     /**
      * Creates new form DangNhapJDialog
      */
@@ -208,6 +208,14 @@ private void init() {
             MsgBox.alert(this, "Sai tên đăng nhập !");
         } else if (!matkhau.equals(nhanvien.getMatKhau())) {
             MsgBox.alert(this, "Sai mật khẩu !");
+            c++;
+            if(c > 3){
+                if(MsgBox.confirm(this, "Bạn có muốn reset lại mật khẩu không?")){
+                    this.dispose();
+                    new QuenMatKhauJDialog(this, rootPaneCheckingEnabled).setVisible(true);
+                }else{
+                }
+            }
         } else {
             Auth.user = nhanvien; // user = tendn
             this.dispose();

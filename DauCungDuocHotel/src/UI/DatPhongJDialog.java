@@ -8,10 +8,14 @@ import DAO.DatPhongDAO;
 import DAO.KhachHangDAO;
 import Entity.DatPhong;
 import Entity.KhachHang;
+import Entity.LoaiPhong;
+import Entity.NhanVien;
+import Untils.MsgBox;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -21,6 +25,8 @@ public class DatPhongJDialog extends javax.swing.JDialog {
     
     DatPhongDAO dao= new DatPhongDAO();
     KhachHangDAO dao1= new KhachHangDAO();
+    List<DatPhong> list = dao.selectAll();
+    List<KhachHang> list1 = dao1.selectAll();
     
     /**
      * Creates new form DatPhongJDialog
@@ -30,27 +36,70 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         initComponents();
         setTitle("Đặt phòng");
         setLocationRelativeTo(null);
-        fillcbo();
+        fillCombo();
     }
     
     DatPhong readForm(){
         DatPhong dp= new DatPhong();
-//        dp.setTuoi(Integer.valueOf(txtTuoi.getText()));
-//        dp.setGioiTinh(rdoNam.isSelected());
-//        dp.setSdt(txtSdt.getText());
-//        dp.setCCCD(txtCccd.getText());
-        
-        
+        dp.setDatCoc(Double.valueOf(txtTiendc.getText()));
+        dp.setNgayDatPhong(DayStart.getDate());
+        dp.setNgayTraPhong(DayEnd.getDate());
         return dp;
+    }  
+    
+    KhachHang readForm2(){
+        KhachHang kh= new KhachHang();
+        kh.setTenKH((String) cboKh.getSelectedItem());
+        kh.setTuoi(Integer.valueOf(txtTuoi.getText()));
+        kh.setGioiTinh(rdoNam.isSelected());
+        kh.setSdt(txtSdt.getText());
+        kh.setCCCD(txtCccd.getText());
+        if (rdoNam.isSelected()) {
+	    kh.setGioiTinh(true);
+	} else {
+	    kh.setGioiTinh(false);
+	}
+        return kh;
     }
     
-    void fillcbo(){
-        DefaultComboBoxModel model = (DefaultComboBoxModel) cboKh.getModel();
-        model.removeAllElements();
-        List<KhachHang> list = dao1.selectAll();
-        for (KhachHang kh : list) {
-            model.addElement(kh);
+    void insert(){
+        try{
+            KhachHang kh= readForm2();
+            DatPhong dp= readForm();
+
+            dao.insert(dp);
+            dao1.insert(kh);
+
+            MsgBox.alert(this, "Thêm thành công!");
+            list.removeAll(list);
+            list1.removeAll(list1);
+            list.addAll(dao.selectAll());
+            list1.addAll(dao1.selectAll());
+        }catch(Exception e){
+            MsgBox.alert(this, "Lỗi");
         }
+    }
+    
+    void fillCombo() {
+	DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboKh.getModel();
+	tblmodel.removeAllElements();
+
+	for (KhachHang kh : list1) {
+	    if (check(kh.getTenKH(), cboKh) == false) {
+		tblmodel.addElement(kh.getTenKH());
+	    } else {
+		return;
+	    }
+	}
+    }
+    
+    boolean check(Object ob, JComboBox cbo) {
+	for (int i = 0; i < list.size(); i++) {
+	    if (ob.equals(cbo.getItemAt(i))) {
+		return true;
+	    }
+	}
+	return false;
     }
     
     /**
@@ -224,8 +273,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCheckinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckinActionPerformed
-        // TODO add your handling code here:
-        
+        insert();
     }//GEN-LAST:event_btnCheckinActionPerformed
 
     /**

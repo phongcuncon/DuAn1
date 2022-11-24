@@ -11,10 +11,31 @@ import java.util.Date;
  * @author ps22004_taquocphong
  */
 public class NhanVien {
-    String maNV,tenNV,tenDN, Anh,matKhau,chucDanh,Sdt,DiaChi,Email,CCCD;
+    String maNV,tenNV,tenDN, Anh,matKhau,chucDanh,Sdt,DiaChi,Email,CCCD,lichlam,calam;
     Date NgaySinh;
     boolean GioiTinh;
     public NhanVien() {
+    }
+
+    public String getLichlam() {
+        return lichlam;
+    }
+
+    public void setLichlam(String lichlam) {
+        this.lichlam = lichlam;
+    }
+
+    public String getCalam() {
+        return calam;
+    }
+
+    public void setCalam(String calam) {
+        this.calam = calam;
+    }
+
+    public NhanVien(String lichlam, String calam) {
+        this.lichlam = lichlam;
+        this.calam = calam;
     }
 
     public String getMaNV() {

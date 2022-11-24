@@ -42,6 +42,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         tblNhanVien.setDefaultEditor(Object.class, null);
 	filltable();
 	fillCombo();
+        fillCombo2();
 	filltableLichLam();
     }
 
@@ -79,13 +80,13 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         txtcccd = new javax.swing.JTextField();
         txtemail = new javax.swing.JTextField();
+        cboCD = new javax.swing.JComboBox<>();
         txtmk = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         diachi = new javax.swing.JTextArea();
         date = new com.toedter.calendar.JDateChooser();
-        txtCD = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txtManv = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -163,7 +164,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
                         .addGap(36, 36, 36)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbo, 0, 324, Short.MAX_VALUE))
+                        .addComponent(cbo, 0, 326, Short.MAX_VALUE))
                     .addComponent(jScrollPane2))
                 .addContainerGap())
         );
@@ -223,6 +224,13 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 
         txtemail.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153), null, null));
 
+        cboCD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboCD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboCDActionPerformed(evt);
+            }
+        });
+
         txtmk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153), null, null));
 
         jLabel9.setText("Chức danh (vị trí):");
@@ -232,8 +240,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         diachi.setColumns(20);
         diachi.setRows(5);
         jScrollPane3.setViewportView(diachi);
-
-        txtCD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153), null, null));
 
         jLabel12.setText("Mã nhân viên");
 
@@ -289,15 +295,15 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addGap(35, 35, 35)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtManv, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtManv, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboCD, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -305,9 +311,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
                             .addComponent(jLabel8)
                             .addComponent(jLabel4))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtcccd, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(66, 66, 66)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,9 +318,12 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
                                         .addComponent(rdoNam)
                                         .addGap(18, 18, 18)
                                         .addComponent(rdoNu))
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtHoten, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                                        .addComponent(date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                                    .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtcccd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtHoten, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -377,11 +383,9 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel9)
-                                    .addComponent(txtCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(14, 14, 14)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cboCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(15, 15, 15)
+                                .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel3)
@@ -407,7 +411,8 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
                                 .addGap(14, 14, 14)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel6)
-                                    .addComponent(txtsdt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtsdt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtHoten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -462,7 +467,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 963, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 971, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -553,17 +558,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-//        NhanVien nv= readForm();
-//        String chk= txtManv.getText();
-//        if(!chk.equals("")){
-//            if(chk.equals(nv.getMaNV())){
-//                insert();
-//            }else{
-//                MsgBox.alert(this, "Mã nhân viên đã tồn tại!");
-//            }
-//        }else{
-//            MsgBox.alert(this,"Mã nhân viên đang để trống");
-//        }
         insert();
     }//GEN-LAST:event_btnThemActionPerformed
 
@@ -578,6 +572,10 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 //	}
 //        filltable();
     }//GEN-LAST:event_txttimkiemKeyReleased
+
+    private void cboCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCDActionPerformed
+        
+    }//GEN-LAST:event_cboCDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -634,7 +632,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	DefaultTableModel tblmodel = (DefaultTableModel) tblNhanVien.getModel();
 	tblmodel.setRowCount(0);
 	for (NhanVien nhanVien : list) {
-	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getTenDN(), nhanVien.getMatKhau()});
+	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getLichlam(), nhanVien.getCalam()});
         }
     }
     void insert(){
@@ -684,7 +682,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
     void clearForm(){
         txtManv.setText("");
         txtHoten.setText("");
-        txtCD.setText("");
+        cboCD.setSelectedIndex(0);
         date.setDate(null);
         txtcccd.setText("");
         rdoNam.setSelected(false);
@@ -703,6 +701,18 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	for (NhanVien nhanVien : list2) {
 	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getTenDN(), nhanVien.getMatKhau()});
 	} 
+    }
+    void cboCD(){
+        DefaultComboBoxModel model= (DefaultComboBoxModel) cboCD.getModel();
+        model.removeAllElements();
+        
+        for(NhanVien nv: list){
+            if(check(nv.getChucDanh(),cboCD) == false){
+                model.addElement(nv.getChucDanh());
+            }else{
+                return;
+            }
+        }
     }
     void filltable() {
 	DefaultTableModel tblmodel = (DefaultTableModel) tblNhanVien1.getModel();
@@ -724,9 +734,21 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 		return;
 	    }
 	}
-
     }
+    
+    void fillCombo2() {
+	DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboCD.getModel();
+	tblmodel.removeAllElements();
 
+	for (NhanVien nhanVien : list) {
+	    if (check(nhanVien.getChucDanh(), cboCD) == false) {
+		tblmodel.addElement(nhanVien.getChucDanh());
+	    } else {
+		return;
+	    }
+	}
+    }
+    
     void filltableTK() {
 	DefaultTableModel model = (DefaultTableModel) tblNhanVien1.getModel();
 	model.setRowCount(0);
@@ -744,8 +766,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	nv.setMatKhau(txtmk.getText());
 	nv.setChucDanh(String.valueOf(cbo.getSelectedItem()));
 	nv.setNgaySinh(date.getDate());
-//	nv.setGioiTinh(rdoNam.isSelected());
-//        nv.setGioiTinh(!rdoNam.isSelected());
+//        nv.setChucDanh(cboCD.getSelectedIndex());
         if (rdoNam.isSelected()) {
 	    nv.setGioiTinh(true);
 	} else {
@@ -762,7 +783,8 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 
     void writeForm(NhanVien nv) {
         txtManv.setText(nv.getMaNV());
-	txtCD.setText(nv.getChucDanh());
+        cboCD.setSelectedItem(nv.getChucDanh());
+//	txtCD.setText(nv.getChucDanh());
 	txtHoten.setText(nv.getTenNV());
 	txttk.setText(nv.getTenDN());
 	txtmk.setText(nv.getMatKhau());
@@ -773,10 +795,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	} else {
 	    rdoNu.setSelected(true);
 	}
-//        rdoNam.setSelected(nv.isGioiTinh());
-//        rdoNu.setSelected(!nv.isGioiTinh());
 	txtcccd.setText(nv.getCCCD());
-//	System.out.println(nv.getMatKhau());
 	txtemail.setText(nv.getEmail());
 	diachi.setText(nv.getDiaChi());
         if(nv.getAnh()==null){
@@ -808,10 +827,11 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
     }
     
     boolean valid(){
-        if(txtCD.getText().equals("")){
-            MsgBox.alert(this,"Chức danh đang để trống");
-            return false;
-        }else if(txtHoten.getText().equals("")){
+//        if(txtCD.getText().equals("")){
+//            MsgBox.alert(this,"Chức danh đang để trống");
+//            return false;
+//        }else 
+        if(txtHoten.getText().equals("")){
             MsgBox.alert(this,"Họ tên đang để trống");
             return false;
         }else if(date.getDate().equals("")){
@@ -850,6 +870,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnXoa;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbo;
+    private javax.swing.JComboBox<String> cboCD;
     private com.toedter.calendar.JDateChooser date;
     private javax.swing.JTextArea diachi;
     private javax.swing.JLabel jLabel1;
@@ -879,7 +900,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
     private javax.swing.JRadioButton rdoNu;
     private javax.swing.JTable tblNhanVien;
     private javax.swing.JTable tblNhanVien1;
-    private javax.swing.JTextField txtCD;
     private javax.swing.JTextField txtHoten;
     private javax.swing.JTextField txtManv;
     private javax.swing.JTextField txtcccd;
