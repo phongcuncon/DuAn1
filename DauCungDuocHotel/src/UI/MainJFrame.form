@@ -529,10 +529,8 @@
                       <Component id="label27" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label28" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
-                      <Component id="label29" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="label32" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                           <Component id="label33" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                           <Component id="label34" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
@@ -540,6 +538,10 @@
                           <Component id="label31" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                           <Component id="label36" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
                           <Component id="label30" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="label28" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="label29" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="52" max="32767" attributes="0"/>
