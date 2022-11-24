@@ -23,13 +23,19 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace pref="24" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jPanel3" max="32767" attributes="0"/>
-                  <Component id="jPanel4" pref="783" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jPanel3" max="32767" attributes="0"/>
+                      <Component id="jPanel4" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jPanel2" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
       </Group>
@@ -37,20 +43,18 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel4" max="32767" attributes="0"/>
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="30" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,6 +67,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="jLabel6" min="-2" pref="118" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="72" max="-2" attributes="0"/>
@@ -88,11 +96,6 @@
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel6" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -121,9 +124,9 @@
                   <Component id="jButton9" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace pref="36" max="32767" attributes="0"/>
-                  <Component id="jLabel6" min="-2" pref="65" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel6" min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -245,7 +248,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="237" max="32767" attributes="0"/>
                   <Component id="lblTime" min="-2" pref="191" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
               </Group>
@@ -254,7 +257,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="lblTime" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -380,7 +383,6 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="lbTang1" max="32767" attributes="0"/>
-              <Component id="lbTang2" alignment="0" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -401,9 +403,9 @@
                           <Component id="label7" min="-2" pref="80" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="label8" min="-2" pref="80" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Component id="label9" min="-2" pref="80" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="label9" min="-2" pref="77" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -427,38 +429,61 @@
                                   <Component id="label18" min="-2" pref="80" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="label19" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="label19" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label20" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label21" min="-2" pref="82" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="label28" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label29" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label30" min="-2" pref="80" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label31" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="label22" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label20" min="-2" pref="80" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label21" min="-2" pref="80" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label22" min="-2" pref="80" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="label23" min="-2" pref="79" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label24" min="-2" pref="79" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label25" min="-2" pref="79" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label26" min="-2" pref="79" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label27" min="-2" pref="79" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label28" min="-2" pref="79" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label29" min="-2" pref="79" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label30" min="-2" pref="80" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="label31" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="label23" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label24" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label25" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label26" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label27" min="-2" pref="80" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="label32" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label33" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label34" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Component id="label35" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="label36" min="-2" pref="80" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
+              <Component id="lbTang2" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -490,27 +515,34 @@
                       <Component id="label18" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lbTang2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label19" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="label20" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="label21" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="label22" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lbTang2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label23" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="label24" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="label25" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="label26" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
-                      <Component id="label27" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                      <Component id="label27" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label28" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="label29" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
-                      <Component id="label30" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
-                      <Component id="label31" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Component id="label32" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="label33" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="label34" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="label35" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="label31" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="label36" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                          <Component id="label30" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="52" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -683,6 +715,63 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="label28">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="label29">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="label30">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="label31">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbTang2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="T&#x1ea7;ng 2"/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JLabel" name="label19">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -727,19 +816,6 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbTang2">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="T&#x1ea7;ng 2"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="label23">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -763,50 +839,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="label25">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="ff" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="label26">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="ff" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="label27">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="ff" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="label28">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="ff" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="label29">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="ff" red="0" type="rgb"/>
@@ -861,7 +893,7 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label30">
+        <Component class="javax.swing.JLabel" name="label26">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="ff" red="0" type="rgb"/>
@@ -872,7 +904,62 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label31">
+        <Component class="javax.swing.JLabel" name="label36">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="label32">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="label33">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="label34">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="label35">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;101&lt;br&gt;(VIP)&lt;br&gt;Tr&#x1ed1;ng" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="label27">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="ff" red="0" type="rgb"/>
