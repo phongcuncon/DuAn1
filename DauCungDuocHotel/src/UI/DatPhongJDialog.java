@@ -66,10 +66,8 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         try{
             KhachHang kh= readForm2();
             DatPhong dp= readForm();
-
             dao.insert(dp);
             dao1.insert(kh);
-
             MsgBox.alert(this, "Thêm thành công!");
             list.removeAll(list);
             list1.removeAll(list1);
