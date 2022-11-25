@@ -91,6 +91,12 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         return true;
     }
     
+    void clearForm(){
+        txtEmail.setText("");
+        txtManv.setText("");
+        txtUser.setText("");
+    }
+    
     Integer randomNumber(){
         int min= 100000;
         int max= 999999;
@@ -103,9 +109,17 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         NhanVien nv= readForm();
         try{
             nv.setMatKhau(String.valueOf(nb));
+            nv.setTenNV(nv.getTenNV());
+            nv.setAnh(nv.getAnh());
+            nv.setCCCD(nv.getCCCD());
+            nv.setChucDanh(nv.getChucDanh());
+            nv.setDiaChi(nv.getDiaChi());
+            nv.setEmail(nv.getEmail());
+            nv.setNgaySinh(nv.getNgaySinh());
+            nv.setSdt(nv.getSdt());
             dao.Update(nv);
         }catch(Exception e){
-            MsgBox.alert(this, "Lỗi đổi mk");
+            MsgBox.alert(this, "Lỗi đổi mật khẩu");
         }
     }
     /**
@@ -134,7 +148,6 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
 
         jLabel2.setText("Email:");
 
-        txtEmail.setText("datkala0@gmail.com");
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -142,8 +155,6 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         });
 
         jLabel3.setText("Username:");
-
-        txtUser.setText("date");
 
         btnGui.setText("Gửi");
         btnGui.addActionListener(new java.awt.event.ActionListener() {
@@ -160,8 +171,6 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         });
 
         jLabel4.setText("Mã NV:");
-
-        txtManv.setText("NV8");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,6 +253,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         }else{
             changePass();
             send();
+            clearForm();
         }
     }//GEN-LAST:event_btnGuiActionPerformed
 

@@ -111,9 +111,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmail">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="datkala0@gmail.com"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmailActionPerformed"/>
       </Events>
@@ -124,9 +121,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUser">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="date"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnGui">
       <Properties>
@@ -150,9 +144,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtManv">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="NV8"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

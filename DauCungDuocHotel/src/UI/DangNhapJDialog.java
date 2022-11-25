@@ -211,7 +211,6 @@ private void init() {
             c++;
             if(c > 3){
                 if(MsgBox.confirm(this, "Bạn có muốn reset lại mật khẩu không?")){
-                    this.dispose();
                     new QuenMatKhauJDialog(this, rootPaneCheckingEnabled).setVisible(true);
                 }else{
                 }
