@@ -135,7 +135,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         btnCheckin = new javax.swing.JButton();
 
         lbPhong.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbPhong.setText("PHÒNG ...");
+        lbPhong.setText("ĐẶT PHÒNG");
 
         jLabel2.setText("Khách hàng:");
 
@@ -171,11 +171,6 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         cboSL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
 
         btnCheckin.setText("Check-In");
-        btnCheckin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCheckinActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,7 +208,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
                             .addComponent(DayEnd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cboSL, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtTiendc)
-                            .addComponent(lbPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(lbPhong))))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

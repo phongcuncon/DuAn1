@@ -59,7 +59,7 @@
                           <Component id="DayEnd" max="32767" attributes="0"/>
                           <Component id="cboSL" max="32767" attributes="0"/>
                           <Component id="txtTiendc" max="32767" attributes="0"/>
-                          <Component id="lbPhong" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbPhong" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -136,7 +136,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="PH&#xd2;NG ..."/>
+        <Property name="text" type="java.lang.String" value="&#x110;&#x1eb6;T PH&#xd2;NG"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
