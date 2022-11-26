@@ -976,14 +976,15 @@ public class MainJFrame extends javax.swing.JFrame {
 //            MsgBox.alert(this, "Vui lòng đăng nhập");
 //        }
 //
+    
     }
 
     private void openSetting() {
-        if (Auth.isLogin()) {
+//        if (Auth.isLogin()) {
             new CaiDatJDialog(this, true).setVisible(true);
-        } else {
-            MsgBox.alert(this, "Vui lòng đăng nhập");
-        }
+//        } else {
+//            MsgBox.alert(this, "Vui lòng đăng nhập");
+//        }
     }
 
 }
