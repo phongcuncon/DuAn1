@@ -28,10 +28,13 @@ public class CaiDatJDialog extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Cài đặt");
+
+        jButton1.setText("jButton1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -41,11 +44,17 @@ public class CaiDatJDialog extends javax.swing.JDialog {
                 .addGap(393, 393, 393)
                 .addComponent(jLabel1)
                 .addContainerGap(401, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(324, 324, 324))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(235, 235, 235)
+                .addGap(103, 103, 103)
+                .addComponent(jButton1)
+                .addGap(109, 109, 109)
                 .addComponent(jLabel1)
                 .addContainerGap(353, Short.MAX_VALUE))
         );
@@ -96,6 +105,7 @@ public class CaiDatJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
