@@ -70,7 +70,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
+        <Property name="text" type="java.lang.String" value="C&#x1ea3;nh ngu qu&#xe1;"/>
       </Properties>
     </Component>
   </SubComponents>

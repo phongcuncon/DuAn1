@@ -37,7 +37,7 @@ public class CaiDatJDialog extends javax.swing.JDialog {
 
         jButton1.setText("ádfsd");
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("Cảnh ngu quá");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
