@@ -1,21 +1,27 @@
 package UI;
 
-
 import DAO.PhongDAO;
 import Entity.Phong;
+import Untils.*;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
+import java.awt.Desktop;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JLabel;
+import javax.swing.Timer;
 import javax.swing.UIManager;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author Nguyen Thanh Dat
@@ -29,23 +35,24 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         setTitle("Quản Lý Khách Sạn");
         Time();
-	fillLabel();
+        fillLabel();
         setLocationRelativeTo(null);
     }
-    
+
     void Time() {
         class TimeClock extends Thread {
 
             @Override
             public void run() {
                 while (true) {
-                    lblTime.setText(new SimpleDateFormat("E yyyy.MM.đ 'at' hh:mm:ss a").format(Calendar.getInstance().getTime()));
+                    lblTime.setText(new SimpleDateFormat("E yyyy.dd.MM 'at' hh:mm:ss a").format(Calendar.getInstance().getTime()));
                 }
             }
         }
         TimeClock timeClock = new TimeClock();
         timeClock.start();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,13 +64,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         PanelMenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnPhong = new javax.swing.JButton();
-        btnLoaiPhong = new javax.swing.JButton();
         btnDichVu = new javax.swing.JButton();
         btnKho = new javax.swing.JButton();
         btnKhachHang = new javax.swing.JButton();
         btnNhanVien = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnThongKe = new javax.swing.JButton();
         btnSetting = new javax.swing.JButton();
         btnDoiMK = new javax.swing.JButton();
         btnDangXuat = new javax.swing.JButton();
@@ -122,55 +127,69 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LOGO");
 
-        btnPhong.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnPhong.setText("Phòng");
-        btnPhong.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnPhong.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnPhongMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnPhongMouseExited(evt);
-            }
-        });
-
-        btnLoaiPhong.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnLoaiPhong.setText("Loại phòng");
-        btnLoaiPhong.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnLoaiPhong.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoaiPhongActionPerformed(evt);
-            }
-        });
-
         btnDichVu.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnDichVu.setText("Dịch vụ");
         btnDichVu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnDichVu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDichVuActionPerformed(evt);
+            }
+        });
 
         btnKho.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnKho.setText("Kho");
         btnKho.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnKho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKhoActionPerformed(evt);
+            }
+        });
 
         btnKhachHang.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnKhachHang.setText("Khách hàng");
         btnKhachHang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnKhachHang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKhachHangActionPerformed(evt);
+            }
+        });
 
         btnNhanVien.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnNhanVien.setText("Nhân viên");
         btnNhanVien.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnNhanVien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNhanVienActionPerformed(evt);
+            }
+        });
 
-        jButton7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton7.setText("Thống kê");
-        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnThongKe.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnThongKe.setText("Thống kê");
+        btnThongKe.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnThongKe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThongKeActionPerformed(evt);
+            }
+        });
 
         btnSetting.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnSetting.setText("Cài đặt");
         btnSetting.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnSetting.setPreferredSize(new java.awt.Dimension(101, 22));
+        btnSetting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSettingActionPerformed(evt);
+            }
+        });
 
         btnDoiMK.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnDoiMK.setText("Đổi mật khẩu");
         btnDoiMK.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnDoiMK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoiMKActionPerformed(evt);
+            }
+        });
 
         btnDangXuat.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnDangXuat.setText("Đăng xuất");
@@ -194,13 +213,11 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelMenuLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnLoaiPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnDichVu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnKho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnKhachHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnNhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnThongKe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSetting, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnDangXuat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(PanelMenuLayout.createSequentialGroup()
@@ -214,10 +231,6 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnLoaiPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnKho, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,14 +239,14 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDoiMK, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(88, 88, 88)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -726,17 +739,40 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPhongMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPhongMouseEntered
-        btnPhong.setBackground(Color.GRAY);
-    }//GEN-LAST:event_btnPhongMouseEntered
-
-    private void btnPhongMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPhongMouseExited
-        btnPhong.setBackground(UIManager.getColor("control"));
-    }//GEN-LAST:event_btnPhongMouseExited
-
-    private void btnLoaiPhongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoaiPhongActionPerformed
+    private void btnKhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLoaiPhongActionPerformed
+        openKho();
+    }//GEN-LAST:event_btnKhoActionPerformed
+
+    private void btnDoiMKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMKActionPerformed
+        // TODO add your handling code here:
+        openDoiMatKhau();
+    }//GEN-LAST:event_btnDoiMKActionPerformed
+
+    private void btnDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDichVuActionPerformed
+        // TODO add your handling code here:
+        openDichVu();
+    }//GEN-LAST:event_btnDichVuActionPerformed
+
+    private void btnSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingActionPerformed
+        // TODO add your handling code here:
+        openSetting();
+    }//GEN-LAST:event_btnSettingActionPerformed
+
+    private void btnThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongKeActionPerformed
+        // TODO add your handling code here:
+        openThongKe();
+    }//GEN-LAST:event_btnThongKeActionPerformed
+
+    private void btnNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhanVienActionPerformed
+        // TODO add your handling code here:
+        openNhanVien();
+    }//GEN-LAST:event_btnNhanVienActionPerformed
+
+    private void btnKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhachHangActionPerformed
+        // TODO add your handling code here:
+        openKhachHang();
+    }//GEN-LAST:event_btnKhachHangActionPerformed
 
     /**
      * @param args the command line arguments
@@ -779,17 +815,18 @@ public class MainJFrame extends javax.swing.JFrame {
     }
     PhongDAO dao = new PhongDAO();
     List<Phong> list = dao.selectAll();
-    void fillLabel(){
-	String loaiPhong = null;
-	for (int i = 0; i< list.size();i++) {
-	    if(list.get(i).getMaLoaiPhong() == "1"){
-		 loaiPhong = "(VIP)";
-	    }else{
-		loaiPhong = "(Thuong)";
-	}
-	    JLabel[] label = {label1,label2,label3,label4,label5,label6,label7,label8,label9,label10,label11,label12,label13,label14,label15,label16,label17,label18,label19,label20,label21,label22,label23,label24,label25,label26,label27,label28,label29,label30,label31,label32,label33,label34,label35,label36};
-	    label[i].setText( "<html>"+ list.get(i).getMaPhong()+ "<br>" +loaiPhong+ "<br>" +list.get(i).getTrangThai());
-	}
+
+    void fillLabel() {
+        String loaiPhong = null;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getMaLoaiPhong() == "1") {
+                loaiPhong = "(VIP)";
+            } else {
+                loaiPhong = "(Thuong)";
+            }
+            JLabel[] label = {label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15, label16, label17, label18, label19, label20, label21, label22, label23, label24, label25, label26, label27, label28, label29, label30, label31, label32, label33, label34, label35, label36};
+            label[i].setText("<html>" + list.get(i).getMaPhong() + "<br>" + loaiPhong + "<br>" + list.get(i).getTrangThai());
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -802,11 +839,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnDoiMK;
     private javax.swing.JButton btnKhachHang;
     private javax.swing.JButton btnKho;
-    private javax.swing.JButton btnLoaiPhong;
     private javax.swing.JButton btnNhanVien;
-    private javax.swing.JButton btnPhong;
     private javax.swing.JButton btnSetting;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btnThongKe;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel38;
@@ -855,4 +890,100 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lbTang2;
     private javax.swing.JLabel lblTime;
     // End of variables declaration//GEN-END:variables
+
+    private void init() {
+        new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Date now = new Date();
+                SimpleDateFormat formater = new SimpleDateFormat("hh:mm:ss");
+                String text = formater.format(now);
+                lblTime.setText(text);
+            }
+        }).start();
+        new ChaoJDialog(this, true).setVisible(true);
+//        new DangNhapJDialog(this, true).setVisible(true);
+
+    }
+
+
+    void openDoiMatKhau() {
+        if (Auth.isLogin()) {
+            new DoiMatKhauJDialog(this, true).setVisible(true);
+        } else {
+            MsgBox.alert(this, "Vui lòng đăng nhập");
+        }
+
+    }
+
+    void dangxuat() {
+        Auth.clear();
+        this.dispose();
+        new MainJFrame().setVisible(true);
+
+    }
+
+    void ketthuc() {
+        if (MsgBox.confirm(this, "Bạn có muốn thoát phần mềm không ?")) {
+            System.exit(0);
+        }
+    }
+
+    void openNhanVien() {
+        if (Auth.isLogin()) {
+            new QLNhanVienJDialog(this, true).setVisible(true);
+        } else {
+            MsgBox.alert(this, "Vui lòng đăng nhập");
+        }
+    }
+
+    void openKhachHang() {
+        if (Auth.isLogin()) {
+            new QLKhachHangJDialog(this, true).setVisible(true);
+        } else {
+            MsgBox.alert(this, "Vui lòng đăng nhập");
+        }
+
+    }
+
+    void openDichVu() {
+        if (Auth.isLogin()) {
+            new QLDichVuJDialog(this, true).setVisible(true);
+        } else {
+            MsgBox.alert(this, "Vui lòng đăng nhập");
+        }
+
+    }
+
+    void openKho() {
+        if (Auth.isLogin()) {
+            new QuanLyKhoJDialog(this, true).setVisible(true);
+        } else {
+            MsgBox.alert(this, "Vui lòng đăng nhập");
+        }
+    }
+
+    void openThongKe(/* int index */) {
+//        if (Auth.isLogin()) {
+//            if (index == 3 && !Auth.isManager()) {
+//                MsgBox.alert(this, "Bạn không có quyền xem doanh thu");
+//            } else {
+//                ThongKeJDialog tkwin = new ThongKeJDialog(this, true);
+////                tkwin.selectTab(index);
+//                tkwin.setVisible(true);
+//            }
+//        } else {
+//            MsgBox.alert(this, "Vui lòng đăng nhập");
+//        }
+//
+    }
+
+    private void openSetting() {
+        if (Auth.isLogin()) {
+            new CaiDatJDialog(this, true).setVisible(true);
+        } else {
+            MsgBox.alert(this, "Vui lòng đăng nhập");
+        }
+    }
+
 }
