@@ -702,18 +702,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getTenDN(), nhanVien.getMatKhau()});
 	} 
     }
-    void cboCD(){
-        DefaultComboBoxModel model= (DefaultComboBoxModel) cboCD.getModel();
-        model.removeAllElements();
-        
-        for(NhanVien nv: list){
-            if(check(nv.getChucDanh(),cboCD) == false){
-                model.addElement(nv.getChucDanh());
-            }else{
-                return;
-            }
-        }
-    }
+
     void filltable() {
 	DefaultTableModel tblmodel = (DefaultTableModel) tblNhanVien1.getModel();
 	tblmodel.setRowCount(0);
@@ -784,7 +773,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
     void writeForm(NhanVien nv) {
         txtManv.setText(nv.getMaNV());
         cboCD.setSelectedItem(nv.getChucDanh());
-//	txtCD.setText(nv.getChucDanh());
 	txtHoten.setText(nv.getTenNV());
 	txttk.setText(nv.getTenDN());
 	txtmk.setText(nv.getMatKhau());

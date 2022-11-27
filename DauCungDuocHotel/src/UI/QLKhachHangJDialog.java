@@ -8,6 +8,8 @@ package UI;
 import DAO.KhachHangDAO;
 import java.util.List;
 import Entity.KhachHang;
+import Untils.MsgBox;
+import java.awt.event.MouseEvent;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
@@ -18,6 +20,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class QLKhachHangJDialog extends javax.swing.JDialog {
 
+    int index=-1;
+    
     /**
      * Creates new form QLKhachHangJDialog
      */
@@ -39,6 +43,9 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     private void initComponents() {
 
         btnGroupGioiTinhKH = new javax.swing.ButtonGroup();
+        popUp = new javax.swing.JPopupMenu();
+        them = new javax.swing.JMenuItem();
+        xoa = new javax.swing.JMenuItem();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblKhachHang = new javax.swing.JTable();
@@ -46,11 +53,29 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         cboDoTT = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         btnTimKiem = new javax.swing.JButton();
+        btnMoi = new javax.swing.JButton();
+
+        them.setText("Chỉnh sửa");
+        them.setToolTipText("");
+        them.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                themActionPerformed(evt);
+            }
+        });
+        popUp.add(them);
+
+        xoa.setText("Xóa");
+        xoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xoaActionPerformed(evt);
+            }
+        });
+        popUp.add(xoa);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách khách hàng", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Helvetica Neue", 1, 14))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh sách khách hàng", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Helvetica Neue", 1, 18))); // NOI18N
 
         tblKhachHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,6 +88,14 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 "Họ tên khách hàng", "Tuổi", "Giới tính", "CCCD", "Trạng thái"
             }
         ));
+        tblKhachHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblKhachHangMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblKhachHangMouseReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblKhachHang);
 
         cboDoTT.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +110,13 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         btnTimKiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTimKiemActionPerformed(evt);
+            }
+        });
+
+        btnMoi.setText("Làm mới");
+        btnMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoiActionPerformed(evt);
             }
         });
 
@@ -97,6 +137,10 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cboDoTT, 0, 245, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +152,9 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                     .addComponent(jLabel10)
                     .addComponent(btnTimKiem))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(btnMoi, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -123,10 +169,9 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -139,6 +184,54 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     private void cboDoTTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDoTTActionPerformed
         cbo();
     }//GEN-LAST:event_cboDoTTActionPerformed
+
+    private void tblKhachHangMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangMouseReleased
+        if(evt.getButton()==MouseEvent.BUTTON3){
+            if(evt.isPopupTrigger()&&tblKhachHang.getSelectedRowCount()!=0){
+                popUp.show(evt.getComponent(),evt.getX(),evt.getY());
+            }
+        }
+    }//GEN-LAST:event_tblKhachHangMouseReleased
+
+    private void tblKhachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangMouseClicked
+        if(evt.getClickCount()==2){
+            KhachHangJDialog f1= new KhachHangJDialog(null, rootPaneCheckingEnabled);
+            index= tblKhachHang.getSelectedRow();
+            KhachHang kh = list.get(index);
+            f1.status1();
+            f1.writeForm(kh);
+            f1.setVisible(true);
+        }
+    }//GEN-LAST:event_tblKhachHangMouseClicked
+
+    private void themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themActionPerformed
+        KhachHangJDialog f1= new KhachHangJDialog(null, rootPaneCheckingEnabled);
+        index= tblKhachHang.getSelectedRow();
+        KhachHang kh = list.get(index);
+        f1.status();
+        f1.writeForm(kh);
+        f1.setVisible(true);
+    }//GEN-LAST:event_themActionPerformed
+
+    private void xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaActionPerformed
+        index= tblKhachHang.getSelectedRow();
+        KhachHang kh = list.get(index);
+        String id= kh.getMaKH();
+        if(MsgBox.confirm(this,"Bạn có muốn xóa nhân viên này không?")){
+            try{
+                dao.delete(id);
+                list.removeAll(list);
+                list.addAll(dao.selectAll());
+                MsgBox.alert(this,"Xóa thành công!");
+            }catch(Exception e){
+                MsgBox.alert(this,"Xóa thất bại!");
+            }
+        }
+    }//GEN-LAST:event_xoaActionPerformed
+
+    private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
+        fillToTable();
+    }//GEN-LAST:event_btnMoiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,13 +277,17 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btnGroupGioiTinhKH;
+    private javax.swing.JButton btnMoi;
     private javax.swing.JButton btnTimKiem;
     private javax.swing.JComboBox<String> cboDoTT;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPopupMenu popUp;
     private javax.swing.JTable tblKhachHang;
+    private javax.swing.JMenuItem them;
     private javax.swing.JTextField txtTimKiem;
+    private javax.swing.JMenuItem xoa;
     // End of variables declaration//GEN-END:variables
 
     KhachHangDAO dao = new KhachHangDAO();
@@ -198,6 +295,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
 
     void init() {
         setLocationRelativeTo(null);
+        tblKhachHang.setDefaultEditor(Object.class, null);
         this.fillToTable();
         this.fillCombo();
     }

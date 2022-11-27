@@ -25,7 +25,7 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
     @Override
     public void insert(KhachHang enity) {
 
-        JdbcHelper.update(INSERT_SQL, enity.getMaKH(), enity.getTenKH(), enity.getCCCD(), enity.getDoThanThiet()
+        JdbcHelper.update(INSERT_SQL, enity.getMaKH(), enity.getTenKH(), enity.getTuoi(),enity.getCCCD(), enity.getDoThanThiet()
         , enity.getDiaChi(), enity.getSdt(), enity.isGioiTinh(), enity.getGhiChu());
     }
 
@@ -88,4 +88,8 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
 	return selectBySql(sql, "%" + key + "%");
     }
     
+//    public List<KhachHang> selectByKeyWord1(String key){
+//	String sql = "SELECT MaKH FROM KhachHang WHERE TenKH LIKE ?";
+//	return selectBySql(sql, "%" + key + "%");
+//    }
 }
