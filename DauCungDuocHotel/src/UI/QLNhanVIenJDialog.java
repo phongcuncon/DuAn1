@@ -592,6 +592,10 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	//</editor-fold>
 	//</editor-fold>
 	//</editor-fold>
+	//</editor-fold>
+	//</editor-fold>
+	//</editor-fold>
+	//</editor-fold>
         
         try {
             UIManager.setLookAndFeel(new FlatLightLaf());
