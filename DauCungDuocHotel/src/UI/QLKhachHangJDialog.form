@@ -27,6 +27,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="xoaActionPerformed"/>
           </Events>
         </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="datphong">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x110;&#x1eb7;t ph&#xf2;ng"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="datphongActionPerformed"/>
+          </Events>
+        </MenuItem>
       </SubComponents>
     </Container>
   </NonVisualComponents>
