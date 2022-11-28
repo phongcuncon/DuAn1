@@ -8,6 +8,7 @@ import DAO.NhanVienDAO;
 import Entity.NhanVien;
 import Untils.Auth;
 import Untils.MsgBox;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,6 +60,11 @@ int c=0;
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDangNhapActionPerformed(evt);
+            }
+        });
+        btnDangNhap.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnDangNhapKeyPressed(evt);
             }
         });
 
@@ -142,6 +148,13 @@ int c=0;
         // TODO add your handling code here:
         exit();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnDangNhapKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnDangNhapKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            dangnhap();
+        }
+    }//GEN-LAST:event_btnDangNhapKeyPressed
 
     /**
      * @param args the command line arguments
