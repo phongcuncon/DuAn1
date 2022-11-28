@@ -15,3 +15,5 @@ insert into KhachHang VALUES('KH003',N'Diệu',24,053198064232,N'Vàng',N'Kiên 
 
 insert into LoaiPhong VALUEs('1',N'Double',400);
 insert into Phong VALUEs('1',N'Double',400);
+
+insert into NhanVien VALUES('123','Nam','a',N'Nhân viên','024324324',1,null,null,null,'namndtps21986@fpt.edu.vn',null);

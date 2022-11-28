@@ -54,13 +54,6 @@ public class NhanVien {
 	this.tenNV = tenNV;
     }
 
-    public String getTenDN() {
-	return tenDN;
-    }
-
-    public void setTenDN(String tenDN) {
-	this.tenDN = tenDN;
-    }
 
     public String getAnh() {
 	return Anh;
@@ -134,10 +127,9 @@ public class NhanVien {
 	this.GioiTinh = GioiTinh;
     }
 
-    public NhanVien(String maNV, String tenNV, String tenDN, String Anh, String matKhau, String chucDanh, String Sdt, String DiaChi, String Email, String CCCD, Date NgaySinh, boolean GioiTinh) {
+    public NhanVien(String maNV, String tenNV, String Anh, String matKhau, String chucDanh, String Sdt, String DiaChi, String Email, String CCCD, Date NgaySinh, boolean GioiTinh) {
 	this.maNV = maNV;
 	this.tenNV = tenNV;
-	this.tenDN = tenDN;
 	this.Anh = Anh;
 	this.matKhau = matKhau;
 	this.chucDanh = chucDanh;

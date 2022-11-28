@@ -64,7 +64,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
     
     NhanVien readForm(){
         NhanVien nv = new NhanVien();
-        nv.setTenDN(txtUser.getText());
+        nv.setMaNV(txtUser.getText());
         nv.setMaNV(txtManv.getText());
         nv.setEmail(txtEmail.getText());
 //        nv.setTenNV(nv.getTenNV());
@@ -245,7 +245,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
 
     private void btnGuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuiActionPerformed
         NhanVien nv= readForm();
-        if(!txtUser.getText().equals(nv.getTenDN())){
+        if(!txtUser.getText().equals(nv.getMaNV())){
             MsgBox.alert(this,"Tên đăng nhập không đúng");
         }else if(!txtManv.getText().equals(nv.getMaNV())){
             MsgBox.alert(this,"Mã nhân viên không đúng");

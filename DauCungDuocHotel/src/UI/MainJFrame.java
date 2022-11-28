@@ -42,7 +42,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
     void Time() {
         class TimeClock extends Thread {
-
             @Override
             public void run() {
                 while (true) {
@@ -73,7 +72,7 @@ public class MainJFrame extends javax.swing.JFrame {
         btnSetting = new javax.swing.JButton();
         btnDoiMK = new javax.swing.JButton();
         btnDangXuat = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        lblTenNV = new javax.swing.JLabel();
         PanelMain = new javax.swing.JPanel();
         PanelChuThich = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -195,8 +194,8 @@ public class MainJFrame extends javax.swing.JFrame {
         btnDangXuat.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnDangXuat.setText("Đăng xuất");
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("<html>Nhân viên<br>Lê Hữu Đức");
+        lblTenNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTenNV.setText("<html>Nhân viên<br>Lê Hữu Đức");
 
         javax.swing.GroupLayout PanelMenuLayout = new javax.swing.GroupLayout(PanelMenu);
         PanelMenu.setLayout(PanelMenuLayout);
@@ -206,7 +205,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PanelMenuLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelMenuLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,7 +247,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(88, 88, 88)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -850,7 +849,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel label1;
     private javax.swing.JLabel label10;
     private javax.swing.JLabel label11;
@@ -889,6 +887,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel label9;
     private javax.swing.JLabel lbTang1;
     private javax.swing.JLabel lbTang2;
+    private javax.swing.JLabel lblTenNV;
     private javax.swing.JLabel lblTime;
     // End of variables declaration//GEN-END:variables
 

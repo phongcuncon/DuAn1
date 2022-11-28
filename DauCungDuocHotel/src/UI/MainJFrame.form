@@ -64,7 +64,7 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jLabel6" min="-2" pref="118" max="-2" attributes="0"/>
+                          <Component id="lblTenNV" min="-2" pref="118" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -114,7 +114,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnDangXuat" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="lblTenNV" min="-2" pref="47" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -222,7 +222,7 @@
             <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng xu&#x1ea5;t"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="lblTenNV">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Nh&#xe2;n vi&#xea;n&lt;br&gt;L&#xea; H&#x1eef;u &#x110;&#x1ee9;c"/>

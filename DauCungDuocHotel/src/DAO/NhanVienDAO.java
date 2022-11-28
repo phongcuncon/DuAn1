@@ -16,21 +16,21 @@ import java.util.List;
  * @author ps22004_taquocphong
  */
 public class NhanVienDAO extends HotelDAO<NhanVien, String>{
-    String INSERT_SQL = "INSERT INTO NhanVien(MaNV,TenNV,TenDN,Anh, MatKhau,ChucDanh, Sdt, DiaChi, NgaySinh, GioiTinh,Email, CCCD)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE NhanVien SET TenNV = ?, TenDN = ?, Anh = ?, MatKhau = ?, ChucDanh = ?, Sdt = ? , DiaChi = ?, NgaySinh = ?, GioiTinh = ?, Email = ?, CCCD = ? WHERE MaNV = ?";
+    String INSERT_SQL = "INSERT INTO NhanVien(MaNV,TenNV,Anh, MatKhau,ChucDanh, Sdt, DiaChi, NgaySinh, GioiTinh,Email, CCCD)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE NhanVien SET TenNV = ?, Anh = ?, MatKhau = ?, ChucDanh = ?, Sdt = ? , DiaChi = ?, NgaySinh = ?, GioiTinh = ?, Email = ?, CCCD = ? WHERE MaNV = ?";
     String DELETE_SQL = "DELETE FROM NhanVien WHERE MaNV = ?";
     String SELECTALL_SQL = "SELECT * FROM NhanVien";
     String SELECT_BY_ID_SQL = "SELECT * FROM NhanVien WHERE MaNV = ?";
 
     @Override
     public void insert(NhanVien enity) {
-	JdbcHelper.update(INSERT_SQL, enity.getMaNV(),enity.getTenNV(),enity.getTenDN(),enity.getAnh(),enity.getMatKhau(),enity.getChucDanh(),enity.getSdt(),enity.getDiaChi(),enity.getNgaySinh(),enity.isGioiTinh(),enity.getEmail(),enity.getCCCD());
+	JdbcHelper.update(INSERT_SQL, enity.getMaNV(),enity.getTenNV(),enity.getAnh(),enity.getMatKhau(),enity.getChucDanh(),enity.getSdt(),enity.getDiaChi(),enity.getNgaySinh(),enity.isGioiTinh(),enity.getEmail(),enity.getCCCD());
 	
     }
 
     @Override
     public void Update(NhanVien enity) {
-	JdbcHelper.update(UPDATE_SQL, enity.getTenNV(),enity.getTenDN(),enity.getAnh(),enity.getMatKhau(),enity.getChucDanh(),enity.getSdt(),enity.getDiaChi(),enity.getNgaySinh(),enity.isGioiTinh(),enity.getEmail(),enity.getCCCD(),enity.getMaNV());
+	JdbcHelper.update(UPDATE_SQL, enity.getTenNV(),enity.getAnh(),enity.getMatKhau(),enity.getChucDanh(),enity.getSdt(),enity.getDiaChi(),enity.getNgaySinh(),enity.isGioiTinh(),enity.getEmail(),enity.getCCCD(),enity.getMaNV());
     }
 
     @Override
@@ -61,7 +61,6 @@ public class NhanVienDAO extends HotelDAO<NhanVien, String>{
 		NhanVien entity = new NhanVien();
 		entity.setMaNV(rs.getString("MaNV"));
 		entity.setTenNV(rs.getString("TenNV"));
-		entity.setTenDN(rs.getString("TenDN"));
 		entity.setAnh(rs.getString("Anh"));
 		entity.setMatKhau(rs.getString("MatKhau"));
 		entity.setChucDanh(rs.getString("ChucDanh"));

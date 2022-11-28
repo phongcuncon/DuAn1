@@ -91,8 +91,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         txtManv = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         txtsdt1 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        txttk = new javax.swing.JTextField();
         btnXoa = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         lblAnh = new javax.swing.JLabel();
@@ -126,13 +124,13 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 
         tblNhanVien1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Mã NV", "Họ tên", "Chức danh", "Tài khoản", "Mật khẩu"
+                "Mã NV", "Họ tên", "Chức danh", "Mật khẩu"
             }
         ));
         tblNhanVien1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -241,6 +239,8 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         diachi.setRows(5);
         jScrollPane3.setViewportView(diachi);
 
+        date.setDateFormatString("dd,MM,yyyy");
+
         jLabel12.setText("Mã nhân viên");
 
         txtManv.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153), null, null));
@@ -248,10 +248,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         jLabel13.setText("Mật khẩu");
 
         txtsdt1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153), null, null));
-
-        jLabel14.setText("Tài khoản");
-
-        txttk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153), null, null));
 
         btnXoa.setText("Xóa");
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
@@ -273,7 +269,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAnh, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+            .addComponent(lblAnh, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,14 +325,12 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtemail)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
                     .addComponent(txtsdt1)
-                    .addComponent(txttk)
                     .addComponent(txtmk))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,10 +394,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
                                     .addComponent(txtcccd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel14)
-                                    .addComponent(txttk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtManv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtManv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel13)
@@ -660,6 +651,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
                     MsgBox.alert(this,"Cập nhật thành công!");
                     clearForm();
                 }catch(Exception e){
+                    System.out.println(e);
                     MsgBox.alert(this,"Cập nhật thất bại!");    
                 }
             }
@@ -689,7 +681,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         rdoNu.setSelected(false);
         diachi.setText("");
         txtsdt1.setText("");
-        txttk.setText("");
         txtmk.setText("");
         txtemail.setText("");
     }
@@ -699,7 +690,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	tblmodel.setRowCount(0);
 	List<NhanVien> list2 = dao.selectByKey(cd);
 	for (NhanVien nhanVien : list2) {
-	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getTenDN(), nhanVien.getMatKhau()});
+	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getMatKhau()});
 	} 
     }
 
@@ -707,7 +698,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	DefaultTableModel tblmodel = (DefaultTableModel) tblNhanVien1.getModel();
 	tblmodel.setRowCount(0);
 	for (NhanVien nhanVien : list) {
-	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getTenDN(), nhanVien.getMatKhau()});
+	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getMatKhau()});
 	}
 
     }
@@ -744,14 +735,13 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	String tk = txttimkiem.getText();
 	List<NhanVien> list1 = dao.selectByKeyWord(tk);
 	for (NhanVien nhanVien : list1) {
-	    model.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getTenDN(), nhanVien.getMatKhau()});
+	    model.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getMatKhau()});
 	}
     }
 
     NhanVien readForm() {
 	NhanVien nv = new NhanVien();
         nv.setTenNV(txtHoten.getText());
-	nv.setTenDN(txttk.getText());
 	nv.setMatKhau(txtmk.getText());
 	nv.setChucDanh(String.valueOf(cbo.getSelectedItem()));
 	nv.setNgaySinh(date.getDate());
@@ -774,7 +764,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         txtManv.setText(nv.getMaNV());
         cboCD.setSelectedItem(nv.getChucDanh());
 	txtHoten.setText(nv.getTenNV());
-	txttk.setText(nv.getTenDN());
 	txtmk.setText(nv.getMatKhau());
 	txtsdt1.setText(nv.getSdt());
 	date.setDate(nv.getNgaySinh());
@@ -831,9 +820,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         }else if(txtcccd.getText().equals("")){
             MsgBox.alert(this,"CCCD đang để trống");
             return false;
-        }else if(txttk.getText().equals("")){
-            MsgBox.alert(this,"Tài khoản đang để trống");
-            return false;
         }else if(txtmk.getText().equals("")){
             MsgBox.alert(this,"Mật khẩu đang để trống");
             return false;
@@ -866,7 +852,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -895,6 +880,5 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
     private javax.swing.JTextField txtmk;
     private javax.swing.JTextField txtsdt1;
     private javax.swing.JTextField txttimkiem;
-    private javax.swing.JTextField txttk;
     // End of variables declaration//GEN-END:variables
 }
