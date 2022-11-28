@@ -12,6 +12,7 @@ import java.util.Random;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.swing.JDialog;
 
 /**
  *
@@ -25,7 +26,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
     /**
      * Creates new form QuenMatKhauJDialog
      */
-    public QuenMatKhauJDialog(java.awt.Frame parent, boolean modal) {
+    public QuenMatKhauJDialog(JDialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
@@ -287,7 +288,7 @@ public class QuenMatKhauJDialog extends javax.swing.JDialog {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                QuenMatKhauJDialog dialog= new QuenMatKhauJDialog(new javax.swing.JFrame(), true);
+                QuenMatKhauJDialog dialog= new QuenMatKhauJDialog(new javax.swing.JDialog(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter(){
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e){

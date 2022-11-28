@@ -37,6 +37,7 @@ public class MainJFrame extends javax.swing.JFrame {
         Time();
         fillLabel();
         setLocationRelativeTo(null);
+        init();
     }
 
     void Time() {
@@ -902,7 +903,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }).start();
         new ChaoJDialog(this, true).setVisible(true);
-//        new DangNhapJDialog(this, true).setVisible(true);
+        new Log_in(this,true).setVisible(true);
 
     }
 
