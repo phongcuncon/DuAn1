@@ -31,7 +31,7 @@ public class DichVuDAO extends HotelDAO<DichVu, String> {
 
     @Override
     public void Update(DichVu enity) {
-	JdbcHelper.update(INSERT_SQL, enity.getTenDV(), enity.getGia(), enity.getGhiChu(), enity.getMaDV());
+	JdbcHelper.update(UPDATE_SQL, enity.getTenDV(), enity.getGia(), enity.getGhiChu(), enity.getMaDV());
     }
 
     @Override
@@ -46,7 +46,7 @@ public class DichVuDAO extends HotelDAO<DichVu, String> {
 
     @Override
     public DichVu selectByID(String key) {
-	List<DichVu> list = this.selectBySql(SELECTALL_SQL, key);
+	List<DichVu> list = this.selectBySql(SELECT_BY_ID_SQL, key);
 	if(list.isEmpty()){
 	    return null;
 	}
@@ -75,5 +75,10 @@ public class DichVuDAO extends HotelDAO<DichVu, String> {
     public List<DichVu> selectByKeyword(String keyword) {
         String SQL = "SELECT * FROM DichVu WHERE MaDV LIKE ?";
         return this.selectBySql(SQL, "%" + keyword + "%");
+    }
+    
+    public List<DichVu> selectNotInCourse(String kw) {
+        String sql = "SELECT * FROM DichVu WHERE TenDV LIKE ?";
+        return this.selectBySql(sql, "%" + kw + "%");
     }
 }
