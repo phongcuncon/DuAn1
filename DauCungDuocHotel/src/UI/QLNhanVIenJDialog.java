@@ -123,13 +123,13 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 
         tblNhanVien1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Mã NV", "Họ tên", "Chức danh", "Tài khoản", "Mật khẩu"
+                "Mã NV", "Họ tên", "Chức danh", "Mật khẩu"
             }
         ));
         tblNhanVien1.addMouseListener(new java.awt.event.MouseAdapter() {
