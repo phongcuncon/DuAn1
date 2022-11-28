@@ -9,9 +9,11 @@ import DAO.KhachHangDAO;
 import java.util.List;
 import Entity.KhachHang;
 import Untils.MsgBox;
+import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.event.MouseEvent;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -46,6 +48,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         popUp = new javax.swing.JPopupMenu();
         them = new javax.swing.JMenuItem();
         xoa = new javax.swing.JMenuItem();
+        datphong = new javax.swing.JMenuItem();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblKhachHang = new javax.swing.JTable();
@@ -71,6 +74,14 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
             }
         });
         popUp.add(xoa);
+
+        datphong.setText("Đặt phòng");
+        datphong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                datphongActionPerformed(evt);
+            }
+        });
+        popUp.add(datphong);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -233,6 +244,14 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         fillToTable();
     }//GEN-LAST:event_btnMoiActionPerformed
 
+    private void datphongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datphongActionPerformed
+        DatPhongJDialog f2= new DatPhongJDialog(null, rootPaneCheckingEnabled);
+        index= tblKhachHang.getSelectedRow();
+        KhachHang kh = list.get(index);
+        f2.writeForm(kh);
+        f2.setVisible(true);
+    }//GEN-LAST:event_datphongActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,6 +280,12 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         //</editor-fold>
 
         /* Create and display the dialog */
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
+        }
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 QLKhachHangJDialog dialog = new QLKhachHangJDialog(new javax.swing.JFrame(), true);
@@ -280,6 +305,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnMoi;
     private javax.swing.JButton btnTimKiem;
     private javax.swing.JComboBox<String> cboDoTT;
+    private javax.swing.JMenuItem datphong;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
