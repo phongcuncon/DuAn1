@@ -9,7 +9,6 @@ import Entity.TKDichVu;
 import Entity.ThongKe;
 import java.awt.Color;
 import java.util.List;
-import javaswingdev.chart.ModelChart;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,12 +29,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 	String nam = (String) cboThongKeNam.getSelectedItem();
         List<ThongKe> list = dao.getDoanhThu(nam);
 	
-	barChart1.addLegend("Ten", Color.GREEN, Color.WHITE);
-        this.setLocationRelativeTo(null);
-	for (ThongKe thongKe : list) {
-	    barChart1.addData(new ModelChart("Nam",new double[]{thongKe.getDoanhThu()}));
-	}
-	   barChart1.start();
+	
 
     }
 
@@ -54,8 +48,6 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         cboThongKeNam = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDoanhThu = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        barChart1 = new javaswingdev.chart.BarChart();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblThongKeDichVu = new javax.swing.JTable();
@@ -84,27 +76,6 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(tblDoanhThu);
 
-        jPanel3.setBackground(new java.awt.Color(45, 45, 45));
-
-        barChart1.setBackground(new java.awt.Color(51, 51, 0));
-        barChart1.setOpaque(true);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(barChart1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(30, 30, 30))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(barChart1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -112,7 +83,6 @@ public class ThongKeJDialog extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,9 +100,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
                     .addComponent(cboThongKeNam, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addContainerGap(480, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Thống Kê Doanh Thu", jPanel1);
@@ -253,12 +221,10 @@ public class ThongKeJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javaswingdev.chart.BarChart barChart1;
     private javax.swing.JComboBox<String> cboThongKeNam;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
