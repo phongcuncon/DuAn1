@@ -237,7 +237,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 		FileOutputStream fos = new FileOutputStream(file);
 		workbook.write(fos);
 		fos.close();
-		MsgBox.alert(this, "HAHA");
+		MsgBox.alert(this, "Xuat file thanh cong!");
 	    } catch (Exception e) {
 	    }
 	} catch (Exception e) {
