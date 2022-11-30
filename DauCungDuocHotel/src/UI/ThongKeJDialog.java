@@ -7,9 +7,24 @@ package UI;
 import DAO.ThongKeDAO;
 import Entity.TKDichVu;
 import Entity.ThongKe;
+import Untils.MsgBox;
 import java.awt.Color;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.export.oasis.CellStyle;
+import org.apache.poi.ss.usermodel.CreationHelper;
+import org.apache.poi.ss.usermodel.Cell;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.CreationHelper;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 
 /**
  *
@@ -25,9 +40,6 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         initComponents();
 	fillTableDichVu();
 	fillTableDoanhThu();
-	
-	String nam = (String) cboThongKeNam.getSelectedItem();
-        List<ThongKe> list = dao.getDoanhThu(nam);
 	
 	
 
@@ -48,6 +60,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         cboThongKeNam = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDoanhThu = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblThongKeDichVu = new javax.swing.JTable();
@@ -76,6 +89,13 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(tblDoanhThu);
 
+        jButton1.setText("In");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -88,6 +108,8 @@ public class ThongKeJDialog extends javax.swing.JDialog {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(cboThongKeNam, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -97,7 +119,8 @@ public class ThongKeJDialog extends javax.swing.JDialog {
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cboThongKeNam, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cboThongKeNam, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(480, Short.MAX_VALUE))
@@ -154,6 +177,73 @@ public class ThongKeJDialog extends javax.swing.JDialog {
     private void cboThongKeNamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboThongKeNamActionPerformed
         fillTableDoanhThu();
     }//GEN-LAST:event_cboThongKeNamActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       String nam = (String) cboThongKeNam.getSelectedItem();
+        List<ThongKe> list = dao.getDoanhThu(nam);
+	try {
+	    XSSFWorkbook workbook = new XSSFWorkbook();
+	    XSSFSheet sheet = workbook.createSheet("List");
+	    XSSFRow row = null;
+	    Cell cell = null;
+	    row = sheet.createRow(1);
+	    cell = row.createCell(0, CellType.STRING);
+	    cell.setCellValue("NgayGD");
+
+	    cell = row.createCell(1, CellType.STRING);
+	    cell.setCellValue("MaHD");
+
+	    cell = row.createCell(2, CellType.STRING);
+	    cell.setCellValue("TenKH");
+
+	    cell = row.createCell(3, CellType.STRING);
+	    cell.setCellValue("MaPhong");
+	    cell = row.createCell(4, CellType.STRING);
+	    cell.setCellValue("TongTien");
+	    cell = row.createCell(5, CellType.STRING);
+	    cell.setCellValue("NhanVien");
+
+	    for (int i = 0; i < list.size(); i++) {
+		row = sheet.createRow(2 + i);
+
+//            cell = row.createCell(0,CellType.BLANK);
+//            cell.setCellValue(list.get(i).getNgayXuat());
+		XSSFCellStyle cellStyle = workbook.createCellStyle();
+		CreationHelper createHelper = workbook.getCreationHelper();
+		cellStyle.setDataFormat(
+			createHelper.createDataFormat().getFormat("d/m/yyyy "));
+		cell = row.createCell(0);
+		cell.setCellValue(list.get(i).getNgayXuat());
+		cell.setCellStyle(cellStyle);
+
+		cell = row.createCell(1, CellType.STRING);
+		cell.setCellValue(list.get(i).getMaHD());
+
+		cell = row.createCell(2, CellType.STRING);
+		cell.setCellValue(list.get(i).getTenKH());
+
+		cell = row.createCell(3, CellType.STRING);
+		cell.setCellValue(list.get(i).getPhong());
+
+		cell = row.createCell(4, CellType.STRING);
+		cell.setCellValue(list.get(i).getDoanhThu());
+
+		cell = row.createCell(5, CellType.STRING);
+		cell.setCellValue(list.get(i).getMaNV());
+	    }
+
+	    File file = new File("F://Danhsach12.xlsx");
+	    try {
+		FileOutputStream fos = new FileOutputStream(file);
+		workbook.write(fos);
+		fos.close();
+		MsgBox.alert(this, "HAHA");
+	    } catch (Exception e) {
+	    }
+	} catch (Exception e) {
+	}
+	
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +312,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cboThongKeNam;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
