@@ -211,6 +211,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
             KhachHang kh = list.get(index);
             f1.status1();
             f1.writeForm(kh);
+            fillToTable();
             f1.setVisible(true);
         }
     }//GEN-LAST:event_tblKhachHangMouseClicked
@@ -221,6 +222,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         KhachHang kh = list.get(index);
         f1.status();
         f1.writeForm(kh);
+        fillToTable();
         f1.setVisible(true);
     }//GEN-LAST:event_themActionPerformed
 
@@ -234,6 +236,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 list.removeAll(list);
                 list.addAll(dao.selectAll());
                 MsgBox.alert(this,"Xóa thành công!");
+                fillToTable();
             }catch(Exception e){
                 MsgBox.alert(this,"Xóa thất bại!");
             }

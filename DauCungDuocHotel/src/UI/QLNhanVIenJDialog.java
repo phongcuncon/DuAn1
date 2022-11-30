@@ -642,17 +642,12 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         NhanVien nv= readForm();
         if(valid()){
             if(MsgBox.confirm(this,"Bạn có muốn cập nhật thông tin nhân viên?")){
-                try{
                     dao.Update(nv);
                     list.removeAll(list);
                     list.addAll(dao.selectAll());
                     this.filltable();
                     MsgBox.alert(this,"Cập nhật thành công!");
                     clearForm();
-                }catch(Exception e){
-                    System.out.println(e);
-                    MsgBox.alert(this,"Cập nhật thất bại!");    
-                }
             }
         }
     }

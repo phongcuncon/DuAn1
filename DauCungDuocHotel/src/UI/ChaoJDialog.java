@@ -72,8 +72,9 @@ public class ChaoJDialog extends javax.swing.JDialog {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("LOGO");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hinh/Nội dung đoạn văn bản của bạn.gif"))); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jLabel2.setPreferredSize(new java.awt.Dimension(500, 500));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 

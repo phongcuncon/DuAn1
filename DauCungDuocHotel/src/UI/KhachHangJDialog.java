@@ -6,7 +6,6 @@ package UI;
 
 import DAO.KhachHangDAO;
 import Entity.KhachHang;
-import Entity.NhanVien;
 import Untils.MsgBox;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.util.List;
@@ -367,6 +366,7 @@ public class KhachHangJDialog extends javax.swing.JDialog {
     }
     
     void status1(){
+        txtMaKH.setEditable(false);
         btnLuu.setVisible(false);
         btnSua.setVisible(true);
     }
