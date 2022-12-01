@@ -64,6 +64,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblThongKeDichVu = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -141,6 +142,13 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         ));
         jScrollPane2.setViewportView(tblThongKeDichVu);
 
+        jButton2.setText("In");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -149,12 +157,18 @@ public class ThongKeJDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(368, 368, 368)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 956, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -245,6 +259,65 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 	
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       List<TKDichVu> list = dao.getDichVu();
+	try {
+	    XSSFWorkbook workbook = new XSSFWorkbook();
+	    XSSFSheet sheet = workbook.createSheet("ListDichVu");
+	    XSSFRow row = null;
+	    Cell cell = null;
+	    row = sheet.createRow(1);
+	    cell = row.createCell(0, CellType.STRING);
+	    cell.setCellValue("MaDV");
+
+	    cell = row.createCell(1, CellType.STRING);
+	    cell.setCellValue("TenDV");
+
+	    cell = row.createCell(2, CellType.STRING);
+	    cell.setCellValue("SoLuong");
+
+	    cell = row.createCell(3, CellType.STRING);
+	    cell.setCellValue("TongTien");
+	  
+	    
+
+	    for (int i = 0; i < list.size(); i++) {
+		row = sheet.createRow(2 + i);
+
+            cell = row.createCell(0,CellType.BLANK);
+            cell.setCellValue(list.get(i).getMaDV());
+//		XSSFCellStyle cellStyle = workbook.createCellStyle();
+//		CreationHelper createHelper = workbook.getCreationHelper();
+//		cellStyle.setDataFormat(
+//			createHelper.createDataFormat().getFormat("d/m/yyyy "));
+//		cell = row.createCell(0);
+//		cell.setCellValue(list.get(i).);
+//		cell.setCellStyle(cellStyle);
+
+		cell = row.createCell(1, CellType.STRING);
+		cell.setCellValue(list.get(i).getTenDV());
+
+		cell = row.createCell(2, CellType.STRING);
+		cell.setCellValue(list.get(i).getSoLuong());
+
+		cell = row.createCell(3, CellType.STRING);
+		cell.setCellValue(list.get(i).getTongTien());
+
+		
+	    }
+
+	    File file = new File("F://DanhsachDV.xlsx");
+	    try {
+		FileOutputStream fos = new FileOutputStream(file);
+		workbook.write(fos);
+		fos.close();
+		MsgBox.alert(this, "Xuat file thanh cong!");
+	    } catch (Exception e) {
+	    }
+	} catch (Exception e) {
+	}
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -313,6 +386,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cboThongKeNam;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
