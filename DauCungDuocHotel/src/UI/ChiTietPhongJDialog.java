@@ -140,7 +140,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         jLabel2.setBackground(new java.awt.Color(51, 255, 51));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setText("Chi Tiết Thuê Phỏng");
+        jLabel2.setText("Chi Tiết Thuê Phòng");
         jLabel2.setOpaque(true);
 
         tblHDCT.setModel(new javax.swing.table.DefaultTableModel(
