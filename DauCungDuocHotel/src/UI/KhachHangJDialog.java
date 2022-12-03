@@ -151,11 +151,6 @@ public class KhachHangJDialog extends javax.swing.JDialog {
                 btnLuuActionPerformed(evt);
             }
         });
-        btnLuu.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnLuuKeyPressed(evt);
-            }
-        });
         jPanel1.add(btnLuu, "card2");
 
         btnSua.setText("Sửa");
