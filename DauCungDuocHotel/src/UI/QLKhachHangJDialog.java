@@ -109,6 +109,12 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblKhachHang);
 
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
+
         cboDoTT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboDoTTActionPerformed(evt);
@@ -255,6 +261,22 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         f2.setVisible(true);
     }//GEN-LAST:event_datphongActionPerformed
 
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        DefaultTableModel model = (DefaultTableModel) tblKhachHang.getModel();
+        model.setRowCount(0);
+        String tk = txtTimKiem.getText();
+        List<KhachHang> lst1 = dao.selectByKeyWord2(tk);
+//        int cccd;
+//        if(tk.isEmpty()){
+//            cccd = 0;
+//        }else
+//            if(tk.chars().allMatch(Character::isDigit))
+//                cccd=Integer.parseInt(tk);
+        for (KhachHang kh : lst1) {
+            model.addRow(new Object[]{kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh()?"Nam" : "Nữ", kh.getCCCD(), kh.getGhiChu()});
+        }
+    }//GEN-LAST:event_txtTimKiemKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -349,7 +371,6 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh()?"Nam" : "Nữ", kh.getCCCD(), kh.getGhiChu()
             });
         }
-
     }
 
     void cbo() {

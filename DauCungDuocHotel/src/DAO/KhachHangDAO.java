@@ -89,7 +89,7 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
     }
     
     public List<KhachHang> selectByKeyWord2(String key){
-	String sql = "SELECT * FROM KhachHang WHERE MaKH LIKE ? OR TenKH LIKE ? OR CCCD LIKE ?";
+	String sql = "SELECT * FROM KhachHang WHERE TenKH LIKE ?";
 	return selectBySql(sql, "%" + key + "%");
     }
     
