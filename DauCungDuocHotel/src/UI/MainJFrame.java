@@ -15,6 +15,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 
@@ -38,6 +39,7 @@ public class MainJFrame extends javax.swing.JFrame {
         fillLabel();
         setLocationRelativeTo(null);
         init();
+        setUser();
     }
 
     void Time() {
@@ -174,6 +176,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         lblTenNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTenNV.setText("<html>Nhân viên<br>Lê Hữu Đức");
+        lblTenNV.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout PanelMenuLayout = new javax.swing.GroupLayout(PanelMenu);
         PanelMenu.setLayout(PanelMenuLayout);
@@ -309,17 +312,13 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblLoaiPhong)
-                            .addComponent(lblTenPhong))
-                        .addGap(28, 28, 28))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblTrangThai)
-                        .addGap(19, 19, 19))))
+                    .addComponent(lblTrangThai)
+                    .addComponent(lblLoaiPhong)
+                    .addComponent(lblTenPhong))
+                .addGap(28, 28, 28))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -661,6 +660,14 @@ public class MainJFrame extends javax.swing.JFrame {
                 loaiPhong = "(Thuong)";
             }
 	}
+    }
+    
+    void setUser(){
+        //Set label tên nhân viên
+        String userID = Auth.user.getTenNV();
+        String role = Auth.user.getChucDanh();
+        lblTenNV.setText("<html>" + "Nhân viên: "+ "<br>" + userID + "<br>" + "Role: " + role + "</html>");
+        lblTenNV.setHorizontalAlignment(JLabel.CENTER);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

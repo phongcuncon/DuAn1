@@ -304,7 +304,6 @@ public class DatPhongJDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCheckinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckinActionPerformed
-        
         if (valid()) {
             insert();
         }
