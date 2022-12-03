@@ -88,8 +88,13 @@ public class KhachHangDAO extends HotelDAO<KhachHang, String>{
 	return selectBySql(sql, "%" + key + "%");
     }
     
-//    public List<KhachHang> selectByKeyWord1(String key){
-//	String sql = "SELECT MaKH FROM KhachHang WHERE TenKH LIKE ?";
-//	return selectBySql(sql, "%" + key + "%");
-//    }
+    public List<KhachHang> selectByKeyWord2(String key){
+	String sql = "SELECT * FROM KhachHang WHERE MaKH LIKE ? OR TenKH LIKE ? OR CCCD LIKE ?";
+	return selectBySql(sql, "%" + key + "%");
+    }
+    
+    public List<KhachHang> selectByKeyWord1(String key){
+	String sql = "SELECT * FROM KhachHang WHERE DoThanThiet LIKE ?";
+	return selectBySql(sql, "%" + key + "%");
+    }
 }

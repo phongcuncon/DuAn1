@@ -334,8 +334,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         tblmodel.setRowCount(0);
         for (KhachHang kh : list) {
             tblmodel.addRow(new Object[]{
-                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh(),
-                kh.getCCCD(), kh.getGhiChu()
+                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh()?"Nam" : "Nữ",kh.getCCCD(), kh.getGhiChu()
             });
         }
     }
@@ -347,7 +346,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         List<KhachHang> lst = dao.selectByKeyWord(tk);
         for (KhachHang kh : lst) {
             model.addRow(new Object[]{
-                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh(), kh.getCCCD(), kh.getGhiChu()
+                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh()?"Nam" : "Nữ", kh.getCCCD(), kh.getGhiChu()
             });
         }
 
@@ -357,10 +356,10 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         String ad = (String) cboDoTT.getSelectedItem();
         DefaultTableModel model1 = (DefaultTableModel) tblKhachHang.getModel();
         model1.setRowCount(0);
-        dao.selectByKeyWord(ad);
-        for (KhachHang kh2 : list) {
+        List<KhachHang> list1 = dao.selectByKeyWord1(ad);
+        for (KhachHang kh2 : list1) {
             model1.addRow(new Object[]{
-                kh2.getTenKH(), kh2.getTuoi(), kh2.isGioiTinh(), kh2.getCCCD(), kh2.getGhiChu()
+                kh2.getTenKH(), kh2.getTuoi(), kh2.isGioiTinh()?"Nam" : "Nữ", kh2.getCCCD(), kh2.getGhiChu()
             });
         }
     }
