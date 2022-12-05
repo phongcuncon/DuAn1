@@ -374,7 +374,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel13.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong12.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong12.setText("101");
+        lblTenPhong12.setText("201");
 
         lblLoaiPhong12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong12.setText("Phòng đôi");
@@ -417,7 +417,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel14.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong13.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong13.setText("101");
+        lblTenPhong13.setText("202");
 
         lblLoaiPhong13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong13.setText("Phòng đôi");
@@ -460,7 +460,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel15.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong14.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong14.setText("101");
+        lblTenPhong14.setText("203");
 
         lblLoaiPhong14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong14.setText("Phòng đôi");
@@ -503,7 +503,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel16.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong15.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong15.setText("101");
+        lblTenPhong15.setText("204");
 
         lblLoaiPhong15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong15.setText("Phòng đôi");
@@ -551,7 +551,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel17.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong16.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong16.setText("101");
+        lblTenPhong16.setText("205");
 
         lblLoaiPhong16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong16.setText("Phòng đôi");
@@ -599,7 +599,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel18.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong17.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong17.setText("101");
+        lblTenPhong17.setText("206");
 
         lblLoaiPhong17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong17.setText("Phòng đôi");
@@ -647,7 +647,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel19.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong18.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong18.setText("101");
+        lblTenPhong18.setText("207");
 
         lblLoaiPhong18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong18.setText("Phòng đôi");
@@ -695,7 +695,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel20.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong19.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong19.setText("101");
+        lblTenPhong19.setText("208");
 
         lblLoaiPhong19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong19.setText("Phòng đôi");
@@ -728,7 +728,7 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTenPhong19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTrangThai19)
                 .addGap(18, 18, 18)
                 .addComponent(lblLoaiPhong19)
@@ -741,7 +741,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel21.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong20.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong20.setText("101");
+        lblTenPhong20.setText("209");
 
         lblLoaiPhong20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong20.setText("Phòng đôi");
@@ -790,7 +790,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel22.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong21.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong21.setText("101");
+        lblTenPhong21.setText("210");
 
         lblLoaiPhong21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong21.setText("Phòng đôi");
@@ -839,7 +839,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel23.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong22.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong22.setText("101");
+        lblTenPhong22.setText("211");
 
         lblLoaiPhong22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong22.setText("Phòng đôi");
@@ -887,7 +887,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel24.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong23.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong23.setText("101");
+        lblTenPhong23.setText("212");
 
         lblLoaiPhong23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong23.setText("Phòng đôi");
@@ -939,7 +939,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         PanelDanhSachPhongLayout.setVerticalGroup(
             PanelDanhSachPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
+            .addGap(0, 252, Short.MAX_VALUE)
             .addGroup(PanelDanhSachPhongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelDanhSachPhongLayout.createSequentialGroup()
                     .addContainerGap()
@@ -997,7 +997,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong1.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong1.setText("101");
+        lblTenPhong1.setText("102");
 
         lblLoaiPhong1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong1.setText("Phòng đôi");
@@ -1040,7 +1040,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel3.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong2.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong2.setText("101");
+        lblTenPhong2.setText("103");
 
         lblLoaiPhong2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong2.setText("Phòng đôi");
@@ -1083,7 +1083,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel4.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong11.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong11.setText("101");
+        lblTenPhong11.setText("104");
 
         lblLoaiPhong11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong11.setText("Phòng đôi");
@@ -1131,7 +1131,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel5.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong10.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong10.setText("101");
+        lblTenPhong10.setText("105");
 
         lblLoaiPhong10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong10.setText("Phòng đôi");
@@ -1179,7 +1179,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel6.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong9.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong9.setText("101");
+        lblTenPhong9.setText("106");
 
         lblLoaiPhong9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong9.setText("Phòng đôi");
@@ -1227,7 +1227,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel7.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong8.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong8.setText("101");
+        lblTenPhong8.setText("107");
 
         lblLoaiPhong8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong8.setText("Phòng đôi");
@@ -1275,7 +1275,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel8.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong7.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong7.setText("101");
+        lblTenPhong7.setText("108");
 
         lblLoaiPhong7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong7.setText("Phòng đôi");
@@ -1308,7 +1308,7 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTenPhong7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTrangThai7)
                 .addGap(18, 18, 18)
                 .addComponent(lblLoaiPhong7)
@@ -1321,7 +1321,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel9.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong6.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong6.setText("101");
+        lblTenPhong6.setText("109");
 
         lblLoaiPhong6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong6.setText("Phòng đôi");
@@ -1370,7 +1370,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel10.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong5.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong5.setText("101");
+        lblTenPhong5.setText("110");
 
         lblLoaiPhong5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong5.setText("Phòng đôi");
@@ -1419,7 +1419,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel11.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong4.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong4.setText("101");
+        lblTenPhong4.setText("111");
 
         lblLoaiPhong4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong4.setText("Phòng đôi");
@@ -1467,7 +1467,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel12.setForeground(new java.awt.Color(255, 204, 51));
 
         lblTenPhong3.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        lblTenPhong3.setText("101");
+        lblTenPhong3.setText("112");
 
         lblLoaiPhong3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLoaiPhong3.setText("Phòng đôi");
@@ -1514,7 +1514,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelDanhSachPhong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelTang1, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE))
+                    .addComponent(PanelTang1, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(PanelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelMainLayout.createSequentialGroup()

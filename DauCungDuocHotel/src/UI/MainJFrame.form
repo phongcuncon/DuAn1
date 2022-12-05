@@ -240,7 +240,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="PanelDanhSachPhong" alignment="0" max="32767" attributes="0"/>
-                      <Component id="PanelTang1" alignment="0" pref="617" max="32767" attributes="0"/>
+                      <Component id="PanelTang1" alignment="0" pref="629" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -388,7 +388,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="240" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="252" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -470,7 +470,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="201"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong12">
@@ -541,7 +541,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="202"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong13">
@@ -612,7 +612,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="203"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong14">
@@ -689,7 +689,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="204"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong15">
@@ -767,7 +767,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="205"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong16">
@@ -844,7 +844,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="206"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong17">
@@ -921,7 +921,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="207"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong18">
@@ -980,7 +980,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblTenPhong19" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="13" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="lblTrangThai19" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="lblLoaiPhong19" min="-2" max="-2" attributes="0"/>
@@ -995,7 +995,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="208"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong19">
@@ -1075,7 +1075,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="209"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong20">
@@ -1155,7 +1155,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="210"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong21">
@@ -1232,7 +1232,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="211"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong22">
@@ -1303,7 +1303,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Helvetica Neue" size="14" style="3"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="101"/>
+                        <Property name="text" type="java.lang.String" value="212"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblLoaiPhong23">
@@ -1468,7 +1468,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="102"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong1">
@@ -1539,7 +1539,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="103"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong2">
@@ -1616,7 +1616,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="104"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong11">
@@ -1694,7 +1694,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="105"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong10">
@@ -1771,7 +1771,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="106"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong9">
@@ -1848,7 +1848,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="107"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong8">
@@ -1907,7 +1907,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblTenPhong7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="13" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="lblTrangThai7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="lblLoaiPhong7" min="-2" max="-2" attributes="0"/>
@@ -1922,7 +1922,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="108"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong7">
@@ -2002,7 +2002,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="109"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong6">
@@ -2082,7 +2082,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="110"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong5">
@@ -2159,7 +2159,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="111"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong4">
@@ -2230,7 +2230,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="14" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="101"/>
+                    <Property name="text" type="java.lang.String" value="112"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblLoaiPhong3">
