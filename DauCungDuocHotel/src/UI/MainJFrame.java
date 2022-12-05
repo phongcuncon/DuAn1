@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -64,6 +66,9 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pu = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         PanelMenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnDichVu = new javax.swing.JButton();
@@ -134,7 +139,7 @@ public class MainJFrame extends javax.swing.JFrame {
         lblLoaiPhong23 = new javax.swing.JLabel();
         lblTrangThai23 = new javax.swing.JLabel();
         PanelTang1 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        PanelPhong101 = new javax.swing.JPanel();
         lblTenPhong = new javax.swing.JLabel();
         lblLoaiPhong = new javax.swing.JLabel();
         lblTrangThai = new javax.swing.JLabel();
@@ -183,6 +188,12 @@ public class MainJFrame extends javax.swing.JFrame {
         lblLoaiPhong3 = new javax.swing.JLabel();
         lblTrangThai3 = new javax.swing.JLabel();
         lblTime = new javax.swing.JLabel();
+
+        jMenuItem1.setText("jMenuItem1");
+        pu.add(jMenuItem1);
+
+        jMenuItem2.setText("jMenuItem2");
+        pu.add(jMenuItem2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -950,8 +961,16 @@ public class MainJFrame extends javax.swing.JFrame {
         PanelTang1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tầng 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 1, 16), new java.awt.Color(255, 51, 102))); // NOI18N
         PanelTang1.setLayout(new java.awt.GridLayout(2, 0, 3, 5));
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 0));
-        jPanel1.setForeground(new java.awt.Color(255, 204, 51));
+        PanelPhong101.setBackground(new java.awt.Color(255, 204, 0));
+        PanelPhong101.setForeground(new java.awt.Color(255, 204, 51));
+        PanelPhong101.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PanelPhong101MouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                PanelPhong101MouseReleased(evt);
+            }
+        });
 
         lblTenPhong.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
         lblTenPhong.setText("101");
@@ -963,25 +982,25 @@ public class MainJFrame extends javax.swing.JFrame {
         lblTrangThai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTrangThai.setText("Trống");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelPhong101Layout = new javax.swing.GroupLayout(PanelPhong101);
+        PanelPhong101.setLayout(PanelPhong101Layout);
+        PanelPhong101Layout.setHorizontalGroup(
+            PanelPhong101Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPhong101Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(PanelPhong101Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelPhong101Layout.createSequentialGroup()
                         .addComponent(lblTenPhong)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong101Layout.createSequentialGroup()
+                        .addGroup(PanelPhong101Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTrangThai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblLoaiPhong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
                         .addContainerGap())))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PanelPhong101Layout.setVerticalGroup(
+            PanelPhong101Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPhong101Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTenPhong)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -991,7 +1010,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PanelTang1.add(jPanel1);
+        PanelTang1.add(PanelPhong101);
 
         jPanel2.setBackground(new java.awt.Color(204, 0, 51));
         jPanel2.setForeground(new java.awt.Color(255, 204, 51));
@@ -1605,6 +1624,26 @@ public class MainJFrame extends javax.swing.JFrame {
         openKhachHang();
     }//GEN-LAST:event_btnKhachHangActionPerformed
 
+    private void PanelPhong101MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelPhong101MouseReleased
+        // TODO add your handling code here:
+//        int clickcount = 0;
+//        PanelPhong101.addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e){
+//                clickcount= clickcount +1;
+//            }
+//        });
+//        if(evt.getButton()==MouseEvent.BUTTON3){
+//            if(evt.isPopupTrigger()&& clickcoun!=1){
+//                 pu.show(evt.getComponent(),evt.getX(),evt.getY());
+//            }
+//        }
+    }//GEN-LAST:event_PanelPhong101MouseReleased
+
+    private void PanelPhong101MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelPhong101MouseClicked
+        // TODO add your handling code here:     
+    }//GEN-LAST:event_PanelPhong101MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1674,6 +1713,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel PanelDanhSachPhong;
     private javax.swing.JPanel PanelMain;
     private javax.swing.JPanel PanelMenu;
+    private javax.swing.JPanel PanelPhong101;
     private javax.swing.JPanel PanelTang1;
     private javax.swing.JPanel PanelTang2;
     private javax.swing.JButton btnDangXuat;
@@ -1691,7 +1731,8 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -1789,6 +1830,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblTrangThai7;
     private javax.swing.JLabel lblTrangThai8;
     private javax.swing.JLabel lblTrangThai9;
+    private javax.swing.JPopupMenu pu;
     // End of variables declaration//GEN-END:variables
 
     private void init() {
