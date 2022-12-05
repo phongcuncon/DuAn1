@@ -56,7 +56,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
+        kGradientPanel1 = new org.netbeans.modules.form.InvalidComponent();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -91,9 +91,6 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        kGradientPanel1.setkEndColor(new java.awt.Color(224, 208, 208));
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("TÌNH TRẠNG KINH DOANH");
@@ -690,7 +687,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private keeptoo.KGradientPanel kGradientPanel1;
+    private org.netbeans.modules.form.InvalidComponent kGradientPanel1;
     private javax.swing.JLabel lblAVG;
     private javax.swing.JLabel lblDoanhThu;
     private javax.swing.JLabel lblMax;
