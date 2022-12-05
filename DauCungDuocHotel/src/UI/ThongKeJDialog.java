@@ -216,7 +216,12 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 	    cell.setCellValue("TongTien");
 	    cell = row.createCell(5, CellType.STRING);
 	    cell.setCellValue("NhanVien");
-
+	    sheet.setColumnWidth(0, 3300);
+	    sheet.setColumnWidth(1, 3300);
+	    sheet.setColumnWidth(2, 9000);
+	    sheet.setColumnWidth(3, 3300);
+	    sheet.setColumnWidth(4, 3300);
+	    sheet.setColumnWidth(5, 3300);
 	    for (int i = 0; i < list.size(); i++) {
 		row = sheet.createRow(2 + i);
 
