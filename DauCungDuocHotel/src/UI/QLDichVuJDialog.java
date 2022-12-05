@@ -11,6 +11,7 @@ import Untils.Auth;
 import Untils.MsgBox;
 import Untils.XImage;
 import Untils.isValidated;
+import java.util.Date;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JFileChooser;
@@ -84,6 +85,8 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
         txtGhiChu.setRows(5);
         jScrollPane1.setViewportView(txtGhiChu);
 
+        btnThem.setBackground(new java.awt.Color(51, 153, 255));
+        btnThem.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnThem.setText("THÊM");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +94,8 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnXoa.setBackground(new java.awt.Color(51, 153, 255));
+        btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnXoa.setText("XOÁ");
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +103,8 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnSua.setBackground(new java.awt.Color(51, 153, 255));
+        btnSua.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSua.setText("SỬA");
         btnSua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +112,8 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnMoi.setBackground(new java.awt.Color(51, 153, 255));
+        btnMoi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnMoi.setText("MỚI");
         btnMoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,27 +128,30 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(txtMaDichVu)
-                    .addComponent(txtPhiDichVu)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
+                            .addComponent(jScrollPane1)
+                            .addComponent(txtMaDichVu)
+                            .addComponent(txtPhiDichVu)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnThem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnXoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnMoi, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                                    .addComponent(btnSua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(txtTenDV))
-                .addContainerGap())
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txtTenDV))
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnThem, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                            .addComponent(btnXoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,11 +317,13 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        reset();
         timkiem();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
         // TODO add your handling code here:
+        reset();
         timkiem();
     }//GEN-LAST:event_txtTimKiemKeyReleased
 
@@ -407,27 +421,37 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
         tblDichVu.setDefaultEditor(Object.class, null);
     }
         void insert() {
-        DichVu dv = getForm();
-        boolean isSuccess = validated();
-        if (!isSuccess) {
-            MsgBox.alert(this, notice);
-        } else {
-            try {
-                dao.insert(dv);
-                this.clearForm(); 
-                MsgBox.alert(this, "Thêm mới thành công !");
-                list.removeAll(list);
-                list.addAll(dao.selectAll());
-                fillTable();
-            } catch (Exception e) {
-                MsgBox.alert(this, "Thêm mới thất bại");
-            }
-        }
+//        DichVu dv = getForm();
+//        boolean isSuccess = checkValid();
+//        if (!isSuccess) {
+//            MsgBox.alert(this, notice);
+//        } else {
+//            try {
+//                dao.insert(dv);
+//                this.clearForm(); 
+//                MsgBox.alert(this, "Thêm mới thành công !");
+//                list.removeAll(list);
+//                list.addAll(dao.selectAll());
+//                fillTable();
+//            } catch (Exception e) {
+//                MsgBox.alert(this, "Thêm mới thất bại");
+//            }
+//        }
+            if(checkValid()){
+	    DichVu dv = getForm()   ;
+            dao.insert(dv);
+
+            list.removeAll(list);
+            list.addAll(dao.selectAll());
+            fillTable();
+            MsgBox.alert(this, "Them thanh cong!");
+                reset();
+	}
     }
 
     void update() {
         DichVu dv = getForm();
-        boolean isSuccess = validated();
+        boolean isSuccess = checkValid();
         if (!isSuccess) {
             MsgBox.alert(this, notice);
         } else {
@@ -487,6 +511,15 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
         this.setForm(dv);
         this.updateStatus();
     }
+    void reset() {
+	txtMaDichVu.setText("");
+	txtTenDV.setText("");
+	txtGhiChu.setText("");
+//	txtTimKiem.setText("");
+	txtPhiDichVu.setText("");
+
+    }
+
     void fillTable() {
         DefaultTableModel model = (DefaultTableModel) tblDichVu.getModel();
         model.setRowCount(0);
@@ -526,31 +559,43 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
         btnSua.setEnabled(edit);
         btnXoa.setEnabled(edit);
     }
-    boolean validated() {
-        String MaDV = txtMaDichVu.getText();
-        String TenDV = txtTenDV.getText();
-        String DonGia = txtPhiDichVu.getText();
-
-
-        if (!isValidated.isBlank(MaDV)) {
-            txtMaDichVu.requestFocus();
-            notice = "Vui lòng nhập mã dịch vụ";
-            return false;
-        }
-
-        if (!isValidated.isBlank(TenDV)) {
-            txtTenDV.requestFocus();
-            notice = "Vui lòng nhập tên dịch vụ";
-            return false;
-        }
-
-        if (!isValidated.isBlank(DonGia)) {
-            txtPhiDichVu.requestFocus();
-            notice = "Vui lòng nhập phí dịch vụ";
-            return false;
-        }
-
-
-        return true;
+//    boolean validated() {
+//        String MaDV = txtMaDichVu.getText();
+//        String TenDV = txtTenDV.getText();
+//        String DonGia = txtPhiDichVu.getText();
+//
+//
+//        if (!isValidated.isBlank(MaDV)) {
+//            txtMaDichVu.requestFocus();
+//            notice = "Vui lòng nhập mã dịch vụ";
+//            return false;
+//        }
+//
+//        if (!isValidated.isBlank(TenDV)) {
+//            txtTenDV.requestFocus();
+//            notice = "Vui lòng nhập tên dịch vụ";
+//            return false;
+//        }
+//
+//        if (!isValidated.isBlank(DonGia)) {
+//            txtPhiDichVu.requestFocus();
+//            notice = "Vui lòng nhập phí dịch vụ";
+//            return false;
+//        }
+//
+//
+//        return true;
+//    }
+    boolean checkValid(){
+	if(txtMaDichVu.getText().isEmpty()){
+	    MsgBox.alert(this, "Vui lòng nhập mã dịch vụ!");
+	    return false;
+	}else if(txtTenDV.getText().isEmpty()){
+	    MsgBox.alert(this, "Vui lòng nhập tên dịch vụ!");
+	}else if(txtPhiDichVu.getText().isEmpty()){
+	    MsgBox.alert(this, "Vui lòng nhập phí dịch vụ!");
+	    return false;
+	}
+	return true;
     }
 }

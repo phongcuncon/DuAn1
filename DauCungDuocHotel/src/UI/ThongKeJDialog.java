@@ -246,7 +246,8 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 		cell.setCellValue(list.get(i).getMaNV());
 	    }
 
-	    File file = new File("F://Danhsach12.xlsx");
+//	    File file = new File("F://Danhsach12.xlsx");
+            File file = new File("E://Danhsach12.xlsx");
 	    try {
 		FileOutputStream fos = new FileOutputStream(file);
 		workbook.write(fos);
@@ -284,12 +285,12 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 	    for (int i = 0; i < list.size(); i++) {
 		row = sheet.createRow(2 + i);
 
-            cell = row.createCell(0,CellType.BLANK);
-            cell.setCellValue(list.get(i).getMaDV());
+//            cell = row.createCell(0,CellType.BLANK);
+//            cell.setCellValue(list.get(i).getMaDV());
 //		XSSFCellStyle cellStyle = workbook.createCellStyle();
 //		CreationHelper createHelper = workbook.getCreationHelper();
 //		cellStyle.setDataFormat(
-//			createHelper.createDataFormat().getFormat("d/m/yyyy "));
+//		createHelper.createDataFormat().getFormat("d/m/yyyy "));
 //		cell = row.createCell(0);
 //		cell.setCellValue(list.get(i).);
 //		cell.setCellStyle(cellStyle);
@@ -306,7 +307,8 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 		
 	    }
 
-	    File file = new File("F://DanhsachDV.xlsx");
+//	    File file = new File("F://DanhsachDV.xlsx");
+            File file = new File("E://DanhsachDV.xlsx");
 	    try {
 		FileOutputStream fos = new FileOutputStream(file);
 		workbook.write(fos);
