@@ -8,21 +8,25 @@ import DAO.DichVuDAO;
 import DAO.HoaDonDAO;
 import Entity.DichVu;
 import Entity.HoaDon;
+import Untils.MsgBox;
 import java.awt.HeadlessException;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
  * @author Admin
  */
-public class ChiTietPhongJDialog extends javax.swing.JDialog {
-
-    
+public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionListener{
+        int index = -1;
+        JButton btn;
     
     /**
      * Creates new form PhongJDialog
@@ -32,15 +36,44 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 	initComponents();
 	this.setLocationRelativeTo(null);
         
-        
-        
-//        
+       
         fillComboDV();
         fillButtonDichVu();
 //        timKiemDichVu("");
+
+            
+    }
        
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        TenDVJDialog f = new TenDVJDialog(null, rootPaneCheckingEnabled);
+        
+        f.setVisible(true);
+        
     }
     
+  
+    void getTenDV(String tenDV) {
+        
+
+    }
+    
+    void fillButtonDichVu() {
+
+        for (int i = 0; i < list.size()-1; i++) {
+
+            DichVu dichvu = list.get(i);
+            String tendv = dichvu.getTenDV();
+            JButton btns = new JButton();
+            btns.setText(tendv);
+            PBTMonAn.add(btns);
+            
+            btns.addActionListener(this);
+            
+        }
+  
+    }      
+       
     private void timKiemDichVu(String tenDichVu) {
         List<DichVu> list = dao.selectNotInCourse(tenDichVu);
 //        String tk = txtDVCT.getText();
@@ -72,6 +105,9 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        SuaSoLuong = new javax.swing.JMenuItem();
+        XoaDichVu = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -120,13 +156,29 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         btnThanhToan = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
 
+        SuaSoLuong.setText("jMenuItem1");
+        SuaSoLuong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SuaSoLuongActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(SuaSoLuong);
+
+        XoaDichVu.setText("jMenuItem2");
+        XoaDichVu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                XoaDichVuActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(XoaDichVu);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setBackground(new java.awt.Color(51, 255, 51));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Phòng XXX");
+        jLabel1.setText("Phòng 115");
         jLabel1.setToolTipText("");
         jLabel1.setAutoscrolls(true);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
@@ -180,15 +232,20 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
         tblDV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "DV", "Phong", "Dich Vu", "Don Gia", "So Luong", "Thanh Tien"
+                "DV", "Dich Vu", "Don Gia", "So Luong", "Thanh Tien"
             }
         ));
+        tblDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tblDVMouseReleased(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblDV);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Them Dich Vu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
@@ -504,13 +561,41 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cboLoaiDVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLoaiDVActionPerformed
-
+//        cbo();
     }//GEN-LAST:event_cboLoaiDVActionPerformed
 
     private void txtTimKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKeyReleased
-//        timKiemDichVu();
-        
+//        timKiemDichVu();       
     }//GEN-LAST:event_txtTimKeyReleased
+
+    private void tblDVMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDVMouseReleased
+        if(evt.getButton()==MouseEvent.BUTTON3){
+            if(evt.isPopupTrigger()&&tblDV.getSelectedRowCount()!=0){
+                jPopupMenu1.show(evt.getComponent(),evt.getX(),evt.getY());
+            }
+        }
+    }//GEN-LAST:event_tblDVMouseReleased
+
+    private void SuaSoLuongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaSoLuongActionPerformed
+        
+    }//GEN-LAST:event_SuaSoLuongActionPerformed
+
+    private void XoaDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XoaDichVuActionPerformed
+        index = tblDV.getSelectedRow();
+        DichVu dv = list.get(index);
+        String id = dv.getMaDV();
+        if(MsgBox.confirm(this,"Bạn có muốn xóa dịch vụ này không?")){
+            try{
+                dao.delete(id);
+                list.removeAll(list);
+                list.addAll(dao.selectAll());
+                MsgBox.alert(this,"Xóa thành công!");
+              
+            }catch(Exception e){
+                MsgBox.alert(this,"Xóa thất bại!");
+            }
+        }
+    }//GEN-LAST:event_XoaDichVuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -571,6 +656,8 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PBTMonAn;
+    private javax.swing.JMenuItem SuaSoLuong;
+    private javax.swing.JMenuItem XoaDichVu;
     private javax.swing.JButton btnThanhToan;
     private javax.swing.JComboBox<String> cboLoaiDV;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -600,6 +687,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
@@ -626,8 +714,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     List<HoaDon> list1 = dao1.selectAll();
     
     
-    
-    
 //    void cbo() {
 //        String ad = (String) cboLoaiDV.getSelectedItem();
 //        DefaultTableModel model1 = (DefaultTableModel) tblDV.getModel();
@@ -639,8 +725,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 //            });
 //        }
     
-    
-    
+   
         void fillComboDV() {
         DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboLoaiDV.getModel();
         tblmodel.removeAllElements();
@@ -664,21 +749,5 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         return false;
     }
     
-        
-        void fillButtonDichVu() {
-
-        for (int i = 0; i < list.size()-1; i++) {
-
-            DichVu dichvu = list.get(i);
-            String tendv = dichvu.getTenDV();
-            JButton btns = new JButton();
-            btns.setText(tendv);
-            PBTMonAn.add(btns);
-            
-        }
-  
-    }
-        
-        
-    
+          
 }

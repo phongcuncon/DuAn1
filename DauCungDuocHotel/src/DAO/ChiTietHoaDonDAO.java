@@ -30,7 +30,7 @@ public class ChiTietHoaDonDAO extends HotelDAO<ChiTietHoaDon, String> {
 
     @Override
     public void Update(ChiTietHoaDon enity) {
-	JdbcHelper.update(INSERT_SQL,enity.getDonGia(),enity.getThanhTien(),enity.getMaHD(),enity.getMaNV(),enity.getMaPhong(),enity.getMaCTHD() );
+	JdbcHelper.update(UPDATE_SQL,enity.getDonGia(),enity.getThanhTien(),enity.getMaHD(),enity.getMaNV(),enity.getMaPhong(),enity.getMaCTHD() );
     }
 
     @Override
