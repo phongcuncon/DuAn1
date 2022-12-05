@@ -23,6 +23,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ps22004_taquocphong
  */
+
 public class QLNhanVienJDialog extends javax.swing.JDialog {
 
     NhanVienDAO dao = new NhanVienDAO();
@@ -44,7 +45,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         fillCombo2();
 	filltableLichLam();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -666,17 +666,18 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         }
     }
     void clearForm(){
+        Date date1= new Date();
         txtManv.setText("");
         txtHoten.setText("");
         cboCD.setSelectedIndex(0);
-        date.setDate(null);
+        date.setDate(date1);
         txtcccd.setText("");
         rdoNam.setSelected(false);
         rdoNu.setSelected(false);
-        diachi.setText("");
-        txtsdt1.setText("");
-        txtmk.setText("");
-        txtemail.setText("");
+        diachi.setText(null);
+        txtsdt1.setText(null);
+        txtmk.setText(null);
+        txtemail.setText(null);
     }
     void cbo(){
 	String cd = (String) cbo.getSelectedItem();
@@ -704,8 +705,8 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	for (NhanVien nhanVien : list) {
 	    if (check(nhanVien.getChucDanh(), cbo) == false) {
 		tblmodel.addElement(nhanVien.getChucDanh());
-	    } else {
-		return;
+//	    } else {
+//		return;
 	    }
 	}
     }
@@ -717,8 +718,8 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	for (NhanVien nhanVien : list) {
 	    if (check(nhanVien.getChucDanh(), cboCD) == false) {
 		tblmodel.addElement(nhanVien.getChucDanh());
-	    } else {
-		return;
+//	    } else {
+//		return;
 	    }
 	}
     }

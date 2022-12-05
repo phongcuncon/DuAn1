@@ -11,10 +11,15 @@ import Entity.DatPhong;
 import Entity.KhachHang;
 import Entity.LoaiPhong;
 import Untils.MsgBox;
+import com.formdev.flatlaf.FlatLightLaf;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.UIManager;
 
 /**
  *
@@ -69,6 +74,11 @@ public class DatPhongJDialog extends javax.swing.JDialog {
             MsgBox.alert(this, "Lỗi");
         }
     }
+    void getTime(){
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        Date date = new Date();        
+        final String timedp= dateFormat.format(date);
+    }
     boolean valid(){
         Date date= new Date();
         Date time1= DayStart.getDate();
@@ -88,11 +98,8 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         }else if(txtDatcoc.getText().equals("")){
             MsgBox.alert(this, "Chưa nhập tiền đặt cọc");
             return false;
-        }else if(time1.after(time2)){
-            MsgBox.alert(this, "Ngày đặt phòng phải có trước ngày trả phòng");
-            return false;
-        }else if(time1.before(date)){
-            MsgBox.alert(this, "Ngày đặt phòng phải có sau ngày hiện tại");
+        }else if(time1.before(date) || time2.before(date)){
+            MsgBox.alert(this, "Ngày đặt phòng/trả phòng phải có sau ngày hiện tại");
             return false;
         }else return true;
     }
@@ -187,6 +194,11 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         jScrollPane1.setViewportView(txtGhichu);
 
         btnHuy.setText("Hủy");
+        btnHuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHuyActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -295,7 +307,12 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         if (valid()) {
             insert();
         }
+        getTime();
     }//GEN-LAST:event_btnCheckinActionPerformed
+
+    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnHuyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -325,6 +342,12 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         //</editor-fold>
 
         /* Create and display the form */
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
+        }
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 DatPhongJDialog dialog = new DatPhongJDialog(new javax.swing.JFrame(), true);

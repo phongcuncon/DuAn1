@@ -109,6 +109,12 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblKhachHang);
 
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
+
         cboDoTT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboDoTTActionPerformed(evt);
@@ -255,6 +261,22 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         f2.setVisible(true);
     }//GEN-LAST:event_datphongActionPerformed
 
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        DefaultTableModel model = (DefaultTableModel) tblKhachHang.getModel();
+        model.setRowCount(0);
+        String tk = txtTimKiem.getText();
+        List<KhachHang> lst1 = dao.selectByKeyWord2(tk);
+//        int cccd;
+//        if(tk.isEmpty()){
+//            cccd = 0;
+//        }else
+//            if(tk.chars().allMatch(Character::isDigit))
+//                cccd=Integer.parseInt(tk);
+        for (KhachHang kh : lst1) {
+            model.addRow(new Object[]{kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh()?"Nam" : "Nữ", kh.getCCCD(), kh.getGhiChu()});
+        }
+    }//GEN-LAST:event_txtTimKiemKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -334,8 +356,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         tblmodel.setRowCount(0);
         for (KhachHang kh : list) {
             tblmodel.addRow(new Object[]{
-                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh(),
-                kh.getCCCD(), kh.getGhiChu()
+                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh()?"Nam" : "Nữ",kh.getCCCD(), kh.getGhiChu()
             });
         }
     }
@@ -347,20 +368,19 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         List<KhachHang> lst = dao.selectByKeyWord(tk);
         for (KhachHang kh : lst) {
             model.addRow(new Object[]{
-                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh(), kh.getCCCD(), kh.getGhiChu()
+                kh.getTenKH(), kh.getTuoi(), kh.isGioiTinh()?"Nam" : "Nữ", kh.getCCCD(), kh.getGhiChu()
             });
         }
-
     }
 
     void cbo() {
         String ad = (String) cboDoTT.getSelectedItem();
         DefaultTableModel model1 = (DefaultTableModel) tblKhachHang.getModel();
         model1.setRowCount(0);
-        dao.selectByKeyWord(ad);
-        for (KhachHang kh2 : list) {
+        List<KhachHang> list1 = dao.selectByKeyWord1(ad);
+        for (KhachHang kh2 : list1) {
             model1.addRow(new Object[]{
-                kh2.getTenKH(), kh2.getTuoi(), kh2.isGioiTinh(), kh2.getCCCD(), kh2.getGhiChu()
+                kh2.getTenKH(), kh2.getTuoi(), kh2.isGioiTinh()?"Nam" : "Nữ", kh2.getCCCD(), kh2.getGhiChu()
             });
         }
     }

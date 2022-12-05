@@ -21,12 +21,10 @@ public class ChaoJDialog extends javax.swing.JDialog {
      */
     public ChaoJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         jProgressBar1.setValue(0);
-     
         jProgressBar1.setStringPainted(true);
         
      
@@ -72,7 +70,6 @@ public class ChaoJDialog extends javax.swing.JDialog {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hinh/Nội dung đoạn văn bản của bạn.gif"))); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jLabel2.setPreferredSize(new java.awt.Dimension(500, 500));
 
@@ -181,4 +178,6 @@ public class ChaoJDialog extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
+
+    
 }
