@@ -258,6 +258,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         index= tblKhachHang.getSelectedRow();
         KhachHang kh = list.get(index);
         f2.writeForm(kh);
+        f2.setStatus();
         f2.setVisible(true);
     }//GEN-LAST:event_datphongActionPerformed
 

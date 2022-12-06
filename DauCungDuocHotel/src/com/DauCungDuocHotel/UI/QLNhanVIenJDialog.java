@@ -4,7 +4,9 @@
  */
 package com.DauCungDuocHotel.UI;
 
+import com.DauCungDuocHotel.DAO.LichLamDAO;
 import com.DauCungDuocHotel.DAO.NhanVienDAO;
+import com.DauCungDuocHotel.Entity.LichLam;
 import com.DauCungDuocHotel.Entity.NhanVien;
 import com.DauCungDuocHotel.Untils.MsgBox;
 import com.DauCungDuocHotel.Untils.XImage;
@@ -27,8 +29,10 @@ import javax.swing.table.DefaultTableModel;
 public class QLNhanVienJDialog extends javax.swing.JDialog {
 
     NhanVienDAO dao = new NhanVienDAO();
+    LichLamDAO dao1= new LichLamDAO();
     int index = -1;
     List<NhanVien> list = dao.selectAll();
+    List<LichLam> list1= dao1.selectAll();
     JFileChooser fc= new JFileChooser();
     
     /**
@@ -621,8 +625,8 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
     void filltableLichLam() {
 	DefaultTableModel tblmodel = (DefaultTableModel) tblNhanVien.getModel();
 	tblmodel.setRowCount(0);
-	for (NhanVien nhanVien : list) {
-	    tblmodel.addRow(new Object[]{nhanVien.getMaNV(), nhanVien.getTenNV(), nhanVien.getChucDanh(), nhanVien.getLichlam(), nhanVien.getCalam()});
+	for (LichLam lm : list1) {
+	    tblmodel.addRow(new Object[]{lm.getManv(), lm.getHoTen(), lm.getChucDanh(), lm.getNgayLam(), lm.getCa()});
         }
     }
     void insert(){
@@ -705,8 +709,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	for (NhanVien nhanVien : list) {
 	    if (check(nhanVien.getChucDanh(), cbo) == false) {
 		tblmodel.addElement(nhanVien.getChucDanh());
-//	    } else {
-//		return;
 	    }
 	}
     }
@@ -718,8 +720,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	for (NhanVien nhanVien : list) {
 	    if (check(nhanVien.getChucDanh(), cboCD) == false) {
 		tblmodel.addElement(nhanVien.getChucDanh());
-//	    } else {
-//		return;
 	    }
 	}
     }
