@@ -112,8 +112,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblHDCT = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -124,8 +122,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDV = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        cboLoaiDV = new javax.swing.JComboBox<>();
         txtDVCT = new javax.swing.JLabel();
         txtTim = new javax.swing.JTextField();
         PBTMonAn = new javax.swing.JPanel();
@@ -133,7 +129,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         jLabel22 = new javax.swing.JLabel();
         lblGiaPhongTheoNgay = new javax.swing.JLabel();
         lblGiaPhongTheoGio = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         SuaSoLuong.setText("jMenuItem1");
         SuaSoLuong.addActionListener(new java.awt.event.ActionListener() {
@@ -174,19 +169,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Chi Tiết Thuê Phòng");
         jLabel2.setOpaque(true);
-
-        tblHDCT.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "HÐ", "Phong", "Loai Hinh", "Ngay Thue", "Ngay Tra Du Kien", "Ngay Tra Phong", "Tong Thoi Gian", "Tien Phong", "Check In", "Check Out"
-            }
-        ));
-        jScrollPane1.setViewportView(tblHDCT);
 
         jLabel3.setText("Ngày Trả Phong:");
 
@@ -230,14 +212,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thêm dịch vụ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
-        jLabel10.setText("Các Loại Dịch Vụ:");
-
-        cboLoaiDV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboLoaiDVActionPerformed(evt);
-            }
-        });
-
         txtDVCT.setText("Dịch Vụ Cần Tìm");
 
         txtTim.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -246,6 +220,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
             }
         });
 
+        PBTMonAn.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dịch vụ", javax.swing.border.TitledBorder.TRAILING, javax.swing.border.TitledBorder.TOP));
         PBTMonAn.setLayout(new java.awt.GridLayout(6, 4, 10, 7));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -257,14 +232,10 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PBTMonAn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                            .addComponent(txtDVCT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(txtDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cboLoaiDV, 0, 376, Short.MAX_VALUE)
-                            .addComponent(txtTim))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 106, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -272,13 +243,9 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cboLoaiDV, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtTim, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(txtDVCT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtTim)
+                    .addComponent(txtDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PBTMonAn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -299,10 +266,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -352,21 +315,14 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                     .addComponent(lblKH, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(101, 101, 101)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -429,10 +385,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     private void txtTimKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKeyReleased
         //        timKiemDichVu();
     }//GEN-LAST:event_txtTimKeyReleased
-
-    private void cboLoaiDVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLoaiDVActionPerformed
-        //        cbo();
-    }//GEN-LAST:event_cboLoaiDVActionPerformed
 
     private void tblDVMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDVMouseReleased
         if(evt.getButton()==MouseEvent.BUTTON3){
@@ -519,10 +471,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     private javax.swing.JPanel PBTMonAn;
     private javax.swing.JMenuItem SuaSoLuong;
     private javax.swing.JMenuItem XoaDichVu;
-    private javax.swing.JComboBox<String> cboLoaiDV;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
@@ -534,7 +483,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lblGiaPhongTheoGio;
@@ -542,7 +490,6 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     private javax.swing.JLabel lblKH;
     private javax.swing.JPopupMenu pmenu;
     private javax.swing.JTable tblDV;
-    private javax.swing.JTable tblHDCT;
     private javax.swing.JLabel txtDVCT;
     private javax.swing.JTextField txtTim;
     // End of variables declaration//GEN-END:variables
