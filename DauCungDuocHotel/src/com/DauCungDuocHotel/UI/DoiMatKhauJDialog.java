@@ -28,7 +28,10 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
     }
     
     void gan(){
+        txtTenDN.setEnabled(false);
+        txtMkhientai.setEnabled(false);
         txtTenDN.setText(Auth.user.getMaNV());
+        txtMkhientai.setText(Auth.user.getMatKhau());
     }
     
     void doimk(){

@@ -1702,8 +1702,7 @@ public class MainJFrame extends javax.swing.JFrame {
 	//Set label tên nhân viên
 	String userID = Auth.user.getTenNV();
 	String role = Auth.user.getChucDanh();
-	lblTenNV1.setText("<html>" + "Nhân viên: " + "<br>" + userID + "<br>" + "Role: " + role + "</html>");
-	lblTenNV1.setHorizontalAlignment(JLabel.CENTER);
+	lblTenNV1.setText("<html>" + "<center>" + "Nhân viên: " + "<br>" + userID + "<br>" + "Role: " + role + "</center>"+ "</html>");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
