@@ -105,7 +105,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
+        pmenu = new javax.swing.JPopupMenu();
         SuaSoLuong = new javax.swing.JMenuItem();
         XoaDichVu = new javax.swing.JMenuItem();
         kGradientPanel1 = new keeptoo.KGradientPanel();
@@ -141,7 +141,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                 SuaSoLuongActionPerformed(evt);
             }
         });
-        jPopupMenu1.add(SuaSoLuong);
+        pmenu.add(SuaSoLuong);
 
         XoaDichVu.setText("jMenuItem2");
         XoaDichVu.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +149,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                 XoaDichVuActionPerformed(evt);
             }
         });
-        jPopupMenu1.add(XoaDichVu);
+        pmenu.add(XoaDichVu);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -212,13 +212,13 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 
         tblDV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "DV", "Dich Vu", "Don Gia", "So Luong", "Thanh Tien"
+                "Dịch vụ", "Đơn giá", "Số lượng", "Thành tiền"
             }
         ));
         tblDV.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -228,7 +228,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         });
         jScrollPane2.setViewportView(tblDV);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Them Dich Vu", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thêm dịch vụ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
         jLabel10.setText("Các Loại Dịch Vụ:");
 
@@ -437,7 +437,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     private void tblDVMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDVMouseReleased
         if(evt.getButton()==MouseEvent.BUTTON3){
             if(evt.isPopupTrigger()&&tblDV.getSelectedRowCount()!=0){
-                jPopupMenu1.show(evt.getComponent(),evt.getX(),evt.getY());
+                pmenu.show(evt.getComponent(),evt.getX(),evt.getY());
             }
         }
     }//GEN-LAST:event_tblDVMouseReleased
@@ -534,13 +534,13 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lblGiaPhongTheoGio;
     private javax.swing.JLabel lblGiaPhongTheoNgay;
     private javax.swing.JLabel lblKH;
+    private javax.swing.JPopupMenu pmenu;
     private javax.swing.JTable tblDV;
     private javax.swing.JTable tblHDCT;
     private javax.swing.JLabel txtDVCT;

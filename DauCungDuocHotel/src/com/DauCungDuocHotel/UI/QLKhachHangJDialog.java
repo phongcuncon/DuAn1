@@ -236,7 +236,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         index= tblKhachHang.getSelectedRow();
         KhachHang kh = list.get(index);
         String id= kh.getMaKH();
-        if(MsgBox.confirm(this,"Bạn có muốn xóa nhân viên này không?")){
+        if(MsgBox.confirm(this,"Bạn có muốn xóa khách hàng này không?")){
             try{
                 dao.delete(id);
                 list.removeAll(list);
