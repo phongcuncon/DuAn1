@@ -50,6 +50,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         fillCombo();
         fillCombo1();
+	cboMaLP.setEnabled(false);
     }
     
     DatPhong readForm(){
@@ -372,7 +373,15 @@ public class DatPhongJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnHuyActionPerformed
 
     private void cboMaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMaPActionPerformed
-        // TODO add your handling code here:
+     String MaPhong = (String) cboMaP.getSelectedItem();
+      List<Phong> p = dao3.selectByKeyword(MaPhong);
+     for (int i = 0; i < p.size(); i++) {
+	    if(p.get(i).getMaLoaiPhong().equals("1")){
+		 cboMaLP.setSelectedIndex(0);
+	    }else{
+		 cboMaLP.setSelectedIndex(1);
+	}
+     }
     }//GEN-LAST:event_cboMaPActionPerformed
 
     /**
