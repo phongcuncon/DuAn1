@@ -82,6 +82,7 @@ public class PhongDAO extends HotelDAO<Phong, String> {
         return this.selectBySql(SQL, "%" + keyword + "%");
     }
     
+    
     public List<Phong> selectByKeyword1() {
         String SQL = "SELECT * FROM Phong WHERE TrangThai LIKE N'%Trống' ";
         return this.selectBySql(SQL);
