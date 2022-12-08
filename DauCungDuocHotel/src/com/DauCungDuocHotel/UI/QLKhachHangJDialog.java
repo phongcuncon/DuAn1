@@ -131,7 +131,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setText("Loc");
+        jButton1.setText("Lọc");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

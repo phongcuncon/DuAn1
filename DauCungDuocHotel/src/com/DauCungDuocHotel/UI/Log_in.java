@@ -59,8 +59,10 @@ int c=0;
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 255, 255));
 
         psMk.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        psMk.setText("a");
 
         txtTenDN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtTenDN.setText("nv002");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Tên đăng nhập:");
