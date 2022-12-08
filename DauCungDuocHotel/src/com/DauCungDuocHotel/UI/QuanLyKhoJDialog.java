@@ -112,6 +112,7 @@ public class QuanLyKhoJDialog extends javax.swing.JDialog {
         txtGhiChu.setRows(5);
         jScrollPane1.setViewportView(txtGhiChu);
 
+        btnSua.setBackground(new java.awt.Color(102, 204, 255));
         btnSua.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSua.setText("Sửa");
         btnSua.addActionListener(new java.awt.event.ActionListener() {
@@ -120,6 +121,7 @@ public class QuanLyKhoJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnThem.setBackground(new java.awt.Color(102, 204, 255));
         btnThem.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -128,6 +130,7 @@ public class QuanLyKhoJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnXoa.setBackground(new java.awt.Color(102, 204, 255));
         btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnXoa.setText("Xóa");
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +139,7 @@ public class QuanLyKhoJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnMoi1.setBackground(new java.awt.Color(102, 204, 255));
         btnMoi1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnMoi1.setText("Mới");
         btnMoi1.addActionListener(new java.awt.event.ActionListener() {

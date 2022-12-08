@@ -64,6 +64,7 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
         tblDichVu = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
@@ -85,7 +86,7 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
         txtGhiChu.setRows(5);
         jScrollPane1.setViewportView(txtGhiChu);
 
-        btnThem.setBackground(new java.awt.Color(51, 153, 255));
+        btnThem.setBackground(new java.awt.Color(102, 204, 255));
         btnThem.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnThem.setText("THÊM");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +95,7 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnXoa.setBackground(new java.awt.Color(51, 153, 255));
+        btnXoa.setBackground(new java.awt.Color(102, 204, 255));
         btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnXoa.setText("XOÁ");
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +104,7 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnSua.setBackground(new java.awt.Color(51, 153, 255));
+        btnSua.setBackground(new java.awt.Color(102, 204, 255));
         btnSua.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSua.setText("SỬA");
         btnSua.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +113,7 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnMoi.setBackground(new java.awt.Color(51, 153, 255));
+        btnMoi.setBackground(new java.awt.Color(102, 204, 255));
         btnMoi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnMoi.setText("MỚI");
         btnMoi.addActionListener(new java.awt.event.ActionListener() {
@@ -172,15 +173,15 @@ public class QLDichVuJDialog extends javax.swing.JDialog {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSua, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(btnThem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnThem)
-                    .addComponent(btnSua))
-                .addGap(18, 28, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMoi)
-                    .addComponent(btnXoa))
-                .addGap(21, 21, 21))
+                    .addComponent(btnMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(59, 59, 59))
         );
 
         txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
