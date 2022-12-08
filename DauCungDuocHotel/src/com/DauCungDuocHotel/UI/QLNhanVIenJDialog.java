@@ -226,11 +226,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
         txtemail.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153), null, null));
 
         cboCD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cboCD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboCDActionPerformed(evt);
-            }
-        });
 
         txtmk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153), null, null));
 
@@ -563,10 +558,6 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 //        filltable();
     }//GEN-LAST:event_txttimkiemKeyReleased
 
-    private void cboCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCDActionPerformed
-        
-    }//GEN-LAST:event_cboCDActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -738,7 +729,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	NhanVien nv = new NhanVien();
         nv.setTenNV(txtHoten.getText());
 	nv.setMatKhau(txtmk.getText());
-	nv.setChucDanh(String.valueOf(cbo.getSelectedItem()));
+	nv.setChucDanh(String.valueOf(cboCD.getSelectedItem()));
 	nv.setNgaySinh(date.getDate());
         if (rdoNam.isSelected()) {
 	    nv.setGioiTinh(true);
