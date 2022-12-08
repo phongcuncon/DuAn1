@@ -6,9 +6,16 @@ package com.DauCungDuocHotel.UI;
 
 import com.DauCungDuocHotel.DAO.DichVuDAO;
 import com.DauCungDuocHotel.DAO.HoaDonDAO;
+import com.DauCungDuocHotel.Entity.ChiTietHoaDon;
+import com.DauCungDuocHotel.Entity.DatPhong;
 import com.DauCungDuocHotel.Entity.DichVu;
 import com.DauCungDuocHotel.Entity.HoaDon;
+import com.DauCungDuocHotel.Entity.Phong;
 import com.DauCungDuocHotel.Untils.MsgBox;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
@@ -18,15 +25,16 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
  * @author Admin
  */
 public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionListener {
-
-    int index = -1;
-    JButton btn;
 
     /**
      * Creates new form PhongJDialog
@@ -35,58 +43,10 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
-
-//        fillComboDV();
         fillButtonDichVu();
 //        timKiemDichVu("");
+//        fillInfoCus();
 
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        TenDVJDialog f = new TenDVJDialog(null, rootPaneCheckingEnabled);
-        f.setVisible(true);
-    }
-
-    void getTenDV(String tenDV) {
-
-    }
-
-    void fillButtonDichVu() {
-
-        for (int i = 0; i < list.size() - 1; i++) {
-
-            DichVu dichvu = list.get(i);
-            String tendv = dichvu.getTenDV();
-            JButton btns = new JButton();
-            btns.setText(tendv);
-            PBTMonAn.add(btns);
-
-            btns.addActionListener(this);
-
-        }
-
-    }
-
-    private void timKiemDichVu(String tenDichVu) {
-        List<DichVu> list = dao.selectNotInCourse(tenDichVu);
-//        String tk = txtDVCT.getText();
-        ganButtons(list);
-    }
-
-    private void ganButtons(List<DichVu> list) {
-        for (int i = 0; i < list.size() - 1; i++) {
-            DichVu dichvu = list.get(i);
-            String tendv = dichvu.getTenDV();
-            JButton btns = new JButton();
-            PBTMonAn.add(btns);
-            btns.setText(tendv);
-        }
-    }
-
-    @Override
-    public Point getMousePosition() throws HeadlessException {
-        return super.getMousePosition(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     /**
@@ -104,7 +64,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         jMenuItem1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblChOut = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         lblDongiaPhong = new javax.swing.JLabel();
@@ -112,7 +72,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         jLabel1 = new javax.swing.JLabel();
         lblCCCD = new javax.swing.JLabel();
         lblKH = new javax.swing.JLabel();
-        lblNgayTraPhong = new javax.swing.JLabel();
+        lblChIn = new javax.swing.JLabel();
         lblTienPhong = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -123,7 +83,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         panelDV = new javax.swing.JPanel();
         txtDVCT = new javax.swing.JLabel();
         txtTim = new javax.swing.JTextField();
-        PBTMonAn = new javax.swing.JPanel();
+        panelBtnDV = new javax.swing.JPanel();
         btnExit = new javax.swing.JButton();
 
         SuaSoLuong.setText("jMenuItem1");
@@ -152,7 +112,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 
         jLabel2.setText("Check Out Date: ");
 
-        jLabel4.setText("A");
+        lblChOut.setText("A");
 
         jLabel5.setText("Đơn giá (tính theo đêm) :");
 
@@ -168,7 +128,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 
         lblKH.setText("A");
 
-        lblNgayTraPhong.setText("A");
+        lblChIn.setText("A");
 
         lblTienPhong.setFont(new java.awt.Font("Hiragino Sans GB", 1, 17)); // NOI18N
         lblTienPhong.setText("1000");
@@ -176,7 +136,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         lblTitle.setBackground(new java.awt.Color(214, 228, 229));
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(235, 100, 64));
-        lblTitle.setText("Chi Tiết Thuê Phòng");
+        lblTitle.setText("Chi Tiết Thuê Phòng 102");
         lblTitle.setOpaque(true);
 
         jLabel3.setText("Check In Date: ");
@@ -220,8 +180,8 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
             }
         });
 
-        PBTMonAn.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dịch vụ", javax.swing.border.TitledBorder.TRAILING, javax.swing.border.TitledBorder.TOP));
-        PBTMonAn.setLayout(new java.awt.GridLayout(6, 4, 10, 7));
+        panelBtnDV.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dịch vụ", javax.swing.border.TitledBorder.TRAILING, javax.swing.border.TitledBorder.TOP));
+        panelBtnDV.setLayout(new java.awt.GridLayout(4, 4, 10, 7));
 
         javax.swing.GroupLayout panelDVLayout = new javax.swing.GroupLayout(panelDV);
         panelDV.setLayout(panelDVLayout);
@@ -230,7 +190,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
             .addGroup(panelDVLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PBTMonAn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelBtnDV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panelDVLayout.createSequentialGroup()
                         .addComponent(txtDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -246,7 +206,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                     .addComponent(txtTim)
                     .addComponent(txtDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PBTMonAn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelBtnDV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -293,11 +253,11 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblNgayTraPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblChIn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel5))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
+                                        .addComponent(lblChOut)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel7)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -308,7 +268,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                 .addContainerGap())
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel4, lblNgayTraPhong});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblChIn, lblChOut});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,7 +282,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblNgayTraPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblChIn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5)
                         .addComponent(lblDongiaPhong))
                     .addComponent(lblKH, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -331,7 +291,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
                     .addComponent(jLabel1)
                     .addComponent(lblCCCD)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel4)
+                    .addComponent(lblChOut)
                     .addComponent(jLabel7)
                     .addComponent(lblSoDemO))
                 .addGap(30, 30, 30)
@@ -347,7 +307,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblCCCD, lblKH});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel4, lblNgayTraPhong});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblChIn, lblChOut});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -396,6 +356,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 
     private void txtTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimActionPerformed
         // TODO add your handling code here:
+//        timKiemDichVu(tenDichVu);
     }//GEN-LAST:event_txtTimActionPerformed
 
     private void tblDVMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDVMouseReleased
@@ -485,14 +446,12 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PBTMonAn;
     private javax.swing.JMenuItem SuaSoLuong;
     private javax.swing.JMenuItem XoaDichVu;
     private javax.swing.JButton btnExit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -501,12 +460,14 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCCCD;
+    private javax.swing.JLabel lblChIn;
+    private javax.swing.JLabel lblChOut;
     private javax.swing.JLabel lblDongiaPhong;
     private javax.swing.JLabel lblKH;
-    private javax.swing.JLabel lblNgayTraPhong;
     private javax.swing.JLabel lblSoDemO;
     private javax.swing.JLabel lblTienPhong;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JPanel panelBtnDV;
     private javax.swing.JPanel panelDV;
     private javax.swing.JPopupMenu pmenu;
     private javax.swing.JTable tblDV;
@@ -517,32 +478,21 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     DichVuDAO dao = new DichVuDAO();
     List<DichVu> list = dao.selectAll();
 
-    HoaDonDAO dao1 = new HoaDonDAO();
-    List<HoaDon> list1 = dao1.selectAll();
+    HoaDonDAO HDdao = new HoaDonDAO();
+    List<HoaDon> list1 = HDdao.selectAll();
+    
+    private static HoaDon hoadon;
+    
+    private static ChiTietHoaDon CThoadon;
+    
+    private static DatPhong dp;
+    
+    private static Phong p;
+    
 
-//    void cbo() {
-//        String ad = (String) cboLoaiDV.getSelectedItem();
-//        DefaultTableModel model1 = (DefaultTableModel) tblDV.getModel();
-//        model1.setRowCount(0);
-//        dao.selectByKeyword(ad);
-//        for (DichVu dv : list) {
-//            model1.addRow(new Object[]{
-//                dv.getMaDV(), dv.getTenDV(), dv.getGia()
-//            });
-//        }
-//        void fillComboDV() {
-//        DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboLoaiDV.getModel();
-//        tblmodel.removeAllElements();
-//
-//        for (DichVu dv : list) {
-//
-//            if (check(dv.getTenDV(), cboLoaiDV) == false) {
-//                tblmodel.addElement(dv.getTenDV());
-//                
-//            }
-//
-//        }
-//    }
+    int index = -1;
+    JButton btn;
+
     boolean check(Object ob, JComboBox cbo) {
         for (int i = 0; i < list.size(); i++) {
             if (ob.equals(cbo.getItemAt(i))) {
@@ -552,4 +502,69 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
         return false;
     }
 
+    public void fillButtonDichVu() {
+        panelBtnDV.removeAll();
+        int len = list.size();
+        for (int i = 0; i < len; i++) {
+            DichVu dichvu = list.get(i);
+            String tendv = dichvu.getTenDV();
+            JButton btns = new JButton();
+            btns.setText(tendv);
+
+            panelBtnDV.add(btns);
+        }
+        if (len == 0) {
+            JPanel panel = new JPanel(new BorderLayout());
+            JLabel lbl = new JLabel("Không có sản phẩm nào");
+            lbl.setForeground(new Color(31, 174, 255));
+            lbl.setHorizontalAlignment(SwingConstants.CENTER);
+            panel.add(lbl, BorderLayout.CENTER);
+            panelBtnDV.add(panel);
+        }
+        panelBtnDV.revalidate();
+        panelBtnDV.repaint();
+    }
+
+//    private void fillInfoCus() {
+//        
+//        lblTitle.setText("Chi Tiết Phòng"+ dp.getMaPhong());
+//        lblKH.setText(dp.getMaKH());
+//        lblCCCD.setText(text);
+//        lblChIn.setText(dp.getNgayDatPhong());
+//        lblChOut.setText(dp.getNgayTraPhong());
+//        lblDongiaPhong.setText(String.valueOf(p.getGiaTheoNgay()));
+//        lblSoDemO.setText(text);
+//        lblTienPhong.setText(Integer.parseInt());
+//    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        TenDVJDialog f = new TenDVJDialog(null, rootPaneCheckingEnabled);
+        f.setVisible(true);
+    }
+
+    void getTenDV(String tenDV) {
+
+    }
+
+    private void timKiemDichVu(String tenDichVu) {
+        List<DichVu> list = dao.selectNotInCourse(tenDichVu);
+        String tk = txtDVCT.getText();
+        ganButtons(list);
+    }
+
+    private void ganButtons(List<DichVu> list) {
+        for (int i = 0; i < list.size() - 1; i++) {
+            DichVu dichvu = list.get(i);
+            String tendv = dichvu.getTenDV();
+            JButton btns = new JButton();
+            panelBtnDV.add(btns);
+            btns.setText(tendv);
+        }
+    }
+
+    @Override
+    public Point getMousePosition() throws HeadlessException {
+        return super.getMousePosition(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
 }
