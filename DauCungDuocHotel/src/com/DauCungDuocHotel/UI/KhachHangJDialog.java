@@ -153,11 +153,6 @@ public class KhachHangJDialog extends javax.swing.JDialog {
         jLabel4.setText("Giới tính:");
 
         btnHuy.setText("Hủy");
-        btnHuy.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                btnHuyComponentAdded(evt);
-            }
-        });
         btnHuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHuyActionPerformed(evt);
@@ -333,10 +328,6 @@ public class KhachHangJDialog extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    private void btnHuyComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_btnHuyComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnHuyComponentAdded
-
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
         if(valid()){
@@ -347,6 +338,7 @@ public class KhachHangJDialog extends javax.swing.JDialog {
     private void btnLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuActionPerformed
         if(valid()){
             insert();
+            clear();
         }
     }//GEN-LAST:event_btnLuuActionPerformed
 
@@ -446,6 +438,16 @@ public class KhachHangJDialog extends javax.swing.JDialog {
                 MsgBox.alert(this, "Cập nhật thất bại!");
             }
         }
+    }
+    
+    void clear(){
+        txtMaKH.setText("");
+        txtCccd.setText("");
+        txtDiachi.setText("");
+        txtGhichu.setText("");
+        txtSdt.setText("");
+        txtTenKH.setText("");
+        txtTuoi.setText("");
     }
     
     boolean valid(){

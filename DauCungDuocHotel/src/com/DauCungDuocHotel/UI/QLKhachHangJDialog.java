@@ -251,6 +251,8 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_xoaActionPerformed
 
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
+        list.removeAll(list);
+        list.addAll(dao.selectAll());
         fillToTable();
     }//GEN-LAST:event_btnMoiActionPerformed
 
@@ -384,7 +386,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
             });
         }
     }
-
+    
     void cbo() {
         String ad = (String) cboDoTT.getSelectedItem();
         DefaultTableModel model1 = (DefaultTableModel) tblKhachHang.getModel();
