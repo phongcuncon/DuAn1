@@ -31,7 +31,6 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setTitle("QL Khách hàng");
-
         init();
     }
 
@@ -113,12 +112,6 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtTimKiemKeyReleased(evt);
-            }
-        });
-
-        cboDoTT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboDoTTActionPerformed(evt);
             }
         });
 
@@ -210,10 +203,6 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         timkiem();
     }//GEN-LAST:event_btnTimKiemActionPerformed
 
-    private void cboDoTTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDoTTActionPerformed
-      
-    }//GEN-LAST:event_cboDoTTActionPerformed
-
     private void tblKhachHangMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangMouseReleased
         if(evt.getButton()==MouseEvent.BUTTON3){
             if(evt.isPopupTrigger()&&tblKhachHang.getSelectedRowCount()!=0){
@@ -293,7 +282,11 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         cbo();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+    void ge(){
+        KhachHang kh= new KhachHang();
+        kh.getMaKH();
+    }
     /**
      * @param args the command line arguments
      */
