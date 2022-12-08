@@ -918,6 +918,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         PanelPhong3.setBackground(new java.awt.Color(204, 0, 51));
         PanelPhong3.setForeground(new java.awt.Color(255, 204, 51));
+        PanelPhong3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PanelPhong3MouseClicked(evt);
+            }
+        });
 
         lblTenPhong3.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
         lblTenPhong3.setText("103");
@@ -1668,6 +1673,11 @@ public class MainJFrame extends javax.swing.JFrame {
         openCTP();
     }//GEN-LAST:event_PanelPhong2MouseClicked
 
+    private void PanelPhong3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelPhong3MouseClicked
+        // TODO add your handling code here:
+        openDatPhong();
+    }//GEN-LAST:event_PanelPhong3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1959,6 +1969,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void openCTP() {
         new ChiTietPhongJDialog(this, true).setVisible(true);
+    }
+
+    private void openDatPhong() {
+                new DatPhongJDialog(this, true).setVisible(true);
     }
 
 }

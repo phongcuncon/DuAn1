@@ -1327,6 +1327,9 @@
                       <Color blue="33" green="cc" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PanelPhong3MouseClicked"/>
+                  </Events>
 
                   <Layout>
                     <DimensionLayout dim="0">
