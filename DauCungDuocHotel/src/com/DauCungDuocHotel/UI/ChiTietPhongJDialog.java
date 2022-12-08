@@ -37,7 +37,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 	this.setLocationRelativeTo(null);
         
        
-        fillComboDV();
+//        fillComboDV();
         fillButtonDichVu();
 //        timKiemDichVu("");
 
@@ -513,19 +513,19 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 //        }
     
    
-        void fillComboDV() {
-        DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboLoaiDV.getModel();
-        tblmodel.removeAllElements();
-
-        for (DichVu dv : list) {
-
-            if (check(dv.getTenDV(), cboLoaiDV) == false) {
-                tblmodel.addElement(dv.getTenDV());
-                
-            }
-
-        }
-    }
+//        void fillComboDV() {
+//        DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboLoaiDV.getModel();
+//        tblmodel.removeAllElements();
+//
+//        for (DichVu dv : list) {
+//
+//            if (check(dv.getTenDV(), cboLoaiDV) == false) {
+//                tblmodel.addElement(dv.getTenDV());
+//                
+//            }
+//
+//        }
+//    }
 
         boolean check(Object ob, JComboBox cbo) {
         for (int i = 0; i < list.size(); i++) {

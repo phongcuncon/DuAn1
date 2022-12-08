@@ -57,6 +57,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         jLabel10 = new javax.swing.JLabel();
         btnTimKiem = new javax.swing.JButton();
         btnMoi = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         them.setText("Chỉnh sửa");
         them.setToolTipText("");
@@ -137,6 +138,13 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
             }
         });
 
+        jButton1.setText("Loc");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -152,7 +160,10 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cboDoTT, 0, 245, Short.MAX_VALUE)))
+                        .addComponent(cboDoTT, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addGap(0, 6, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -167,7 +178,8 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                     .addComponent(txtTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboDoTT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(btnTimKiem))
+                    .addComponent(btnTimKiem)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -199,7 +211,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnTimKiemActionPerformed
 
     private void cboDoTTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDoTTActionPerformed
-        cbo();
+      
     }//GEN-LAST:event_cboDoTTActionPerformed
 
     private void tblKhachHangMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhachHangMouseReleased
@@ -278,6 +290,10 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtTimKiemKeyReleased
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        cbo();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -333,6 +349,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnTimKiem;
     private javax.swing.JComboBox<String> cboDoTT;
     private javax.swing.JMenuItem datphong;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

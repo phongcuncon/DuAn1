@@ -39,7 +39,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         initComponents();
 	fillTableDichVu();
 	fillTableDoanhThu();
-	
+	this.setLocationRelativeTo(null);
 	
 
     }

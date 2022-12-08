@@ -250,6 +250,12 @@ public class QuanLyKhoJDialog extends javax.swing.JDialog {
             }
         });
 
+        cbo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -410,6 +416,10 @@ public class QuanLyKhoJDialog extends javax.swing.JDialog {
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
       TimKiem();
     }//GEN-LAST:event_btnTimKiemActionPerformed
+
+    private void cboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboActionPerformed
 
     /**
      * @param args the command line arguments

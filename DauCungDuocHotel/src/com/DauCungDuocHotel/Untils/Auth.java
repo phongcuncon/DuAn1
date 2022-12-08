@@ -25,6 +25,6 @@ public class Auth {
 
     public static boolean isManager() {
 	
-        return Auth.isLogin() && user.getChucDanh() == "Quan Li";
+        return Auth.isLogin() && user.getChucDanh().equalsIgnoreCase("Quản lí");
     }
 }

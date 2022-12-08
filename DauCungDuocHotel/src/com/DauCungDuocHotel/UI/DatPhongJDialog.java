@@ -21,7 +21,10 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.UIManager;
-
+import static com.DauCungDuocHotel.Untils.JdbcHelper.sp_dp;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Nguyen Thanh Dat
@@ -70,12 +73,13 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         txtTenKH.setEnabled(false);
     }
     void insert(){
-        String mp= (String) cboMaP.getSelectedItem();
+      
         try{
             DatPhong dp= readForm();
             dao.insert(dp);
 //            List<Phong> list4= dao3.setTrangThaiDatPhong(mp);
             MsgBox.alert(this, "Đặt phòng thành công!");
+	    
             list.removeAll(list);
             list.addAll(dao.selectAll());
         }catch(Exception e){
@@ -230,6 +234,11 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         jLabel9.setText("Dự kiến trả:");
 
         cboMaP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboMaP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboMaPActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 0, 0));
@@ -326,7 +335,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCheckin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 35, Short.MAX_VALUE))
@@ -349,6 +358,11 @@ public class DatPhongJDialog extends javax.swing.JDialog {
     private void btnCheckinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckinActionPerformed
         if (valid()) {
             insert();
+	    try {
+		sp_dp();
+	    } catch (SQLException ex) {
+		Logger.getLogger(DatPhongJDialog.class.getName()).log(Level.SEVERE, null, ex);
+	    }
         }
         getTime();
     }//GEN-LAST:event_btnCheckinActionPerformed
@@ -356,6 +370,10 @@ public class DatPhongJDialog extends javax.swing.JDialog {
     private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnHuyActionPerformed
+
+    private void cboMaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMaPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboMaPActionPerformed
 
     /**
      * @param args the command line arguments
