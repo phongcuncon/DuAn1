@@ -57,8 +57,9 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Thanh Toán");
         jLabel12.setOpaque(true);
 
@@ -70,9 +71,11 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thẻ Ngân Hàng", "Tiền Mặt" }));
 
-        jLabel15.setText("Phụ Thu Check In");
+        jLabel15.setText("Phụ Thu");
 
         txtPhuThuCheckIn.setFont(new java.awt.Font("Hiragino Sans CNS", 1, 15)); // NOI18N
+        txtPhuThuCheckIn.setText("50000");
+        txtPhuThuCheckIn.setEnabled(false);
 
         jLabel16.setText("Thẻ Ngân Hàng");
 
@@ -87,10 +90,14 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
         jLabel19.setText("Tiền Đặt Cọc");
 
         txtPhuThuCheckOut.setFont(new java.awt.Font("Hiragino Sans CNS", 1, 15)); // NOI18N
+        txtPhuThuCheckOut.setText("5%");
+        txtPhuThuCheckOut.setEnabled(false);
 
-        jLabel20.setText("Phụ Thu Check Out");
+        jLabel20.setText("Thuế");
 
         txtTienDatCoc.setFont(new java.awt.Font("Hiragino Sans CNS", 1, 15)); // NOI18N
+        txtTienDatCoc.setText("100000");
+        txtTienDatCoc.setEnabled(false);
 
         txtGhiChu.setColumns(20);
         txtGhiChu.setRows(5);
@@ -100,6 +107,7 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
 
         jLabel21.setText("Ghi Chú");
 
+        btnPrintHD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnPrintHD.setText("in");
 
         jLabel1.setFont(new java.awt.Font("Hiragino Sans GB", 1, 16)); // NOI18N
@@ -153,9 +161,9 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPrintHD))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(btnPrintHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
