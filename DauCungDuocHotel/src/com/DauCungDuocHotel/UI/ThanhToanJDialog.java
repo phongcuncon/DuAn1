@@ -53,7 +53,7 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(239, 245, 245));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
@@ -103,12 +103,20 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
         txtGhiChu.setRows(5);
         jScrollPane4.setViewportView(txtGhiChu);
 
+        btnThanhToan.setBackground(new java.awt.Color(14, 94, 111));
+        btnThanhToan.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        btnThanhToan.setForeground(new java.awt.Color(239, 154, 83));
         btnThanhToan.setText("Thanh Toán");
 
         jLabel21.setText("Ghi Chú");
 
         btnPrintHD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnPrintHD.setText("in");
+        btnPrintHD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintHDActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Hiragino Sans GB", 1, 16)); // NOI18N
         jLabel1.setText("1000");
@@ -228,6 +236,10 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPrintHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintHDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPrintHDActionPerformed
 
     /**
      * @param args the command line arguments

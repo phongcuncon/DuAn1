@@ -737,7 +737,7 @@ public class QLNhanVienJDialog extends javax.swing.JDialog {
 	    nv.setGioiTinh(false);
 	}
 	nv.setCCCD(txtcccd.getText());
-	nv.setSdt(txtmk.getText());
+	nv.setSdt(txtsdt1.getText());
 	nv.setEmail(txtemail.getText());
 	nv.setDiaChi(diachi.getText());
         nv.setMaNV(txtManv.getText());

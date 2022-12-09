@@ -817,7 +817,7 @@ public class MainJFrame extends javax.swing.JFrame {
         PanelTang4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tầng 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Helvetica Neue", 1, 16), new java.awt.Color(255, 51, 102))); // NOI18N
         PanelTang4.setLayout(new java.awt.GridLayout(2, 0, 3, 5));
 
-        PanelPhong1.setBackground(new java.awt.Color(255, 0, 0));
+        PanelPhong1.setBackground(new java.awt.Color(204, 0, 51));
         PanelPhong1.setForeground(new java.awt.Color(255, 204, 51));
         PanelPhong1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
