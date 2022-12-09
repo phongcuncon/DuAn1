@@ -65,13 +65,13 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="PanelMenu1" min="-2" pref="255" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="960" max="32767" attributes="0"/>
+                  <Component id="PanelMenu1" min="-2" pref="226" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="989" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
-                      <Component id="PanelMain1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="230" max="32767" attributes="0"/>
+                      <Component id="PanelMain1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -106,13 +106,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="PanelDanhSachPhong1" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="PanelTang4" pref="934" max="32767" attributes="0"/>
+                              <Component id="PanelTang4" pref="967" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="PanelChuThich1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
                   </Group>
@@ -286,7 +286,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="lblTrangThai13" pref="138" max="32767" attributes="0"/>
+                                          <Component id="lblTrangThai13" pref="144" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -357,7 +357,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="lblTrangThai14" pref="138" max="32767" attributes="0"/>
+                                          <Component id="lblTrangThai14" pref="144" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -428,7 +428,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="lblTrangThai15" pref="138" max="32767" attributes="0"/>
+                                          <Component id="lblTrangThai15" pref="144" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -501,7 +501,7 @@
                                       <Component id="lblTenPhong16" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblLoaiPhong16" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="86" max="32767" attributes="0"/>
+                                  <EmptySpace pref="95" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -584,7 +584,7 @@
                                           <Component id="lblTrangThai17" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="71" max="32767" attributes="0"/>
+                                  <EmptySpace pref="78" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -647,7 +647,7 @@
                                       <Component id="lblTenPhong18" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblLoaiPhong18" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="86" max="32767" attributes="0"/>
+                                  <EmptySpace pref="95" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -730,7 +730,7 @@
                                           <Component id="lblTrangThai19" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="70" max="32767" attributes="0"/>
+                                  <EmptySpace pref="77" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -801,7 +801,7 @@
                                           <Component id="lblTrangThai20" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="67" max="32767" attributes="0"/>
+                                  <EmptySpace pref="74" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -864,7 +864,7 @@
                                       <Component id="lblTenPhong21" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblLoaiPhong21" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="86" max="32767" attributes="0"/>
+                                  <EmptySpace pref="95" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -939,7 +939,7 @@
                                       <Component id="lblTenPhong22" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblLoaiPhong22" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="86" max="32767" attributes="0"/>
+                                  <EmptySpace pref="95" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -1014,7 +1014,7 @@
                                       <Component id="lblTenPhong23" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblLoaiPhong23" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="86" max="32767" attributes="0"/>
+                                  <EmptySpace pref="95" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -1087,7 +1087,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="lblTrangThai24" pref="138" max="32767" attributes="0"/>
+                                          <Component id="lblTrangThai24" pref="144" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -1188,7 +1188,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblTrangThai1" pref="139" max="32767" attributes="0"/>
+                                      <Component id="lblTrangThai1" pref="145" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -1263,7 +1263,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblTrangThai2" pref="139" max="32767" attributes="0"/>
+                                      <Component id="lblTrangThai2" pref="145" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -1338,12 +1338,12 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblTrangThai3" pref="139" max="32767" attributes="0"/>
+                                      <Component id="lblTrangThai3" pref="145" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="lblTenPhong3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="121" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="127" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1412,7 +1412,7 @@
                                   <Component id="lblTenPhong4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblLoaiPhong4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="87" max="32767" attributes="0"/>
+                              <EmptySpace pref="96" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -1495,7 +1495,7 @@
                                       <Component id="lblTrangThai5" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="76" max="32767" attributes="0"/>
+                              <EmptySpace pref="83" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1558,7 +1558,7 @@
                                   <Component id="lblTenPhong6" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblLoaiPhong6" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="87" max="32767" attributes="0"/>
+                              <EmptySpace pref="96" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -1633,7 +1633,7 @@
                                   <Component id="lblTenPhong7" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblLoaiPhong7" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="87" max="32767" attributes="0"/>
+                              <EmptySpace pref="96" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -1708,7 +1708,7 @@
                                   <Component id="lblTenPhong8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblLoaiPhong8" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="87" max="32767" attributes="0"/>
+                              <EmptySpace pref="96" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
@@ -1776,7 +1776,7 @@
                                   <Component id="lblTenPhong9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblLoaiPhong9" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="87" max="32767" attributes="0"/>
+                              <EmptySpace pref="96" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -1851,7 +1851,7 @@
                                   <Component id="lblTenPhong10" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblLoaiPhong10" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="87" max="32767" attributes="0"/>
+                              <EmptySpace pref="96" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -1926,7 +1926,7 @@
                                   <Component id="lblTenPhong11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblLoaiPhong11" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="87" max="32767" attributes="0"/>
+                              <EmptySpace pref="96" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -1999,7 +1999,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblTrangThai12" pref="139" max="32767" attributes="0"/>
+                                      <Component id="lblTrangThai12" pref="145" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -2105,7 +2105,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel2" pref="77" max="32767" attributes="0"/>
+                      <Component id="jLabel2" pref="102" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnDichVu1" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>

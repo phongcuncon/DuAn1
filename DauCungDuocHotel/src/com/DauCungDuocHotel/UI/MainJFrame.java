@@ -20,7 +20,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.UIManager;
@@ -280,7 +282,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelPhong13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong13Layout.createSequentialGroup()
-                        .addComponent(lblTrangThai13, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                        .addComponent(lblTrangThai13, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(PanelPhong13Layout.createSequentialGroup()
                         .addGroup(PanelPhong13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,7 +325,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelPhong14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong14Layout.createSequentialGroup()
-                        .addComponent(lblTrangThai14, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                        .addComponent(lblTrangThai14, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(PanelPhong14Layout.createSequentialGroup()
                         .addGroup(PanelPhong14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +368,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelPhong15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong15Layout.createSequentialGroup()
-                        .addComponent(lblTrangThai15, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                        .addComponent(lblTrangThai15, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(PanelPhong15Layout.createSequentialGroup()
                         .addGroup(PanelPhong15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,7 +412,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong16)
                     .addComponent(lblLoaiPhong16))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(PanelPhong16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong16Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -461,7 +463,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addGroup(PanelPhong17Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(lblTrangThai17)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
         PanelPhong17Layout.setVerticalGroup(
             PanelPhong17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -499,7 +501,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong18)
                     .addComponent(lblLoaiPhong18))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(PanelPhong18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong18Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -550,7 +552,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addGroup(PanelPhong19Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(lblTrangThai19)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         PanelPhong19Layout.setVerticalGroup(
             PanelPhong19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -593,7 +595,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addGroup(PanelPhong20Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(lblTrangThai20)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         PanelPhong20Layout.setVerticalGroup(
             PanelPhong20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -631,7 +633,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong21)
                     .addComponent(lblLoaiPhong21))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(PanelPhong21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong21Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -677,7 +679,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong22)
                     .addComponent(lblLoaiPhong22))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(PanelPhong22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong22Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -723,7 +725,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong23)
                     .addComponent(lblLoaiPhong23))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(PanelPhong23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong23Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -768,7 +770,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelPhong24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong24Layout.createSequentialGroup()
-                        .addComponent(lblTrangThai24, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                        .addComponent(lblTrangThai24, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(PanelPhong24Layout.createSequentialGroup()
                         .addGroup(PanelPhong24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -844,7 +846,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelPhong1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong1Layout.createSequentialGroup()
-                        .addComponent(lblTrangThai1, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                        .addComponent(lblTrangThai1, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(PanelPhong1Layout.createSequentialGroup()
                         .addComponent(lblTenPhong1)
@@ -893,7 +895,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelPhong2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong2Layout.createSequentialGroup()
-                        .addComponent(lblTrangThai2, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                        .addComponent(lblTrangThai2, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(PanelPhong2Layout.createSequentialGroup()
                         .addComponent(lblTenPhong2)
@@ -942,11 +944,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelPhong3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong3Layout.createSequentialGroup()
-                        .addComponent(lblTrangThai3, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                        .addComponent(lblTrangThai3, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(PanelPhong3Layout.createSequentialGroup()
                         .addComponent(lblTenPhong3)
-                        .addGap(0, 121, Short.MAX_VALUE))))
+                        .addGap(0, 127, Short.MAX_VALUE))))
             .addGroup(PanelPhong3Layout.createSequentialGroup()
                 .addComponent(lblLoaiPhong3)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -987,7 +989,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong4)
                     .addComponent(lblLoaiPhong4))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
             .addGroup(PanelPhong4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong4Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1038,7 +1040,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addGroup(PanelPhong5Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(lblTrangThai5)))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         PanelPhong5Layout.setVerticalGroup(
             PanelPhong5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1076,7 +1078,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong6)
                     .addComponent(lblLoaiPhong6))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
             .addGroup(PanelPhong6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong6Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1122,7 +1124,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong7)
                     .addComponent(lblLoaiPhong7))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
             .addGroup(PanelPhong7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong7Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1168,7 +1170,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong8)
                     .addComponent(lblLoaiPhong8))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTrangThai8)
@@ -1210,7 +1212,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong9)
                     .addComponent(lblLoaiPhong9))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
             .addGroup(PanelPhong9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong9Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1256,7 +1258,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong10)
                     .addComponent(lblLoaiPhong10))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
             .addGroup(PanelPhong10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong10Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1302,7 +1304,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelPhong11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTenPhong11)
                     .addComponent(lblLoaiPhong11))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
             .addGroup(PanelPhong11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelPhong11Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1347,7 +1349,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelPhong12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPhong12Layout.createSequentialGroup()
-                        .addComponent(lblTrangThai12, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                        .addComponent(lblTrangThai12, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(PanelPhong12Layout.createSequentialGroup()
                         .addGroup(PanelPhong12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1378,10 +1380,10 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(PanelMain1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelDanhSachPhong1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelMain1Layout.createSequentialGroup()
-                        .addComponent(PanelTang4, javax.swing.GroupLayout.DEFAULT_SIZE, 934, Short.MAX_VALUE)
+                        .addComponent(PanelTang4, javax.swing.GroupLayout.DEFAULT_SIZE, 967, Short.MAX_VALUE)
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMain1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(PanelChuThich1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(205, 205, 205))
         );
@@ -1554,7 +1556,7 @@ public class MainJFrame extends javax.swing.JFrame {
         PanelMenu1Layout.setVerticalGroup(
             PanelMenu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMenu1Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDichVu1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1584,12 +1586,12 @@ public class MainJFrame extends javax.swing.JFrame {
         kGradientPanel2Layout.setHorizontalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                .addComponent(PanelMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 960, Short.MAX_VALUE))
+                .addComponent(PanelMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 989, Short.MAX_VALUE))
             .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                    .addGap(263, 263, 263)
-                    .addComponent(PanelMain1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
+                    .addContainerGap(230, Short.MAX_VALUE)
+                    .addComponent(PanelMain1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
         kGradientPanel2Layout.setVerticalGroup(
@@ -1750,7 +1752,96 @@ public class MainJFrame extends javax.swing.JFrame {
             } else {
                 phong[i].setBackground(Color.decode("#F8F988"));
             }
+	    if (list.get(i).getTrangThai().equals("Đã có người")) {
+		
+		phong[i].addMouseListener(new PopClickListener());
+	    } else {
+		
+		phong[i].addMouseListener(new PopClickListener1());
+		
+	    }
         }
+    }
+     class showDaCoNguoi extends JPopupMenu {
+
+	JMenuItem anItem;
+	JMenuItem aItem;
+
+	public showDaCoNguoi() {
+	    anItem = new JMenuItem("Xem Chi Tiet Phong");
+	    aItem = new JMenuItem("Sua");
+	    add(anItem);
+	    add(aItem);
+	    anItem.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		    ChiTietPhongJDialog ct = new ChiTietPhongJDialog(null, rootPaneCheckingEnabled);
+		 
+		    ct.setVisible(rootPaneCheckingEnabled);
+		}
+	    });
+	}
+    }
+     class showKhongCoNguoi extends JPopupMenu {
+
+	JMenuItem anItem;
+	JMenuItem aItem;
+
+	public showKhongCoNguoi() {
+	    anItem = new JMenuItem("Dat Phong");
+	    aItem = new JMenuItem("Sua");
+	    add(anItem);
+	    add(aItem);
+	    anItem.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		   DatPhongJDialog dp = new DatPhongJDialog(null,rootPaneCheckingEnabled);
+		   dp.setVisible(true);
+		   
+		}
+	    });
+	}
+    }
+
+    class PopClickListener extends MouseAdapter {
+
+	public void mousePressed(MouseEvent e) {
+	    if (e.isPopupTrigger()) {
+		doPop(e);
+	    }
+	}
+
+	public void mouseReleased(MouseEvent e) {
+	    if (e.isPopupTrigger()) {
+		doPop(e);
+	    }
+	}
+
+	private void doPop(MouseEvent e) {
+	    showDaCoNguoi menu = new showDaCoNguoi();
+	    menu.show(e.getComponent(), e.getX(), e.getY());
+	}
+    }
+
+    class PopClickListener1 extends MouseAdapter {
+
+	public void mousePressed(MouseEvent e) {
+	    if (e.isPopupTrigger()) {
+		doPop(e);
+	    }
+	}
+
+	public void mouseReleased(MouseEvent e) {
+	    if (e.isPopupTrigger()) {
+		doPop(e);
+	    }
+	}
+
+	private void doPop(MouseEvent e) {
+	    showKhongCoNguoi menu = new showKhongCoNguoi();
+	    menu.show(e.getComponent(), e.getX(), e.getY());
+	    DatPhongJDialog ct = new DatPhongJDialog(null, rootPaneCheckingEnabled);
+	}
     }
 
     void setUser() {
