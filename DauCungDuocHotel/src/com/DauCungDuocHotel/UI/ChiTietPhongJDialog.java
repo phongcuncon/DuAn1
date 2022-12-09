@@ -11,7 +11,7 @@ import com.DauCungDuocHotel.Entity.DatPhong;
 import com.DauCungDuocHotel.Entity.DichVu;
 import com.DauCungDuocHotel.Entity.HoaDon;
 import com.DauCungDuocHotel.Entity.Phong;
-import com.DauCungDuocHotel.Untils.MsgBox;
+import com.DauCungDuocHotel.Untils.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -21,6 +21,7 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.util.HashMap;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -29,6 +30,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -489,7 +491,14 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     
     private static Phong p;
     
-
+    private DefaultTableModel modelHoaDon = new DefaultTableModel() {
+		@Override
+		public boolean isCellEditable(int row, int column) {
+			return column==2;
+		}
+	};
+    
+    private HashMap<Object[],Integer> listHD = new HashMap<Object[],Integer>();
     int index = -1;
     JButton btn;
 
@@ -510,12 +519,12 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
             String tendv = dichvu.getTenDV();
             JButton btns = new JButton();
             btns.setText(tendv);
-
+            btns.addActionListener(actionButtonAdd(Object[] product));
             panelBtnDV.add(btns);
         }
         if (len == 0) {
             JPanel panel = new JPanel(new BorderLayout());
-            JLabel lbl = new JLabel("Không có sản phẩm nào");
+            JLabel lbl = new JLabel("Không có dịch vụ nào");
             lbl.setForeground(new Color(31, 174, 255));
             lbl.setHorizontalAlignment(SwingConstants.CENTER);
             panel.add(lbl, BorderLayout.CENTER);
@@ -536,16 +545,32 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 //        lblSoDemO.setText(text);
 //        lblTienPhong.setText(Integer.parseInt());
 //    }
+    
+     private ActionListener actionButtonAdd(Object[] product) {
+			ActionListener action = (e) -> {
+				if(listHD.containsKey(product)) {
+					listHD.put(product,listHD.get(product)+1);
+				}else {
+					listHD.put(product,1);
+				}
+				fillHD();
+//				sumCurrency();
+//				displayTotal();
+			};
+			return action;
+	};
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        TenDVJDialog f = new TenDVJDialog(null, rootPaneCheckingEnabled);
-        f.setVisible(true);
-    }
-
-    void getTenDV(String tenDV) {
-
-    }
+	private void fillHD() {
+		modelHoaDon.setRowCount(0);
+		listHD.forEach((product,amount) -> {
+			modelHoaDon.addRow(new Object[] {
+					product[2],
+					CurrencyUtil.format(Integer.parseInt(product[7]+"")),
+					amount,
+					CurrencyUtil.format(amount*Integer.parseInt(product[7]+""))
+			});
+		});
+	}
 
     private void timKiemDichVu(String tenDichVu) {
         List<DichVu> list = dao.selectNotInCourse(tenDichVu);
