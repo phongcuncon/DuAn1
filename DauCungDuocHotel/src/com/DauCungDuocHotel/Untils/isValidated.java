@@ -24,7 +24,7 @@ public class isValidated {
     public static boolean required(String value, String msg) {
         boolean isSuccess = true;
         if (value.trim().equals("")) {
-            Alert.error(msg);
+//            MsgBox.error();
             isSuccess = false;
         }
         return isSuccess;
@@ -33,7 +33,7 @@ public class isValidated {
     public static boolean requiredImage(File file, String msg) {
         boolean isSuccess = true;
         if (file == null) {
-            Alert.error(msg);
+//            Alert.error(msg);
             isSuccess = false;
         }
         return isSuccess;
@@ -42,7 +42,7 @@ public class isValidated {
     public static boolean validateImage(String value, String msg) {
         boolean isSuccess = true;
         if (!value.matches("(.*)*.+\\.(png|jpg|gif|bmp|jpeg|PNG|JPG|GIF|BMP|JPEG)$")) {
-            Alert.error(msg);
+//            Alert.error(msg);
             isSuccess = false;
         }
         return isSuccess;
@@ -53,7 +53,7 @@ public class isValidated {
             double n = Double.parseDouble(value);
             return true;
         } catch (Exception e) {
-            Alert.error(msg);
+//            Alert.error(msg);
             return false;
         }
     }
@@ -61,7 +61,7 @@ public class isValidated {
     public static boolean equalToOrGreaterThanZero(double value, String msg) {
         boolean isSuccess = true;
         if (value < 0) {
-            Alert.error(msg);
+//            Alert.error(msg);
             isSuccess = false;
         }
         return isSuccess;
@@ -70,7 +70,7 @@ public class isValidated {
     public static boolean equalString(String value1, String value2, String msg) {
         boolean isSuccess = true;
         if (!value1.equals(value2)) {
-            Alert.error(msg);
+//            Alert.error(msg);
             isSuccess = false;
         }
         return isSuccess;
@@ -79,7 +79,7 @@ public class isValidated {
     public static boolean validateDate(String value, String msg) {
         boolean isSuccess = true;
         if (!value.matches("[0-9]{2}[/]{1}[0-9]{2}[/]{1}[0-9]{4}")) {
-            Alert.error(msg);
+//            Alert.error(msg);
             isSuccess = false;
         }
         return isSuccess;
@@ -89,7 +89,7 @@ public class isValidated {
         boolean isSuccess = true;
         String pattern = "\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}";
         if (!value.matches(pattern)) {
-            Alert.error(msg);
+//            Alert.error(msg);
             isSuccess = false;
         }
         return isSuccess;
@@ -98,7 +98,7 @@ public class isValidated {
     public static boolean validateMinMax(double value, double min, double max, String msg) {
         boolean isSuccess = true;
         if (value < min || value > max) {
-            Alert.error(msg);
+//            Alert.error(msg);
             isSuccess = false;
         }
         return isSuccess;
@@ -110,28 +110,10 @@ public class isValidated {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(value);
         boolean isSuccess = true;
         if (!matcher.find()) {
-            Alert.error(msg);
+//            Alert.error(msg);
             isSuccess = false;
         }
         return isSuccess;
     }
-//
-//    public static boolean checkDuplicateProduct(String msp, String msg) {
-//        boolean isSuccess = true;
-//        SanPhamDAO spDAO = new SanPhamDAO();
-//        if (spDAO.selectById(msp) != null) {
-//            Alert.error(msg);
-//            isSuccess = false;
-//        }
-//        return isSuccess;
-//    }
-//    public static boolean checkDuplicateEmployee(String mnv, String msg) {
-//        boolean isSuccess = true;
-//        NhanVienDAO nvDAO = new NhanVienDAO();
-//        if (nvDAO.selectById(mnv) != null) {
-//            Alert.error(msg);
-//            isSuccess = false;
-//        }
-//        return isSuccess;
-//    }
+
 }

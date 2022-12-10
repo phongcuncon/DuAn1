@@ -6,6 +6,7 @@ package com.DauCungDuocHotel.UI;
 
 import com.DauCungDuocHotel.DAO.DichVuDAO;
 import com.DauCungDuocHotel.DAO.HoaDonDAO;
+import com.DauCungDuocHotel.Entity.ChiTietDichVu;
 import com.DauCungDuocHotel.Entity.ChiTietHoaDon;
 import com.DauCungDuocHotel.Entity.DatPhong;
 import com.DauCungDuocHotel.Entity.DichVu;
@@ -21,6 +22,7 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
@@ -482,23 +484,27 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 
     HoaDonDAO HDdao = new HoaDonDAO();
     List<HoaDon> list1 = HDdao.selectAll();
-    
+
+    private List<ChiTietDichVu> listDichVu = new ArrayList<>();
+    private List<Object[]> dv = new ArrayList<Object[]>();
+    private ActionListener action;
+
     private static HoaDon hoadon;
-    
+
     private static ChiTietHoaDon CThoadon;
-    
+
     private static DatPhong dp;
-    
+
     private static Phong p;
-    
+
     private DefaultTableModel modelHoaDon = new DefaultTableModel() {
-		@Override
-		public boolean isCellEditable(int row, int column) {
-			return column==2;
-		}
-	};
-    
-    private HashMap<Object[],Integer> listHD = new HashMap<Object[],Integer>();
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return column == 2;
+        }
+    };
+
+    private HashMap<Object[], Integer> listHD = new HashMap<Object[], Integer>();
     int index = -1;
     JButton btn;
 
@@ -519,7 +525,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
             String tendv = dichvu.getTenDV();
             JButton btns = new JButton();
             btns.setText(tendv);
-//            btns.addActionListener(actionButtonAdd(Object[] product));
+            btns.addActionListener(actionButtonAdd(action==null?null:action));
             panelBtnDV.add(btns);
         }
         if (len == 0) {
@@ -545,7 +551,16 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 //        lblSoDemO.setText(text);
 //        lblTienPhong.setText(Integer.parseInt());
 //    }
-    
+    private void fillTableDV() {
+        DefaultTableModel model = (DefaultTableModel) tblDV.getModel();
+        model.setRowCount(0);
+        for (ChiTietDichVu dv : listDichVu) {
+            model.addRow(dv.toRowOrder());
+        }
+    }
+
+ 
+
      private ActionListener actionButtonAdd(Object[] product) {
 			ActionListener action = (e) -> {
 				if(listHD.containsKey(product)) {
@@ -554,8 +569,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
 					listHD.put(product,1);
 				}
 				fillHD();
-//				sumCurrency();
-//				displayTotal();
+
 			};
 			return action;
 	};
@@ -589,12 +603,12 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     }
 
     @Override
-    public Point getMousePosition() throws HeadlessException {
+public Point getMousePosition() throws HeadlessException {
         return super.getMousePosition(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
