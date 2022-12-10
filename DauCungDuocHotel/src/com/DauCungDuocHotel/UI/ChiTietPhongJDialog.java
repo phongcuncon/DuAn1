@@ -519,7 +519,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
             String tendv = dichvu.getTenDV();
             JButton btns = new JButton();
             btns.setText(tendv);
-            btns.addActionListener(actionButtonAdd(Object[] product));
+//            btns.addActionListener(actionButtonAdd(Object[] product));
             panelBtnDV.add(btns);
         }
         if (len == 0) {
@@ -591,5 +591,10 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog implements ActionLi
     @Override
     public Point getMousePosition() throws HeadlessException {
         return super.getMousePosition(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
