@@ -12,15 +12,16 @@ import lombok.Data;
  */
 @Data
 public class ChiTietDichVu{
-    private String maDV,tenDV;
+    private String maDV,tenDV,maHD;
     private int soLuong,donGia;
 
     public ChiTietDichVu() {
     }
 
-    public ChiTietDichVu(String maDV, String tenDV, int soLuong, int donGia) {
+    public ChiTietDichVu(String maDV, String tenDV, String maHD, int soLuong, int donGia) {
         this.maDV = maDV;
         this.tenDV = tenDV;
+        this.maHD = maHD;
         this.soLuong = soLuong;
         this.donGia = donGia;
     }
@@ -41,6 +42,14 @@ public class ChiTietDichVu{
         this.tenDV = tenDV;
     }
 
+    public String getMaHD() {
+        return maHD;
+    }
+
+    public void setMaHD(String maHD) {
+        this.maHD = maHD;
+    }
+
     public int getSoLuong() {
         return soLuong;
     }
@@ -56,6 +65,7 @@ public class ChiTietDichVu{
     public void setDonGia(int donGia) {
         this.donGia = donGia;
     }
+
 
     
     public Object[] toRowOrder() {
