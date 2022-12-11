@@ -27,6 +27,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -35,6 +37,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.html.parser.Entity;
 
 /**
  *
@@ -51,7 +54,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         this.setLocationRelativeTo(null);
         fillButtonDichVu();
 //        timKiemDichVu("");
-//        fillInfoCus();
+        fillInfoCus();
 
     }
 
@@ -118,25 +121,31 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
         jLabel2.setText("Check Out Date: ");
 
+        lblChOut.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 1, 15)); // NOI18N
         lblChOut.setText("A");
 
         jLabel5.setText("Đơn giá (tính theo đêm) :");
 
         jLabel7.setText("Số đêm khách ở:");
 
+        lblDongiaPhong.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 1, 15)); // NOI18N
         lblDongiaPhong.setText("jLabel9");
 
+        lblSoDemO.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 1, 15)); // NOI18N
         lblSoDemO.setText("jLabel10");
 
         jLabel1.setText("Căn cước công dân:");
 
+        lblCCCD.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 1, 15)); // NOI18N
         lblCCCD.setText("A");
 
+        lblKH.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 1, 15)); // NOI18N
         lblKH.setText("A");
 
+        lblChIn.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 1, 15)); // NOI18N
         lblChIn.setText("A");
 
-        lblTienPhong.setFont(new java.awt.Font("Hiragino Sans GB", 1, 17)); // NOI18N
+        lblTienPhong.setFont(new java.awt.Font("KufiStandardGK", 1, 19)); // NOI18N
         lblTienPhong.setText("1000");
 
         lblTitle.setBackground(new java.awt.Color(214, 228, 229));
@@ -201,7 +210,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
                         .addComponent(txtDVCT, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 29, Short.MAX_VALUE)))
+                        .addGap(0, 88, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelDVLayout.setVerticalGroup(
@@ -242,30 +251,28 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblTienPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblTienPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblKH, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                                    .addComponent(lblCCCD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCCCD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblKH, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblChIn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel5))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblChOut)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel7)))
+                                    .addComponent(lblChIn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblChOut))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel7))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblSoDemO)
@@ -274,7 +281,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblChIn, lblChOut});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblCCCD, lblChIn, lblChOut, lblDongiaPhong, lblKH});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,24 +290,33 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExit))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblChIn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5)
-                        .addComponent(lblDongiaPhong))
-                    .addComponent(lblKH, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(lblCCCD)
-                    .addComponent(jLabel2)
-                    .addComponent(lblChOut)
-                    .addComponent(jLabel7)
-                    .addComponent(lblSoDemO))
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblKH, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(lblCCCD)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblChIn, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2)
+                                .addComponent(lblChOut)
+                                .addComponent(jLabel7)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(1, 1, 1)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                                .addComponent(lblDongiaPhong)))
+                        .addComponent(lblSoDemO, javax.swing.GroupLayout.Alignment.TRAILING)))
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTienPhong))
@@ -314,6 +330,8 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblCCCD, lblKH});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblChIn, lblChOut});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, jLabel3, jLabel5, jLabel6, jLabel7});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -483,6 +501,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
     DichVuDAO dao = new DichVuDAO();
     List<DichVu> list = dao.selectAll();
+    DichVu dv = new DichVu();
 
 //    HoaDonDAO HDdao = new HoaDonDAO();
 //    List<HoaDon> list1 = HDdao.selectAll();
@@ -524,11 +543,11 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         panelBtnDV.removeAll();
         int len = list.size();
         for (int i = 0; i < len; i++) {
-            DichVu dichvu = list.get(i);
-            String tendv = dichvu.getTenDV();
+            DichVu dv = list.get(i);
+            String tendv = dv.getTenDV();
             JButton btns = new JButton();
             btns.setText(tendv);
-//            btns.addActionListener(actionButtonAdd(list.get(index)));            
+//            btns.addActionListener(actionButtonAdd(list.get(i)));
             panelBtnDV.add(btns);
         }
         if (len == 0) {
@@ -578,24 +597,20 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         String searchValue = txtTim.getText();
         if (searchValue.equals(placeholder)) {
             searchValue = "";
-        }	//			ResultSet rs = JdbcHelper.query(query,"%"+searchValue+"%","%"+searchValue+"%");
-//			while (rs.next()) {
-//				Object[] product = new Object[]{
-//						rs.getString(1),   // MaDV
-//						rs.getString(2),   // TenDV
-//						rs.getString(3),   // DonGia
-//						rs.getString(4),    // GhiChu
-//						
-//				};
-//				products.add(product);
-//			}
-        for (DichVu dv : list) {
-            products.add(new Object[]{
-                dv.getMaDV(),
-                dv.getTenDV(),
-                dv.getGia(),
-                dv.getGhiChu()
-            });
+        }
+        try {
+            ResultSet rs = JdbcHelper.query(query, "%" + searchValue + "%", "%" + searchValue + "%");
+            while (rs.next()) {
+                Object[] product = new Object[]{
+                    rs.getString(1), // MaDV
+                    rs.getString(2), // TenDV
+                    rs.getString(3), // DonGia
+                    rs.getString(4), // GhiChu
+                };
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -615,19 +630,40 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
             btns.setText(tendv);
         }
     }
-    //    private void fillInfoCus() {
-//        String query = "select * from ChiTietPhong where MaDV like ? or TenDV like ?";
-//          String searchValue = btns.getText();
-//		try {
-//			ResultSet rs = JdbcHelper.query(query,"%"+searchValue+"%","%"+searchValue+"%");
-//        lblTitle.setText("Chi Tiết Phòng"+ dp.getMaPhong());
-//        lblKH.setText(dp.getMaKH());
-//        lblCCCD.setText(text);
-//        lblChIn.setText(dp.getNgayDatPhong());
-//        lblChOut.setText(dp.getNgayTraPhong());
-//        lblDongiaPhong.setText(String.valueOf(p.getGiaTheoNgay()));
-//        lblSoDemO.setText(text);
-//        lblTienPhong.setText(Integer.parseInt());
-//    }
+
+    private void fillInfoCus() {
+        products.clear();
+        String query = "select * from ChiTietDatPhong where MaPhong like 'P101'";
+        String searchValue = lblTitle.getText();
+        try {
+            ResultSet rs = JdbcHelper.query(query);
+            while (rs.next()) {
+                Object[] product = new Object[]{
+                    rs.getString(1), // MaDV
+                    rs.getString(2), // TenDV
+                    rs.getString(3), // DonGia
+                    rs.getString(4), // GhiChu
+                    rs.getString(5), // MaDV
+                    rs.getString(6), // TenDV
+                    rs.getString(7), // TenDV
+                    rs.getString(8), // DonGia
+                    rs.getString(9), // GhiChu
+                };
+                products.add(product);
+                lblTitle.setText("Chi Tiết Phòng " + rs.getString(2));
+                lblKH.setText(rs.getString(3));
+                lblCCCD.setText(rs.getString(4));
+                lblChIn.setText(rs.getString(5));
+                lblChOut.setText(rs.getString(6));
+                lblDongiaPhong.setText(rs.getString(7));
+                lblSoDemO.setText(rs.getString(8));
+                lblTienPhong.setText(rs.getString(9));
+            }
+
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+
+    }
 
 }
