@@ -1668,7 +1668,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void PanelPhong2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelPhong2MouseClicked
         // TODO add your handling code here:
-        openCTP();
+    
     }//GEN-LAST:event_PanelPhong2MouseClicked
 
     private void PanelPhong3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelPhong3MouseClicked
@@ -1748,11 +1748,9 @@ public class MainJFrame extends javax.swing.JFrame {
             } else {
                 phong[i].setBackground(Color.decode("#00FF00"));
             }
-	    if (list.get(i).getTrangThai().equals("Đã có người")) {
-		
-		phong[i].addMouseListener(new PopClickListener());
-	    } else {
-		
+	    if (list.get(i).getTrangThai().equals("Đã có người")) {	
+		phong[i].addMouseListener(new PopClickListener(list.get(i).getMaPhong()));
+	    } else {		
 		phong[i].addMouseListener(new PopClickListener1());
 		
 	    }
@@ -1762,8 +1760,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
 	JMenuItem anItem;
 	JMenuItem aItem;
-
-	public showDaCoNguoi() {
+	
+	public showDaCoNguoi(String MaPhong) {
+	    
 	    anItem = new JMenuItem("Xem Chi Tiet Phong");
 	    aItem = new JMenuItem("Sua");
 	    add(anItem);
@@ -1771,8 +1770,8 @@ public class MainJFrame extends javax.swing.JFrame {
 	    anItem.addActionListener(new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-		    ChiTietPhongJDialog ct = new ChiTietPhongJDialog(null, rootPaneCheckingEnabled);
-		 
+		    ChiTietPhongJDialog ct = new ChiTietPhongJDialog(null, rootPaneCheckingEnabled,MaPhong);
+		    
 		    ct.setVisible(rootPaneCheckingEnabled);
 		}
 	    });
@@ -1800,7 +1799,10 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     class PopClickListener extends MouseAdapter {
-
+	private String MaPhong;
+	public PopClickListener(String MaPhong){
+	    this.MaPhong = MaPhong;
+	}
 	public void mousePressed(MouseEvent e) {
 	    if (e.isPopupTrigger()) {
 		doPop(e);
@@ -1814,7 +1816,7 @@ public class MainJFrame extends javax.swing.JFrame {
 	}
 
 	private void doPop(MouseEvent e) {
-	    showDaCoNguoi menu = new showDaCoNguoi();
+	    showDaCoNguoi menu = new showDaCoNguoi(MaPhong);
 	    menu.show(e.getComponent(), e.getX(), e.getY());
 	}
     }
@@ -2054,9 +2056,7 @@ public class MainJFrame extends javax.swing.JFrame {
         new AboutJDialog(this, true).setVisible(true);
     }
 
-    private void openCTP() {
-        new ChiTietPhongJDialog(this, true).setVisible(true);
-    }
+   
 
     private void openDatPhong() {
                 new DatPhongJDialog(this, true).setVisible(true);

@@ -27,7 +27,6 @@ public class ThongKeDAO {
 		vals.setNgayXuat(rs.getDate("NgayXuat"));
 		vals.setMaHD(rs.getString("MaHD"));
 		vals.setDoanhThu(rs.getFloat("DoanhThu"));
-		vals.setMaNV(rs.getString("MaNV"));
 		vals.setPhong(rs.getString("Phong"));
 		vals.setTenKH(rs.getString("TenKH"));
 		list.add(vals);
