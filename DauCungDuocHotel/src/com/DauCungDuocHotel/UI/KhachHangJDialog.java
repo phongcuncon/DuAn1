@@ -32,6 +32,7 @@ public class KhachHangJDialog extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         hid();
         fillCombo();
+	btnSua.setEnabled(false);
     }
 
     /**
@@ -73,7 +74,6 @@ public class KhachHangJDialog extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnHuy = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
         btnSua = new javax.swing.JButton();
         btnLuu = new javax.swing.JButton();
 
@@ -159,15 +159,12 @@ public class KhachHangJDialog extends javax.swing.JDialog {
             }
         });
 
-        jPanel2.setLayout(new java.awt.CardLayout());
-
         btnSua.setText("Sửa");
         btnSua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSua, "card2");
 
         btnLuu.setText("Lưu");
         btnLuu.addActionListener(new java.awt.event.ActionListener() {
@@ -175,14 +172,13 @@ public class KhachHangJDialog extends javax.swing.JDialog {
                 btnLuuActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLuu, "card3");
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,8 +211,10 @@ public class KhachHangJDialog extends javax.swing.JDialog {
                                             .addComponent(lb1))))
                                 .addGap(64, 64, 64))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(23, 23, 23)))
+                                .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(btnLuu, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7)))
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
@@ -304,9 +302,10 @@ public class KhachHangJDialog extends javax.swing.JDialog {
                             .addComponent(txtGhichu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnHuy, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnHuy, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLuu, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33))))
         );
 
@@ -330,16 +329,22 @@ public class KhachHangJDialog extends javax.swing.JDialog {
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
-        if(valid()){
+     
+	    if(valid()){
             update();
+	    btnLuu.setEnabled(false);
         }
+       
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuActionPerformed
-        if(valid()){
+         // TODO add your handling code here:
+    
+	    if(valid()){
             insert();
-            clear();
+	    btnSua.setEnabled(false);
         }
+       
     }//GEN-LAST:event_btnLuuActionPerformed
 
     /**
@@ -401,14 +406,14 @@ public class KhachHangJDialog extends javax.swing.JDialog {
     }
     
     void status(){
-        btnLuu.setVisible(true);
-        btnSua.setVisible(false);
+        btnLuu.setEnabled(true);
+        btnSua.setEnabled(false);
     }
     
     void status1(){
         txtMaKH.setEditable(false);
-        btnLuu.setVisible(false);
-        btnSua.setVisible(true);
+        btnLuu.setEnabled(false);
+        btnSua.setEnabled(true);
     }
     
     void insert(){
@@ -544,7 +549,6 @@ public class KhachHangJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lb1;

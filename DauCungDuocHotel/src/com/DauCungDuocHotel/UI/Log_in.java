@@ -59,10 +59,15 @@ int c=0;
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 255, 255));
 
         psMk.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        psMk.setText("a");
+        psMk.setText("091203");
 
         txtTenDN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtTenDN.setText("nv002");
+        txtTenDN.setText("nv001");
+        txtTenDN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTenDNActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Tên đăng nhập:");
@@ -204,6 +209,10 @@ int c=0;
             psMk.setEchoChar('*');
         }
     }//GEN-LAST:event_ckbSPActionPerformed
+
+    private void txtTenDNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenDNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTenDNActionPerformed
 
     /**
      * @param args the command line arguments

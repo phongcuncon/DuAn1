@@ -32,6 +32,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         initComponents();
         this.setTitle("QL Khách hàng");
         init();
+	chinhsua.setText("Chinh Sua");
     }
 
     /**
@@ -45,7 +46,7 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
 
         btnGroupGioiTinhKH = new javax.swing.ButtonGroup();
         popUp = new javax.swing.JPopupMenu();
-        them = new javax.swing.JMenuItem();
+        chinhsua = new javax.swing.JMenuItem();
         xoa = new javax.swing.JMenuItem();
         datphong = new javax.swing.JMenuItem();
         jPanel2 = new javax.swing.JPanel();
@@ -57,15 +58,15 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
         btnTimKiem = new javax.swing.JButton();
         btnMoi = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
-        them.setText("Chỉnh sửa");
-        them.setToolTipText("");
-        them.addActionListener(new java.awt.event.ActionListener() {
+        chinhsua.setText("jMenuItem1");
+        chinhsua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                themActionPerformed(evt);
+                chinhsuaActionPerformed(evt);
             }
         });
-        popUp.add(them);
+        popUp.add(chinhsua);
 
         xoa.setText("Xóa");
         xoa.addActionListener(new java.awt.event.ActionListener() {
@@ -138,6 +139,13 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
             }
         });
 
+        jButton2.setText("Them");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -160,6 +168,8 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -176,7 +186,9 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(btnMoi, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMoi, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -222,16 +234,6 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
             f1.setVisible(true);
         }
     }//GEN-LAST:event_tblKhachHangMouseClicked
-
-    private void themActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themActionPerformed
-        KhachHangJDialog f1= new KhachHangJDialog(null, rootPaneCheckingEnabled);
-        index= tblKhachHang.getSelectedRow();
-        KhachHang kh = list.get(index);
-        f1.status();
-        f1.writeForm(kh);
-        fillToTable();
-        f1.setVisible(true);
-    }//GEN-LAST:event_themActionPerformed
 
     private void xoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaActionPerformed
         index= tblKhachHang.getSelectedRow();
@@ -284,6 +286,31 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         cbo();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       KhachHangJDialog f1= new KhachHangJDialog(null, rootPaneCheckingEnabled);
+        
+        f1.status();
+      
+        fillToTable();
+        f1.setVisible(true);
+	 list.removeAll(list);
+        list.addAll(dao.selectAll());
+        fillToTable();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void chinhsuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chinhsuaActionPerformed
+      KhachHangJDialog kh = new KhachHangJDialog(null, rootPaneCheckingEnabled);
+      index = tblKhachHang.getSelectedRow();
+      KhachHang khachhang = list.get(index);
+      kh.writeForm(khachhang);
+      kh.status1();
+      kh.setVisible(true);
+      fillToTable();
+       list.removeAll(list);
+        list.addAll(dao.selectAll());
+        fillToTable();
+    }//GEN-LAST:event_chinhsuaActionPerformed
     
     void ge(){
         KhachHang kh= new KhachHang();
@@ -343,14 +370,15 @@ public class QLKhachHangJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnMoi;
     private javax.swing.JButton btnTimKiem;
     private javax.swing.JComboBox<String> cboDoTT;
+    private javax.swing.JMenuItem chinhsua;
     private javax.swing.JMenuItem datphong;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu popUp;
     private javax.swing.JTable tblKhachHang;
-    private javax.swing.JMenuItem them;
     private javax.swing.JTextField txtTimKiem;
     private javax.swing.JMenuItem xoa;
     // End of variables declaration//GEN-END:variables

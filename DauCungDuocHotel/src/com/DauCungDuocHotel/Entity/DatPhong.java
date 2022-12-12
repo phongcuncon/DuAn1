@@ -11,19 +11,19 @@ import java.util.Date;
  * @author Admin
  */
 public class DatPhong {
-    String maDP, ghiChu, maKH, maLoaiPhong, maPhong;
+    String maDP, ghiChu, maKH, maPhong,maHD;
     Date ngayDatPhong, ngayTraPhong;
     Double datCoc;
 
     public DatPhong() {
     }
 
-    public DatPhong(String maDP, String ghiChu, String maKH, String maLoaiPhong, String maPhong, Date ngayDatPhong, Date ngayTraPhong, Double datCoc) {
+    public DatPhong(String maDP, String ghiChu, String maKH, String maPhong, String maHD, Date ngayDatPhong, Date ngayTraPhong, Double datCoc) {
 	this.maDP = maDP;
 	this.ghiChu = ghiChu;
 	this.maKH = maKH;
-	this.maLoaiPhong = maLoaiPhong;
 	this.maPhong = maPhong;
+	this.maHD = maHD;
 	this.ngayDatPhong = ngayDatPhong;
 	this.ngayTraPhong = ngayTraPhong;
 	this.datCoc = datCoc;
@@ -53,20 +53,20 @@ public class DatPhong {
 	this.maKH = maKH;
     }
 
-    public String getMaLoaiPhong() {
-	return maLoaiPhong;
-    }
-
-    public void setMaLoaiPhong(String maLoaiPhong) {
-	this.maLoaiPhong = maLoaiPhong;
-    }
-
     public String getMaPhong() {
 	return maPhong;
     }
 
     public void setMaPhong(String maPhong) {
 	this.maPhong = maPhong;
+    }
+
+    public String getMaHD() {
+	return maHD;
+    }
+
+    public void setMaHD(String maHD) {
+	this.maHD = maHD;
     }
 
     public Date getNgayDatPhong() {
@@ -92,6 +92,8 @@ public class DatPhong {
     public void setDatCoc(Double datCoc) {
 	this.datCoc = datCoc;
     }
+
+ 
     
     
 }

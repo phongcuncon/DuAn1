@@ -48,9 +48,9 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         initComponents();
         setTitle("Đặt phòng");
         setLocationRelativeTo(null);
-        fillCombo();
+      
         fillCombo1();
-	cboMaLP.setEnabled(false);
+	
     }
     
     DatPhong readForm(){
@@ -60,7 +60,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         dp.setNgayTraPhong(DayEnd.getDate());
         dp.setGhiChu(txtGhichu.getText());
         dp.setMaKH(txtMaKH.getText());
-        dp.setMaLoaiPhong((String) cboMaLP.getSelectedItem());
+     
         dp.setMaPhong((String) cboMaP.getSelectedItem());
         return dp;
     }
@@ -111,18 +111,6 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         }else return true;
     }
     
-    void fillCombo() {
-	DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboMaLP.getModel();
-	tblmodel.removeAllElements();
-
-	for (LoaiPhong lp : list2) {
-	    if (check(lp.getMaLoaiPhong(), cboMaLP) == false) {
-		tblmodel.addElement(lp.getMaLoaiPhong());
-	    } else {
-		return;
-	    }
-	}
-    }
     
     void fillCombo1() {
 	DefaultComboBoxModel tblmodel = (DefaultComboBoxModel) cboMaP.getModel();
@@ -167,10 +155,8 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         txtDatcoc = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         btnHuy = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        cboMaLP = new javax.swing.JComboBox<>();
         txtTenKH = new javax.swing.JTextField();
         DayEnd = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
@@ -212,9 +198,6 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Mã phòng:");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Mã loại phòng:");
-
         btnHuy.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnHuy.setText("Hủy");
         btnHuy.addActionListener(new java.awt.event.ActionListener() {
@@ -225,8 +208,6 @@ public class DatPhongJDialog extends javax.swing.JDialog {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Ghi chú:");
-
-        cboMaLP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Bắt đầu thuê:");
@@ -258,22 +239,18 @@ public class DatPhongJDialog extends javax.swing.JDialog {
                 .addGap(31, 31, 31)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnCheckin)
-                    .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                            .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2))
-                            .addGap(25, 25, 25)
+                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addGap(54, 54, 54)
+                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtTenKH)
                                 .addComponent(txtMaKH)
-                                .addComponent(cboMaLP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cboMaP, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                            .addGap(49, 49, 49)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(cboMaP, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
@@ -325,15 +302,11 @@ public class DatPhongJDialog extends javax.swing.JDialog {
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(cboMaLP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(cboMaP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,15 +346,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnHuyActionPerformed
 
     private void cboMaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMaPActionPerformed
-     String MaPhong = (String) cboMaP.getSelectedItem();
-      List<Phong> p = dao3.selectByKeyword(MaPhong);
-     for (int i = 0; i < p.size(); i++) {
-	    if(p.get(i).getMaLoaiPhong().equals("1")){
-		 cboMaLP.setSelectedIndex(0);
-	    }else{
-		 cboMaLP.setSelectedIndex(1);
-	}
-     }
+     
     }//GEN-LAST:event_cboMaPActionPerformed
 
     /**
@@ -439,9 +404,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnCheckin;
     private javax.swing.JButton btnHuy;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox<String> cboMaLP;
     private javax.swing.JComboBox<String> cboMaP;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

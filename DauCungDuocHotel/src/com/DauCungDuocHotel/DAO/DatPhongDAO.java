@@ -16,19 +16,19 @@ import java.util.List;
  * @author Admin
  */
 public class DatPhongDAO extends HotelDAO<DatPhong, String> {
-    String INSERT_SQL = "INSERT INTO DatPhong(NgayDatPhong, NgayTraPhong, DatCoc, GhiChu, MaKH, MaLoaiPhong, MaPhong)VALUES(?,?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE DatPhong SET NgayDatPhong = ?, NgayTraPhong = ?, DatCoc = ?, GhiChu = ?, MaKH = ?, MaLoaiPhong = ?, MaPhong = ? WHERE MaDP = ?";
+    String INSERT_SQL = "INSERT INTO DatPhong(NgayDatPhong, NgayTraPhong, DatCoc, GhiChu, MaKH, MaPhong)VALUES(?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE DatPhong SET NgayDatPhong = ?, NgayTraPhong = ?, DatCoc = ?, GhiChu = ?,MaHD = ?, MaKH = ?, MaPhong = ? WHERE MaDP = ?";
     String DELETE_SQL = "DELETE FROM DatPhong WHERE MaDP = ?";
     String SELECTALL_SQL = "SELECT * FROM DatPhong";
     String SELECT_BY_ID_SQL = "SELECT * FROM DatPhong WHERE MaDP = ?";
     @Override
     public void insert(DatPhong enity) {
-	JdbcHelper.update(INSERT_SQL, enity.getNgayDatPhong(), enity.getNgayTraPhong(), enity.getDatCoc(), enity.getGhiChu(), enity.getMaKH(), enity.getMaLoaiPhong(), enity.getMaPhong());
+	JdbcHelper.update(INSERT_SQL, enity.getNgayDatPhong(), enity.getNgayTraPhong(), enity.getDatCoc(), enity.getGhiChu(), enity.getMaKH(), enity.getMaPhong());
     }
 
     @Override
     public void Update(DatPhong enity) {
-	JdbcHelper.update(INSERT_SQL, enity.getNgayDatPhong(), enity.getNgayTraPhong(), enity.getDatCoc(), enity.getGhiChu(), enity.getMaKH(), enity.getMaLoaiPhong(), enity.getMaPhong(), enity.getMaDP());
+	JdbcHelper.update(INSERT_SQL, enity.getNgayDatPhong(), enity.getNgayTraPhong(), enity.getDatCoc(), enity.getGhiChu(), enity.getMaKH(), enity.getMaPhong(), enity.getMaDP());
     }
 
     @Override
@@ -63,7 +63,6 @@ public class DatPhongDAO extends HotelDAO<DatPhong, String> {
 		entity.setDatCoc(rs.getDouble("DatCoc"));
 		entity.setGhiChu(rs.getString("GhiChu"));
 		entity.setMaKH(rs.getString("MaKH"));
-		entity.setMaLoaiPhong(rs.getString("MaLoaiPhong"));
 		entity.setMaPhong(rs.getString("MaPhong"));
 		list.add(entity);
 	    }

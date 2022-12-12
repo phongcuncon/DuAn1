@@ -1744,9 +1744,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 loaiPhong[i].setText("VIP");
             }
             if (list.get(i).getTrangThai().equals("Đã có người")) {
-                phong[i].setBackground(Color.decode("#FF9E9E"));
+                phong[i].setBackground(Color.decode("#FF0000"));
             } else {
-                phong[i].setBackground(Color.decode("#F8F988"));
+                phong[i].setBackground(Color.decode("#00FF00"));
             }
 	    if (list.get(i).getTrangThai().equals("Đã có người")) {
 		

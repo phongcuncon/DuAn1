@@ -631,7 +631,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 //            
 //            System.out.println(modelHoaDon.getValueAt(1, 1));
 //        });
-        String query = "select * from DichVuTheoPhong where MaPhong like 'P105'";
+        String query = "select * from DichVuTheoPhong where MaPhong like 'P001'";
         String searchValue = txtTim.getText();
         if (searchValue.equals(placeholder)) {
             searchValue = "";
@@ -669,7 +669,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
     public void loadDV() {
         products.clear();
-        String query = "select * from DichVuTheoPhong where MaPhong like 'P202'";
+        String query = "select * from DichVuTheoPhong where MaPhong like 'P001'";
         String searchValue = txtTim.getText();
         if (searchValue.equals(placeholder)) {
             searchValue = "";
@@ -729,7 +729,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 // Hien thong tin khach hang va thong tin phong da duoc dat
     private void fillInfoCus() {
         products.clear();
-        String query = "select * from ChiTietDatPhong where MaPhong like 'P202'";
+        String query = "select * from ChiTietDatPhong where MaPhong like 'P001'";
         String searchValue = lblTitle.getText();
         try {
             ResultSet rs = JdbcHelper.query(query);
