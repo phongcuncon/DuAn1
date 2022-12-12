@@ -756,7 +756,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
                     listHD.put(product, amount);
                 }
                 fillTableDV();
-                sumCurrency();
+//                sumCurrency();
 //                displayTotal();
             }
         }
