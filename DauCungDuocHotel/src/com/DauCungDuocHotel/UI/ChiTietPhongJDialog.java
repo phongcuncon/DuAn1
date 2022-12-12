@@ -57,7 +57,8 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
-        fillButtonDichVu();
+        loadDV();
+        fillButtonDichVu(products);
 //        timKiemDichVu("");
         fillInfoCus();
         fillTableDV();
@@ -362,13 +363,13 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
     private void XoaDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XoaDichVuActionPerformed
         index = tblDV.getSelectedRow();
-        DichVu dv = list.get(index);
+        DichVu dv = listDV.get(index);
         String id = dv.getMaDV();
         if (MsgBox.confirm(this, "Bạn có muốn xóa dịch vụ này không?")) {
             try {
                 dao.delete(id);
-                list.removeAll(list);
-                list.addAll(dao.selectAll());
+                listDV.removeAll(listDV);
+                listDV.addAll(dao.selectAll());
                 MsgBox.alert(this, "Xóa thành công!");
 
             } catch (Exception e) {
@@ -456,6 +457,38 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -506,13 +539,13 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 //    List<HoaDon> list1 = HDdao.selectAll();
     private DichVuDAO dao = new DichVuDAO();
 
-    private List<DichVu> list = dao.selectAll();
+    private List<DichVu> listDV = dao.selectAll();
 
     private DichVu dv = new DichVu();
 
     private int sum = 0;
 
-    private List<ChiTietDichVu> listDichVu = new ArrayList<>();
+    private List<ChiTietDichVu> listCTDichVu = new ArrayList<>();
 
     private List<Object[]> products = new ArrayList<Object[]>();
 
@@ -542,7 +575,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     };
 
     boolean check(Object ob, JComboBox cbo) {
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < listDV.size(); i++) {
             if (ob.equals(cbo.getItemAt(i))) {
                 return true;
             }
@@ -557,12 +590,12 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         for (int i = 0; i < list.size() - 1; i++) {
             DichVu dichvu = list.get(i);
             String tendv = dichvu.getTenDV();
-            
+
             if (tendv.equals(txtTim.getText())) {
                 JButton btns = new JButton();
                 btns.setText(tendv);
                 panelBtnDV.add(btns);
-                return ;
+                return;
             } else {
                 panelBtnDV.removeAll();
                 JPanel panel = new JPanel(new BorderLayout());
@@ -590,22 +623,20 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     }
 
 // funtion hiện list dịch vụ
-    public void fillButtonDichVu() {
+    public void fillButtonDichVu(List<Object[]> list) {
         panelBtnDV.removeAll();
         int len = list.size();
         for (int i = 0; i < len; i++) {
-            DichVu dv = new DichVu();
-            dv = list.get(i);
-            String tendv = dv.getTenDV();
+            String tendv = listDV.get(i).getTenDV();
             JButton btns = new JButton();
             btns.setText(tendv);
-//            btns.addActionListener(actionButtonAdd());
+            btns.addActionListener(actionButtonAdd(list.get(i)));
             panelBtnDV.add(btns);
         }
         if (len == 0) {
             JPanel panel = new JPanel(new BorderLayout());
             JLabel lbl = new JLabel("Không có dịch vụ nào");
-            lbl.setForeground(new Color(31, 174, 255));
+            lbl.setForeground(new Color(204, 174, 255));
             lbl.setHorizontalAlignment(SwingConstants.CENTER);
             panel.add(lbl, BorderLayout.CENTER);
             panelBtnDV.add(panel);
@@ -616,41 +647,46 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
 // Hien thong tin chi tiet dich vu theo phong
     private void fillTableDV() {
-        products.clear();
-        modelHoaDon.setRowCount(0);
         modelHoaDon = (DefaultTableModel) tblDV.getModel();
+        modelHoaDon.setRowCount(0);
         modelHoaDon.addTableModelListener(new handleChangeAmount());
 
-//        listHD.forEach((product, amount) -> {
-//            modelHoaDon.addRow(new Object[]{
-//                product[1],
-//                CurrencyUtil.format(Integer.parseInt(product[2] + "")),
-//                amount,
+//        String query = "select * from DichVuTheoPhong where MaPhong like 'P202'";
+//        String searchValue = txtTim.getText();
+//        if (searchValue.equals(placeholder)) {
+//            searchValue = "";
+//        }
+//        try {
+//            ResultSet rs = JdbcHelper.query(query);
+//            while (rs.next()) {
+//                Object[] product = new Object[]{
+//                    rs.getString(1), // MaPhong
+//                    rs.getString(2), // TenDV
+//                    rs.getString(3), // SoLuong
+//                    rs.getString(4), // DonGia
+//                    rs.getString(5) // TongTienCuaMoiDichVu
+//                };
+//                products.add(product);
+//                
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+        listHD.forEach((product, amount) -> {
+            modelHoaDon.addRow(new Object[]{
+                product[1],
+                product[2]+"",
+//                CurrencyUtil.format(Integer.parseInt(product[2] + " ")),
+                amount,
+                product[3]
 //                CurrencyUtil.format(amount * Integer.parseInt(product[2] + ""))
+            });
+        });
 //            });
 //            
 //            System.out.println(modelHoaDon.getValueAt(1, 1));
 //        });
-        String query = "select * from DichVuTheoPhong where MaPhong like 'P001'";
-        String searchValue = txtTim.getText();
-        if (searchValue.equals(placeholder)) {
-            searchValue = "";
-        }
-        try {
-            ResultSet rs = JdbcHelper.query(query);
-            while (rs.next()) {
-                Object[] product = new Object[]{
-                    rs.getString(1), // MaPhong
-                    rs.getString(2), // TenDV
-                    rs.getString(3), // SoLuong
-                    rs.getString(4), // DonGia
-                    rs.getString(5) // TongTienCuaMoiDichVu
-                };
-                modelHoaDon.addRow(new Object[]{product[1],product[3],product[2],product[4]});
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        
 
     }
 
@@ -667,29 +703,38 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         return action;
     }
 
+//    public void loadDV() {
+//        products.clear();
+//        String query = "select * from DichVu";
+//        try {
+//            ResultSet rs = JdbcHelper.query(query);
+//            while (rs.next()) {
+//                Object[] product = new Object[]{
+//                    rs.getString(1), // MaDV
+//                    rs.getString(2), // TenDV
+//                    rs.getString(3), // SoLuong
+//                    rs.getString(4), // DonGia
+//                };
+//                products.add(product);
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//    }
     public void loadDV() {
         products.clear();
-        String query = "select * from DichVuTheoPhong where MaPhong like 'P001'";
-        String searchValue = txtTim.getText();
-        if (searchValue.equals(placeholder)) {
-            searchValue = "";
-        }
-        try {
-            ResultSet rs = JdbcHelper.query(query);
-            while (rs.next()) {
-                Object[] product = new Object[]{
-                    rs.getString(1), // MaPhong
-                    rs.getString(2), // TenDV
-                    rs.getString(3), // SoLuong
-                    rs.getString(4), // DonGia
-                    rs.getString(5) // TongTienCuaMoiDichVu
-                };
-                products.add(product);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        for (DichVu dv : listDV) {
+            Object[] product = new Object[]{
+                dv.getMaDV(),
+                dv.getTenDV(),
+                dv.getGia(),
+                dv.getGhiChu()
+            };
+            products.add(product);
+            System.out.println(product[0] + " " + product[1] + " " + product[2] + " " + product[3]);
 
+        }
     }
 
     public Object[] getKeyHDSelected(String tenSP) {
