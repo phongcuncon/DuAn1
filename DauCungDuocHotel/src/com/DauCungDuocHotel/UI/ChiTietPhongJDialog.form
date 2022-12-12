@@ -331,7 +331,7 @@
             <Component class="javax.swing.JTable" name="tblDV">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
+                  <Table columnCount="4" rowCount="0">
                     <Column editable="true" title="D&#x1ecb;ch v&#x1ee5;" type="java.lang.Object"/>
                     <Column editable="true" title="&#x110;&#x1a1;n gi&#xe1;" type="java.lang.Object"/>
                     <Column editable="true" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
@@ -438,10 +438,8 @@
               </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-                <Property name="columns" type="int" value="4"/>
-                <Property name="horizontalGap" type="int" value="10"/>
-                <Property name="rows" type="int" value="4"/>
-                <Property name="verticalGap" type="int" value="7"/>
+                <Property name="columns" type="int" value="2"/>
+                <Property name="rows" type="int" value="5"/>
               </Layout>
             </Container>
           </SubComponents>

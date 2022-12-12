@@ -27,6 +27,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -36,6 +39,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.html.parser.Entity;
 
@@ -55,6 +60,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         fillButtonDichVu();
 //        timKiemDichVu("");
         fillInfoCus();
+        fillTableDV();
 
     }
 
@@ -164,10 +170,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
         tblDV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Dịch vụ", "Đơn giá", "Số lượng", "Thành tiền"
@@ -196,7 +199,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         });
 
         panelBtnDV.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dịch vụ", javax.swing.border.TitledBorder.TRAILING, javax.swing.border.TitledBorder.TOP));
-        panelBtnDV.setLayout(new java.awt.GridLayout(4, 4, 10, 7));
+        panelBtnDV.setLayout(new java.awt.GridLayout(5, 2));
 
         javax.swing.GroupLayout panelDVLayout = new javax.swing.GroupLayout(panelDV);
         panelDV.setLayout(panelDVLayout);
@@ -375,12 +378,12 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_XoaDichVuActionPerformed
 
     private void txtTimKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKeyReleased
-        //        timKiemDichVu();
+        timKiemDichVu(txtTim.getText());
     }//GEN-LAST:event_txtTimKeyReleased
 
     private void txtTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimActionPerformed
         // TODO add your handling code here:
-//        timKiemDichVu(tenDichVu);
+//        timKiemDichVu(txtTim.getText());
     }//GEN-LAST:event_txtTimActionPerformed
 
     private void tblDVMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDVMouseReleased
@@ -499,15 +502,22 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     private javax.swing.JTextField txtTim;
     // End of variables declaration//GEN-END:variables
 
-    DichVuDAO dao = new DichVuDAO();
-    List<DichVu> list = dao.selectAll();
-    DichVu dv = new DichVu();
-
 //    HoaDonDAO HDdao = new HoaDonDAO();
 //    List<HoaDon> list1 = HDdao.selectAll();
+    private DichVuDAO dao = new DichVuDAO();
+
+    private List<DichVu> list = dao.selectAll();
+
+    private DichVu dv = new DichVu();
+
+    private int sum = 0;
+
     private List<ChiTietDichVu> listDichVu = new ArrayList<>();
+
     private List<Object[]> products = new ArrayList<Object[]>();
+
     private ActionListener action;
+
     private String placeholder = "Mã sản phẩm hoặc tên sản phẩm";
 
     private static HoaDon hoadon;
@@ -518,16 +528,18 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
     private static Phong p;
 
+    private HashMap<Object[], Integer> listHD = new HashMap<Object[], Integer>();
+
+    int index = -1;
+
+    JButton btn;
+
     private DefaultTableModel modelHoaDon = new DefaultTableModel() {
         @Override
         public boolean isCellEditable(int row, int column) {
             return column == 2;
         }
     };
-
-    private HashMap<Object[], Integer> listHD = new HashMap<Object[], Integer>();
-    int index = -1;
-    JButton btn;
 
     boolean check(Object ob, JComboBox cbo) {
         for (int i = 0; i < list.size(); i++) {
@@ -538,16 +550,56 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         return false;
     }
 
+// Tìm kiếm dịch vụ
+    private void timKiemDichVu(String tenDichVu) {
+        panelBtnDV.removeAll();
+        List<DichVu> list = dao.selectByKeyword(tenDichVu);
+        for (int i = 0; i < list.size() - 1; i++) {
+            DichVu dichvu = list.get(i);
+            String tendv = dichvu.getTenDV();
+            
+            if (tendv.equals(txtTim.getText())) {
+                JButton btns = new JButton();
+                btns.setText(tendv);
+                panelBtnDV.add(btns);
+                return ;
+            } else {
+                panelBtnDV.removeAll();
+                JPanel panel = new JPanel(new BorderLayout());
+                JLabel lbl = new JLabel("Không có dịch vụ cần tìm");
+                lbl.setForeground(new Color(31, 174, 255));
+                lbl.setHorizontalAlignment(SwingConstants.CENTER);
+                panel.add(lbl, BorderLayout.CENTER);
+                panelBtnDV.add(panel);
+
+            }
+        }
+        ganButtons(list);
+    }
+// 
+
+    private void ganButtons(List<DichVu> list) {
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            DichVu dichvu = list.get(i);
+            String tendv = dichvu.getTenDV();
+            JButton btns = new JButton();
+            panelBtnDV.add(btns);
+            btns.setText(tendv);
+        }
+    }
+
 // funtion hiện list dịch vụ
     public void fillButtonDichVu() {
         panelBtnDV.removeAll();
         int len = list.size();
         for (int i = 0; i < len; i++) {
-            DichVu dv = list.get(i);
+            DichVu dv = new DichVu();
+            dv = list.get(i);
             String tendv = dv.getTenDV();
             JButton btns = new JButton();
             btns.setText(tendv);
-//            btns.addActionListener(actionButtonAdd(list.get(i)));
+//            btns.addActionListener(actionButtonAdd());
             panelBtnDV.add(btns);
         }
         if (len == 0) {
@@ -562,17 +614,44 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         panelBtnDV.repaint();
     }
 
+// Hien thong tin chi tiet dich vu theo phong
     private void fillTableDV() {
-        DefaultTableModel model = (DefaultTableModel) tblDV.getModel();
-        model.setRowCount(0);
-        listHD.forEach((product, amount) -> {
-            model.addRow(new Object[]{
-                product[1],
-                CurrencyUtil.format(Integer.parseInt(product[2] + "")),
-                amount,
-                CurrencyUtil.format(amount * Integer.parseInt(product[2] + ""))
-            });
-        });
+        products.clear();
+        modelHoaDon.setRowCount(0);
+        modelHoaDon = (DefaultTableModel) tblDV.getModel();
+        modelHoaDon.addTableModelListener(new handleChangeAmount());
+
+//        listHD.forEach((product, amount) -> {
+//            modelHoaDon.addRow(new Object[]{
+//                product[1],
+//                CurrencyUtil.format(Integer.parseInt(product[2] + "")),
+//                amount,
+//                CurrencyUtil.format(amount * Integer.parseInt(product[2] + ""))
+//            });
+//            
+//            System.out.println(modelHoaDon.getValueAt(1, 1));
+//        });
+        String query = "select * from DichVuTheoPhong where MaPhong like 'P105'";
+        String searchValue = txtTim.getText();
+        if (searchValue.equals(placeholder)) {
+            searchValue = "";
+        }
+        try {
+            ResultSet rs = JdbcHelper.query(query);
+            while (rs.next()) {
+                Object[] product = new Object[]{
+                    rs.getString(1), // MaPhong
+                    rs.getString(2), // TenDV
+                    rs.getString(3), // SoLuong
+                    rs.getString(4), // DonGia
+                    rs.getString(5) // TongTienCuaMoiDichVu
+                };
+                modelHoaDon.addRow(new Object[]{product[1],product[3],product[2],product[4]});
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     private ActionListener actionButtonAdd(Object[] product) {
@@ -588,24 +667,22 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
         return action;
     }
 
-    ;
-
-
-        public void loadProduct() {
+    public void loadDV() {
         products.clear();
-        String query = "select * from DichVu where MaDV like ? or TenDV like ?";
+        String query = "select * from DichVuTheoPhong where MaPhong like 'P202'";
         String searchValue = txtTim.getText();
         if (searchValue.equals(placeholder)) {
             searchValue = "";
         }
         try {
-            ResultSet rs = JdbcHelper.query(query, "%" + searchValue + "%", "%" + searchValue + "%");
+            ResultSet rs = JdbcHelper.query(query);
             while (rs.next()) {
                 Object[] product = new Object[]{
-                    rs.getString(1), // MaDV
+                    rs.getString(1), // MaPhong
                     rs.getString(2), // TenDV
-                    rs.getString(3), // DonGia
-                    rs.getString(4), // GhiChu
+                    rs.getString(3), // SoLuong
+                    rs.getString(4), // DonGia
+                    rs.getString(5) // TongTienCuaMoiDichVu
                 };
                 products.add(product);
             }
@@ -615,25 +692,44 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
     }
 
-    private void timKiemDichVu(String tenDichVu) {
-        List<DichVu> list = dao.selectNotInCourse(tenDichVu);
-        String tk = txtDVCT.getText();
-        ganButtons(list);
+    public Object[] getKeyHDSelected(String tenSP) {
+        Optional<Map.Entry<Object[], Integer>> product = listHD.entrySet().stream().filter(i -> i.getKey()[2].equals(tenSP)).findFirst();
+        return product.get().getKey();
     }
 
-    private void ganButtons(List<DichVu> list) {
-        for (int i = 0; i < list.size() - 1; i++) {
-            DichVu dichvu = list.get(i);
-            String tendv = dichvu.getTenDV();
-            JButton btns = new JButton();
-            panelBtnDV.add(btns);
-            btns.setText(tendv);
+    class handleChangeAmount implements TableModelListener {
+
+        @Override
+        public void tableChanged(TableModelEvent e) {
+
+            int rowSelected = tblDV.getSelectedRow();
+            if (rowSelected > -1 && e.getColumn() > -1) {
+                int amount = Integer.parseInt(modelHoaDon.getValueAt(rowSelected, e.getColumn()) + "");
+                String tenSP = modelHoaDon.getValueAt(rowSelected, 0) + "";
+                Object[] product = getKeyHDSelected(tenSP);
+                if (listHD.containsKey(product)) {
+                    listHD.put(product, amount);
+                }
+                fillTableDV();
+                sumCurrency();
+//                displayTotal();
+            }
         }
     }
 
+    private void sumCurrency() {
+        AtomicInteger rs = new AtomicInteger(0);
+        listHD.forEach((product, amount) -> {
+            rs.addAndGet((amount * Integer.parseInt(product[7] + "")));
+        });
+        sum = rs.get();
+        lblTienPhong.setText(CurrencyUtil.format(rs.get()));
+    }
+
+// Hien thong tin khach hang va thong tin phong da duoc dat
     private void fillInfoCus() {
         products.clear();
-        String query = "select * from ChiTietDatPhong where MaPhong like 'P101'";
+        String query = "select * from ChiTietDatPhong where MaPhong like 'P202'";
         String searchValue = lblTitle.getText();
         try {
             ResultSet rs = JdbcHelper.query(query);
