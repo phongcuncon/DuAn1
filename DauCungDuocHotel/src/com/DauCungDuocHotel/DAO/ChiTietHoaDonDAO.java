@@ -17,20 +17,20 @@ import java.util.List;
  * @author Admin
  */
 public class ChiTietHoaDonDAO extends HotelDAO<ChiTietHoaDon, String> {
-    String INSERT_SQL = "INSERT INTO ChiTietHoaDon(MaCTHD,MaHD,MaNV,MaDP)VALUES(?,?,?,?)";
-    String UPDATE_SQL = "UPDATE ChiTietHoaDon SET MaHD = ?, MaNV = ?, MaDP = ? WHERE MaCTHD = ?";
+    String INSERT_SQL = "INSERT INTO ChiTietHoaDon(MaHD, MaNV,MaPhong,ThanhTien)VALUES(?,?,?,?)";
+    String UPDATE_SQL = "UPDATE ChiTietHoaDon SET MaHD = ?, MaNV = ?, MaPhong = ?,ThanhTien = ? WHERE MaCTHD = ?";
     String DELETE_SQL = "DELETE FROM ChiTietHoaDon WHERE MaCTHD = ?";
     String SELECTALL_SQL = "SELECT * FROM ChiTietHoaDon";
     String SELECT_BY_ID_SQL = "SELECT * FROM ChiTietHoaDon WHERE MaCTHD = ?";
 
     @Override
     public void insert(ChiTietHoaDon enity) {
-	JdbcHelper.update(INSERT_SQL,enity.getMaCTHD(),enity.getMaHD(),enity.getMaNV(),enity.getMaDatPhong());
+	JdbcHelper.update(INSERT_SQL,enity.getMaHD(),enity.getMaNV(),enity.getMaPhong(),enity.getThanhTien());
     }
 
     @Override
     public void Update(ChiTietHoaDon enity) {
-	JdbcHelper.update(UPDATE_SQL,enity.getMaHD(),enity.getMaNV(),enity.getMaDatPhong(),enity.getMaCTHD() );
+	JdbcHelper.update(UPDATE_SQL,enity.getMaHD(),enity.getMaNV(),enity.getMaPhong(),enity.getThanhTien(),enity.getMaCTHD() );
     }
 
     @Override
@@ -60,10 +60,11 @@ public class ChiTietHoaDonDAO extends HotelDAO<ChiTietHoaDon, String> {
 	    ResultSet rs = JdbcHelper.query(sql, args);
 	    while(rs.next()){
 		ChiTietHoaDon entity = new ChiTietHoaDon();
-		entity.setMaCTHD(rs.getString("MaCTHD"));
-		entity.setMaHD(rs.getString("MaHD"));
+		entity.setMaCTHD(rs.getInt("MaCTHD"));
+		entity.setMaCTHD(rs.getInt("MaHD"));
 		entity.setMaNV(rs.getString("MaNV"));
-		entity.setMaDatPhong(rs.getString("MaDP"));
+		entity.setMaPhong(rs.getString("MaPhong"));
+                entity.setThanhTien(rs.getDouble("ThanhTien"));
 		list.add(entity);
 	    }
 	    rs.getStatement().getConnection().close();

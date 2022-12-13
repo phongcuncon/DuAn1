@@ -9,35 +9,20 @@ package com.DauCungDuocHotel.Entity;
  * @author Admin
  */
 public class ChiTietHoaDon {
-    String maCTHD, maHD, maNV, maDatPhong;
+    String  maNV, maPhong;
+    int maCTHD, maHD;
     Double datCoc, thanhTien;
-
-    public ChiTietHoaDon(String maCTHD, String maHD, String maNV, String maDatPhong, Double datCoc, Double thanhTien) {
-        this.maCTHD = maCTHD;
-        this.maHD = maHD;
-        this.maNV = maNV;
-        this.maDatPhong = maDatPhong;
-        this.datCoc = datCoc;
-        this.thanhTien = thanhTien;
-    }
 
     public ChiTietHoaDon() {
     }
 
-    public String getMaCTHD() {
-        return maCTHD;
-    }
-
-    public void setMaCTHD(String maCTHD) {
+    public ChiTietHoaDon(String maNV, String maPhong, int maCTHD, int maHD, Double datCoc, Double thanhTien) {
+        this.maNV = maNV;
+        this.maPhong = maPhong;
         this.maCTHD = maCTHD;
-    }
-
-    public String getMaHD() {
-        return maHD;
-    }
-
-    public void setMaHD(String maHD) {
         this.maHD = maHD;
+        this.datCoc = datCoc;
+        this.thanhTien = thanhTien;
     }
 
     public String getMaNV() {
@@ -48,12 +33,28 @@ public class ChiTietHoaDon {
         this.maNV = maNV;
     }
 
-    public String getMaDatPhong() {
-        return maDatPhong;
+    public String getMaPhong() {
+        return maPhong;
     }
 
-    public void setMaDatPhong(String maDatPhong) {
-        this.maDatPhong = maDatPhong;
+    public void setMaPhong(String maPhong) {
+        this.maPhong = maPhong;
+    }
+
+    public int getMaCTHD() {
+        return maCTHD;
+    }
+
+    public void setMaCTHD(int maCTHD) {
+        this.maCTHD = maCTHD;
+    }
+
+    public int getMaHD() {
+        return maHD;
+    }
+
+    public void setMaHD(int maHD) {
+        this.maHD = maHD;
     }
 
     public Double getDatCoc() {

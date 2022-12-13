@@ -9,6 +9,7 @@ import com.DauCungDuocHotel.DAO.KhachHangDAO;
 import com.DauCungDuocHotel.DAO.LoaiPhongDAO;
 import com.DauCungDuocHotel.DAO.PhongDAO;
 import com.DauCungDuocHotel.Entity.DatPhong;
+import com.DauCungDuocHotel.Entity.HoaDon;
 import com.DauCungDuocHotel.Entity.KhachHang;
 import com.DauCungDuocHotel.Entity.LoaiPhong;
 import com.DauCungDuocHotel.Entity.Phong;
@@ -59,7 +60,6 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         dp.setNgayTraPhong(DayEnd.getDate());
         dp.setGhiChu(txtGhichu.getText());
         dp.setMaKH(txtMaKH.getText());
-     
         dp.setMaPhong((String) cboMaP.getSelectedItem());
         return dp;
     }
@@ -72,6 +72,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         txtMaKH.setEnabled(false);
         txtTenKH.setEnabled(false);
     }
+
     void insert(){
         try{
             DatPhong dp= readForm();
@@ -80,6 +81,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
             MsgBox.alert(this, "Đặt phòng thành công!");    
             list.removeAll(list);
             list.addAll(dao.selectAll());
+            this.dispose();
         }catch(Exception e){
             MsgBox.alert(this, "Lỗi");
         }

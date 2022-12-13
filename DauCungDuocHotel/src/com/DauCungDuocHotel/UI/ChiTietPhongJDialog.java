@@ -4,6 +4,7 @@
  */
 package com.DauCungDuocHotel.UI;
 
+import com.DauCungDuocHotel.DAO.ChiTietDichVuDAO;
 import com.DauCungDuocHotel.DAO.DichVuDAO;
 import com.DauCungDuocHotel.DAO.HoaDonDAO;
 import com.DauCungDuocHotel.Entity.ChiTietDichVu;
@@ -60,22 +61,22 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class ChiTietPhongJDialog extends javax.swing.JDialog {
 
-    public  String MaPhong;
-    
+    public String MaPhong;
+
     /**
      * Creates new form PhongJDialog
      */
     public ChiTietPhongJDialog(java.awt.Frame parent, boolean modal, String MaPhong) {
-	
-	super(parent, modal);
-	this.MaPhong = MaPhong;
-	initComponents();
-	this.setLocationRelativeTo(null);
-	loadDV();
-	fillButtonDichVu(products);
+
+        super(parent, modal);
+        this.MaPhong = MaPhong;
+        initComponents();
+        this.setLocationRelativeTo(null);
+        loadDV();
+        fillButtonDichVu(products);
 //        timKiemDichVu("");
-	fillInfoCus();
-	fillTableDV();
+        fillInfoCus();
+        fillTableDV();
 
     }
 
@@ -191,8 +192,21 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
             }
         ));
         tblDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDVMouseClicked(evt);
+            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 tblDVMouseReleased(evt);
+            }
+        });
+        tblDV.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                tblDVPropertyChange(evt);
+            }
+        });
+        tblDV.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tblDVKeyPressed(evt);
             }
         });
         jScrollPane2.setViewportView(tblDV);
@@ -226,7 +240,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setText("In hoa don");
+        jButton1.setText("Them");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -368,152 +382,155 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_SuaSoLuongActionPerformed
 
     private void XoaDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XoaDichVuActionPerformed
-	index = tblDV.getSelectedRow();
-	DichVu dv = listDV.get(index);
-	String id = dv.getMaDV();
-	if (MsgBox.confirm(this, "Bạn có muốn xóa dịch vụ này không?")) {
-	    try {
-		dao.delete(id);
-		listDV.removeAll(listDV);
-		listDV.addAll(dao.selectAll());
-		MsgBox.alert(this, "Xóa thành công!");
+        index = tblDV.getSelectedRow();
+        DichVu dv = listDV.get(index);
+        String id = dv.getMaDV();
+        if (MsgBox.confirm(this, "Bạn có muốn xóa dịch vụ này không?")) {
+            try {
+                dao.delete(id);
+                listDV.removeAll(listDV);
+                listDV.addAll(dao.selectAll());
+                MsgBox.alert(this, "Xóa thành công!");
 
-	    } catch (Exception e) {
-		MsgBox.alert(this, "Xóa thất bại!");
-	    }
-	}
+            } catch (Exception e) {
+                MsgBox.alert(this, "Xóa thất bại!");
+            }
+        }
     }//GEN-LAST:event_XoaDichVuActionPerformed
 
     private void tblDVMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDVMouseReleased
-	if (evt.getButton() == MouseEvent.BUTTON3) {
-	    if (evt.isPopupTrigger() && tblDV.getSelectedRowCount() != 0) {
-		pmenu.show(evt.getComponent(), evt.getX(), evt.getY());
-	    }
-	}
+        if (evt.getButton() == MouseEvent.BUTTON3) {
+            if (evt.isPopupTrigger() && tblDV.getSelectedRowCount() != 0) {
+                pmenu.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        }
     }//GEN-LAST:event_tblDVMouseReleased
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-	// TODO add your handling code here:
-	dispose();
+        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     Hashtable map = new Hashtable();
-	try {
-	    JasperReport rpt = JasperCompileManager.compileReport("src/com/DauCungDuocHotel/UI/HoaDon.jrxml");
-	    map.put("sMaPhong", MaPhong);
-	   
-	    JasperPrint p = JasperFillManager.fillReport(rpt, map, JdbcHelper.conn);
-	    JasperViewer.viewReport(p, false);
-	      JasperExportManager.exportReportToPdfFile(p, "test.pdf");
-	} catch (JRException ex) {
-	    Logger.getLogger(ChiTietPhongJDialog.class.getName()).log(Level.SEVERE, null, ex);
-	}
+       insertChiTietPhongDV();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tblDVPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tblDVPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblDVPropertyChange
+
+    private void tblDVKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblDVKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_tblDVKeyPressed
+
+    private void tblDVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDVMouseClicked
+
+    }//GEN-LAST:event_tblDVMouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-	/* Set the Nimbus look and feel */
-	//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-	/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-	 */
-	try {
-	    for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-		if ("Nimbus".equals(info.getName())) {
-		    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-		    break;
-		}
-	    }
-	} catch (ClassNotFoundException ex) {
-	    java.util.logging.Logger.getLogger(ChiTietPhongJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	} catch (InstantiationException ex) {
-	    java.util.logging.Logger.getLogger(ChiTietPhongJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	} catch (IllegalAccessException ex) {
-	    java.util.logging.Logger.getLogger(ChiTietPhongJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-	    java.util.logging.Logger.getLogger(ChiTietPhongJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	}
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
-	//</editor-fold>
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ChiTietPhongJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ChiTietPhongJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ChiTietPhongJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ChiTietPhongJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
-	/* Create and display the dialog */
-	java.awt.EventQueue.invokeLater(new Runnable() {
-	    public void run() {
-		ChiTietPhongJDialog dialog = new ChiTietPhongJDialog(new javax.swing.JFrame(), true, "P001");
-		dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-		    @Override
-		    public void windowClosing(java.awt.event.WindowEvent e) {
-			System.exit(0);
-		    }
-		});
-		dialog.setVisible(true);
-	    }
-	});
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                ChiTietPhongJDialog dialog = new ChiTietPhongJDialog(new javax.swing.JFrame(), true, "P001");
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -548,6 +565,8 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
 //    HoaDonDAO HDdao = new HoaDonDAO();
 //    List<HoaDon> list1 = HDdao.selectAll();
     private DichVuDAO dao = new DichVuDAO();
+        private ChiTietDichVuDAO ctdvdao = new ChiTietDichVuDAO();
+
 
     private List<DichVu> listDV = dao.selectAll();
 
@@ -576,170 +595,207 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
     int index = -1;
 
     JButton btn;
-
+    int row = -1;
     private DefaultTableModel modelHoaDon = new DefaultTableModel() {
-	@Override
-	public boolean isCellEditable(int row, int column) {
-	    return column == 2;
-	}
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return column == 2;
+        }
     };
 
     boolean check(Object ob, JComboBox cbo) {
-	for (int i = 0; i < listDV.size(); i++) {
-	    if (ob.equals(cbo.getItemAt(i))) {
-		return true;
-	    }
-	}
-	return false;
+        for (int i = 0; i < listDV.size(); i++) {
+            if (ob.equals(cbo.getItemAt(i))) {
+                return true;
+            }
+        }
+        return false;
     }
 
 // 
     private void ganButtons(List<DichVu> list) {
 
-	for (int i = 0; i < list.size() - 1; i++) {
-	    DichVu dichvu = list.get(i);
-	    String tendv = dichvu.getTenDV();
-	    JButton btns = new JButton();
-	    panelBtnDV.add(btns);
-	    btns.setText(tendv);
-	}
+        for (int i = 0; i < list.size() - 1; i++) {
+            DichVu dichvu = list.get(i);
+            String tendv = dichvu.getTenDV();
+            JButton btns = new JButton();
+            panelBtnDV.add(btns);
+            btns.setText(tendv);
+        }
     }
 
 // funtion hiện list dịch vụ
     public void fillButtonDichVu(List<Object[]> list) {
-	panelBtnDV.removeAll();
-	int len = list.size();
-	for (int i = 0; i < len; i++) {
-	    String tendv = listDV.get(i).getTenDV();
-	    JButton btns = new JButton();
-	    btns.setText(tendv);
-	    btns.addActionListener(actionButtonAdd(list.get(i)));
-	    panelBtnDV.add(btns);
-	}
-	if (len == 0) {
-	    JPanel panel = new JPanel(new BorderLayout());
-	    JLabel lbl = new JLabel("Không có dịch vụ nào");
-	    lbl.setForeground(new Color(204, 174, 255));
-	    lbl.setHorizontalAlignment(SwingConstants.CENTER);
-	    panel.add(lbl, BorderLayout.CENTER);
-	    panelBtnDV.add(panel);
-	}
-	panelBtnDV.revalidate();
-	panelBtnDV.repaint();
+        panelBtnDV.removeAll();
+        int len = list.size();
+        for (int i = 0; i < len; i++) {
+            String tendv = listDV.get(i).getTenDV();
+            JButton btns = new JButton();
+            btns.setText(tendv);
+            btns.addActionListener(actionButtonAdd(list.get(i)));
+            panelBtnDV.add(btns);
+        }
+        if (len == 0) {
+            JPanel panel = new JPanel(new BorderLayout());
+            JLabel lbl = new JLabel("Không có dịch vụ nào");
+            lbl.setForeground(new Color(204, 174, 255));
+            lbl.setHorizontalAlignment(SwingConstants.CENTER);
+            panel.add(lbl, BorderLayout.CENTER);
+            panelBtnDV.add(panel);
+        }
+        panelBtnDV.revalidate();
+        panelBtnDV.repaint();
     }
 
 // Hien thong tin chi tiet dich vu theo phong
     private void fillTableDV() {
-	modelHoaDon = (DefaultTableModel) tblDV.getModel();
-	modelHoaDon.setRowCount(0);
-	modelHoaDon.addTableModelListener(new handleChangeAmount());
-	listHD.forEach((product, amount) -> {
-	    modelHoaDon.addRow(new Object[]{
-		product[1],
-		CurrencyUtil.format((int) Double.parseDouble(product[2] + " ")),
-		amount,
-		CurrencyUtil.format((int) (amount * Double.parseDouble(product[2] + "")))
-	    });
-	});
+        modelHoaDon = (DefaultTableModel) tblDV.getModel();
+        modelHoaDon.setRowCount(0);
+        modelHoaDon.addTableModelListener(new handleChangeAmount());
+        listHD.forEach((product, amount) -> {
+            modelHoaDon.addRow(new Object[]{
+                product[1],
+                 Double.parseDouble(product[2] + " "),
+                amount,
+                 (amount * Double.parseDouble(product[2] + ""))
+            });
+//            ChiTietDichVu ctdv = new ChiTietDichVu();
+//            String tendv = modelHoaDon.getValueAt(i, 0).toString();
+//            String madv = dao.selectByName(tendv);
+//            int soluong = Integer.parseInt(tblDV.getValueAt(i, 2).toString());
+//            double thanhtien = Double.parseDouble(tblDV.getValueAt(i, 3).toString());
+//            ctdv.setMaDV(madv);
+//            ctdv.setSoLuong(soluong);
+//            ctdv.setMaPhong(MaPhong);
+//            ctdv.setThanhTien(thanhtien);
+//                 ctdvdao.insert(ctdv);
+        });
 
     }
 
     private ActionListener actionButtonAdd(Object[] product) {
-	ActionListener action = (e) -> {
-	    if (listHD.containsKey(product)) {
-		listHD.put(product, listHD.get(product) + 1);
-	    } else {
-		listHD.put(product, 1);
-	    }
-	    fillTableDV();
+        ActionListener action = (e) -> {
+            if (listHD.containsKey(product)) {
+                listHD.put(product, listHD.get(product) + 1);
+            } else {
+                listHD.put(product, 1);
+            }
+            fillTableDV();
 
-	};
-	return action;
+        };
+        return action;
     }
 
     public void loadDV() {
-	products.clear();
-	for (DichVu dv : listDV) {
-	    Object[] product = new Object[]{
-		dv.getMaDV(),
-		dv.getTenDV(),
-		dv.getGia(),
-		dv.getGhiChu()
-	    };
-	    products.add(product);
-	    System.out.println(product[0] + " " + product[1] + " " + product[2] + " " + product[3]);
+        products.clear();
+        for (DichVu dv : listDV) {
+            Object[] product = new Object[]{
+                dv.getMaDV(),
+                dv.getTenDV(),
+                dv.getGia(),
+                dv.getGhiChu()
+            };
+            products.add(product);
+            System.out.println(product[0] + " " + product[1] + " " + product[2] + " " + product[3]);
 
-	}
+        }
     }
 
     public Object[] getKeyHDSelected(String tenSP) {
-	Optional<Map.Entry<Object[], Integer>> product = listHD.entrySet().stream().filter(i -> i.getKey()[2].equals(tenSP)).findFirst();
-	return product.get().getKey();
+        Optional<Map.Entry<Object[], Integer>> product = listHD.entrySet().stream().filter(i -> i.getKey()[2].equals(tenSP)).findFirst();
+        return product.get().getKey();
+    }
+    
+    private void insertChiTietPhongDV() {
+        
+      
+        
+        for (int i = 0; i < tblDV.getRowCount(); i++) {
+            
+            ChiTietDichVu ctdv = new ChiTietDichVu();
+            String tendv = modelHoaDon.getValueAt(i, 0).toString();
+            String madv = dao.selectByName(tendv);
+            int soluong = Integer.parseInt(tblDV.getValueAt(i, 2).toString());
+            double thanhtien = Double.parseDouble(tblDV.getValueAt(i, 3).toString());
+            System.out.println(thanhtien);
+            ctdv.setMaDV(madv);
+            ctdv.setSoLuong(soluong);
+            ctdv.setMaPhong(MaPhong);
+                     
+            ctdv.setThanhTien(thanhtien);
+              
+                 ctdvdao.insert(ctdv);
+            
+ 
+          
+           
+            
+        }
     }
 
     class handleChangeAmount implements TableModelListener {
 
-	@Override
-	public void tableChanged(TableModelEvent e) {
+        @Override
+        public void tableChanged(TableModelEvent e) {
 
-	    int rowSelected = tblDV.getSelectedRow();
-	    if (rowSelected > -1 && e.getColumn() > -1) {
-		int amount = Integer.parseInt(modelHoaDon.getValueAt(rowSelected, e.getColumn()) + "");
-		String tenSP = modelHoaDon.getValueAt(rowSelected, 0) + "";
-		Object[] product = getKeyHDSelected(tenSP);
-		if (listHD.containsKey(product)) {
-		    listHD.put(product, amount);
-		}
-		fillTableDV();
-//                sumCurrency();
+            int rowSelected = tblDV.getSelectedRow();
+            if (rowSelected > -1 && e.getColumn() > -1) {
+                int amount = Integer.parseInt(modelHoaDon.getValueAt(rowSelected, e.getColumn()) + "");
+                String tenSP = modelHoaDon.getValueAt(rowSelected, 0) + "";
+                Object[] product = getKeyHDSelected(tenSP);
+                if (listHD.containsKey(product)) {
+                    listHD.put(product, amount);
+                }
+                fillTableDV();
+                sumCurrency();
 //                displayTotal();
-	    }
-	}
+            }
+        }
     }
 
     private void sumCurrency() {
-	AtomicInteger rs = new AtomicInteger(0);
-	listHD.forEach((product, amount) -> {
-	    rs.addAndGet((amount * Integer.parseInt(product[7] + "")));
-	});
-	sum = rs.get();
-	lblTienPhong.setText(CurrencyUtil.format(rs.get()));
+        AtomicInteger rs = new AtomicInteger(0);
+        listHD.forEach((product, amount) -> {
+            rs.addAndGet((amount * Integer.parseInt(product[7] + "")));
+        });
+        sum = rs.get();
+        lblTienPhong.setText(CurrencyUtil.format(rs.get()));
     }
 
 // Hien thong tin khach hang va thong tin phong da duoc dat
-    private void fillInfoCus() {
-	products.clear();
-	String searchValue = lblTitle.getText();
-	String query = "select * from ChiTietDatPhong where MaPhong like '" + MaPhong + "'";
-	System.out.println(MaPhong);
-	try {
-	    ResultSet rs = JdbcHelper.query(query);
-	    while (rs.next()) {
-		Object[] product = new Object[]{
-		    rs.getString(1), // MaDV
-		    rs.getString(2), // TenDV
-		    rs.getString(3), // DonGia
-		    rs.getString(4), // GhiChu
-		    rs.getString(5), // MaDV
-		    rs.getString(6), // TenDV
-		    rs.getString(7), // TenDV
-		    rs.getString(8), // DonGia
-		    rs.getString(9), // GhiChu
-		};
-		products.add(product);
-		lblTitle.setText("Chi Tiết Phòng " + rs.getString(2));
-		lblKH.setText(rs.getString(3));
-		lblCCCD.setText(rs.getString(4));
-		lblChIn.setText(rs.getString(5));
-		lblChOut.setText(rs.getString(6));
-		lblDongiaPhong.setText(rs.getString(7));
-		lblSoDemO.setText(rs.getString(8));
-		lblTienPhong.setText(rs.getString(9));
-	    }
 
-	} catch (SQLException ex) {
-	    throw new RuntimeException(ex);
-	}
+    private void fillInfoCus() {
+        products.clear();
+        String searchValue = lblTitle.getText();
+        String query = "select * from ChiTietDatPhong where MaPhong like '" + MaPhong + "'";
+        System.out.println(MaPhong);
+        try {
+            ResultSet rs = JdbcHelper.query(query);
+            while (rs.next()) {
+                Object[] product = new Object[]{
+                    rs.getString(1), // MaDV
+                    rs.getString(2), // TenDV
+                    rs.getString(3), // DonGia
+                    rs.getString(4), // GhiChu
+                    rs.getString(5), // MaDV
+                    rs.getString(6), // TenDV
+                    rs.getString(7), // TenDV
+                    rs.getString(8), // DonGia
+                };
+                products.add(product);
+                lblTitle.setText("Chi Tiết Phòng " + rs.getString(1));
+                lblKH.setText(rs.getString(2));
+                lblCCCD.setText(rs.getString(3));
+                lblChIn.setText(rs.getString(4));
+                lblChOut.setText(rs.getString(5));
+                lblDongiaPhong.setText(rs.getString(6));
+                lblSoDemO.setText(rs.getString(7));
+                lblTienPhong.setText(rs.getString(8));
+            }
+
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
 
     }
 

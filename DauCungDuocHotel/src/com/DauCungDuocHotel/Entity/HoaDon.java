@@ -4,63 +4,50 @@
  */
 package com.DauCungDuocHotel.Entity;
 
+import java.util.Date;
+
 /**
  *
  * @author Admin
  */
 public class HoaDon {
-    String maHD, diaChi, maKH, maDV;
-    Double gia;
-
-    public HoaDon(String maHD, String diaChi, String maKH, String maDV, Double gia) {
-	this.maHD = maHD;
-	this.diaChi = diaChi;
-	this.maKH = maKH;
-	this.maDV = maDV;
-	this.gia = gia;
-    }
+    int maHD;
+    String maPhong;
+    Date NgayXuat;
 
     public HoaDon() {
     }
 
-    public String getMaHD() {
-	return maHD;
+    public HoaDon(int maHD, String maPhong, Date NgayXuat) {
+        this.maHD = maHD;
+        this.maPhong = maPhong;
+        this.NgayXuat = NgayXuat;
     }
 
-    public void setMaHD(String maHD) {
-	this.maHD = maHD;
+    public int getMaHD() {
+        return maHD;
     }
 
-    public String getDiaChi() {
-	return diaChi;
+    public void setMaHD(int maHD) {
+        this.maHD = maHD;
     }
 
-    public void setDiaChi(String diaChi) {
-	this.diaChi = diaChi;
+    public String getMaPhong() {
+        return maPhong;
     }
 
-    public String getMaKH() {
-	return maKH;
+    public void setMaPhong(String maPhong) {
+        this.maPhong = maPhong;
     }
 
-    public void setMaKH(String maKH) {
-	this.maKH = maKH;
+    public Date getNgayXuat() {
+        return NgayXuat;
     }
 
-    public String getMaDV() {
-	return maDV;
+    public void setNgayXuat(Date NgayXuat) {
+        this.NgayXuat = NgayXuat;
     }
 
-    public void setMaDV(String maDV) {
-	this.maDV = maDV;
-    }
-
-    public Double getGia() {
-	return gia;
-    }
-
-    public void setGia(Double gia) {
-	this.gia = gia;
-    }
+    
     
 }

@@ -16,19 +16,19 @@ import java.util.List;
  * @author Admin
  */
 public class DatPhongDAO extends HotelDAO<DatPhong, String> {
-    String INSERT_SQL = "INSERT INTO DatPhong(NgayDatPhong, NgayTraPhong, DatCoc, GhiChu, MaKH, MaPhong)VALUES(?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE DatPhong SET NgayDatPhong = ?, NgayTraPhong = ?, DatCoc = ?, GhiChu = ?,MaHD = ?, MaKH = ?, MaPhong = ? WHERE MaDP = ?";
-    String DELETE_SQL = "DELETE FROM DatPhong WHERE MaDP = ?";
+    String INSERT_SQL = "INSERT INTO DatPhong(MaPhong, NgayDatPhong, NgayTraPhong, DatCoc, GhiChu, MaKH)VALUES(?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE DatPhong SET NgayDatPhong = ?, NgayTraPhong = ?, DatCoc = ?, GhiChu = ?,MaHD = ?, MaKH = ?  WHERE MaPhong = ? ";
+    String DELETE_SQL = "DELETE FROM DatPhong WHERE MaPhong = ?";
     String SELECTALL_SQL = "SELECT * FROM DatPhong";
-    String SELECT_BY_ID_SQL = "SELECT * FROM DatPhong WHERE MaDP = ?";
+    String SELECT_BY_ID_SQL = "SELECT * FROM DatPhong WHERE MaPhong = ?";
     @Override
     public void insert(DatPhong enity) {
-	JdbcHelper.update(INSERT_SQL, enity.getNgayDatPhong(), enity.getNgayTraPhong(), enity.getDatCoc(), enity.getGhiChu(), enity.getMaKH(), enity.getMaPhong());
+	JdbcHelper.update(INSERT_SQL,enity.getMaPhong(), enity.getNgayDatPhong(), enity.getNgayTraPhong(), enity.getDatCoc(), enity.getGhiChu(), enity.getMaKH());
     }
 
     @Override
     public void Update(DatPhong enity) {
-	JdbcHelper.update(INSERT_SQL, enity.getNgayDatPhong(), enity.getNgayTraPhong(), enity.getDatCoc(), enity.getGhiChu(), enity.getMaKH(), enity.getMaPhong(), enity.getMaDP());
+	JdbcHelper.update(INSERT_SQL, enity.getNgayDatPhong(), enity.getNgayTraPhong(), enity.getDatCoc(), enity.getGhiChu(), enity.getMaKH(), enity.getMaPhong());
     }
 
     @Override
@@ -57,13 +57,12 @@ public class DatPhongDAO extends HotelDAO<DatPhong, String> {
 	    ResultSet rs = JdbcHelper.query(sql, args);
 	    while(rs.next()){
 		DatPhong entity = new DatPhong();
-		entity.setMaDP(rs.getString("MaDP"));
+		entity.setMaPhong(rs.getString("MaPhong"));
 		entity.setNgayDatPhong(rs.getDate("NgayDatPhong"));
 		entity.setNgayTraPhong(rs.getDate("NgayTraPhong"));
 		entity.setDatCoc(rs.getDouble("DatCoc"));
 		entity.setGhiChu(rs.getString("GhiChu"));
 		entity.setMaKH(rs.getString("MaKH"));
-		entity.setMaPhong(rs.getString("MaPhong"));
 		list.add(entity);
 	    }
 	    rs.getStatement().getConnection().close();
@@ -74,12 +73,12 @@ public class DatPhongDAO extends HotelDAO<DatPhong, String> {
     }
     
     public List<DatPhong> selectByMaDP(String key){
-	String sql = "SELECT * FROM DatPhong WHERE MaDP LIKE ?";
+	String sql = "SELECT * FROM DatPhong WHERE MaPhong LIKE ?";
 	return selectBySql(sql, "%" + key + "%");
     }
     
     public List<DatPhong> selectByMaDP1(String key){
-	String sql = "SELECT MaLoaiPhong FROM DatPhong WHERE MaDP LIKE ?";
+	String sql = "SELECT MaLoaiPhong FROM DatPhong WHERE MaPhong LIKE ?";
 	return selectBySql(sql, "%" + key + "%");
     }
 }

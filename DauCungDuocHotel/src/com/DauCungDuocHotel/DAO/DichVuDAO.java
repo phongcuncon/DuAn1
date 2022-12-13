@@ -81,4 +81,12 @@ public class DichVuDAO extends HotelDAO<DichVu, String> {
         String sql = "SELECT * FROM DichVu WHERE TenDV LIKE ?";
         return this.selectBySql(sql, "%" + kw + "%");
     }
+    public String selectByName(String key) {
+        String sql = "Select * from DichVu where TenDV like ?";
+	List<DichVu> list= this.selectBySql(sql, key);
+	if(list.isEmpty()){
+	    return null;
+	}
+	return list.get(0).getMaDV();
+    }
 }

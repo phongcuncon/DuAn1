@@ -18,20 +18,20 @@ import java.util.List;
  */
 public class HoaDonDAO extends HotelDAO<HoaDon, String> {
 
-    String INSERT_SQL = "INSERT INTO HoaDon(MaHD,DiaChi,Gia,MaKH, MaDV)VALUES(?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE HoaDon SET DiaChi = ?, Gia = ?, MaKH = ?, MaDV = ? WHERE MaHD = ?";
+    String INSERT_SQL = "INSERT INTO HoaDon ([NgayXuat], [MaPhong]) VALUES (?,?)";
+    String UPDATE_SQL = "UPDATE HoaDon SET NgayXuat = ?, MaPhong = ? WHERE MaHD = ?";
     String DELETE_SQL = "DELETE FROM HoaDon WHERE MaHD = ?";
     String SELECTALL_SQL = "SELECT * FROM HoaDon";
     String SELECT_BY_ID_SQL = "SELECT * FROM HoaDon WHERE MaHD = ?";
 
     @Override
     public void insert(HoaDon enity) {
-	JdbcHelper.update(INSERT_SQL, enity.getMaHD(), enity.getDiaChi(), enity.getGia(), enity.getMaKH(), enity.getMaDV());
+	JdbcHelper.update(INSERT_SQL,enity.getNgayXuat(),enity.getMaPhong());
     }
 
     @Override
     public void Update(HoaDon enity) {
-	JdbcHelper.update(UPDATE_SQL, enity.getDiaChi(), enity.getGia(), enity.getMaKH(), enity.getMaDV(), enity.getMaHD());
+	JdbcHelper.update(UPDATE_SQL,enity.getNgayXuat(),enity.getMaPhong(), enity.getMaHD());
     }
 
     @Override
@@ -60,11 +60,9 @@ public class HoaDonDAO extends HotelDAO<HoaDon, String> {
 	    ResultSet rs = JdbcHelper.query(sql, args);
 	    while (rs.next()) {
 		HoaDon entity = new HoaDon();
-		entity.setMaHD(rs.getString("MaHD"));
-		entity.setDiaChi(rs.getString("DiaChi"));
-		entity.setGia(rs.getDouble("Gia"));
-		entity.setMaKH(rs.getString("MaKH"));
-		entity.setMaDV(rs.getString("MaDV"));
+		entity.setMaHD(rs.getInt("MaHD"));
+		entity.setNgayXuat(rs.getDate("NgayXuat"));
+		entity.setMaPhong(rs.getString("MaDV"));
 		list.add(entity);
 	    }
 	    rs.getStatement().getConnection().close();
@@ -72,5 +70,14 @@ public class HoaDonDAO extends HotelDAO<HoaDon, String> {
 	} catch (SQLException e) {
 	    throw new RuntimeException(e);
 	}
+    }
+    public int demHoaDon() throws SQLException {
+        int dem = 0;
+        String sql = "SELECT COUNT(*) AS 'COUNT' FROM HoaDon";
+        ResultSet rs = JdbcHelper.query(sql);
+        while (rs.next()) {
+            dem = rs.getInt("COUNT");
+        }
+        return dem;
     }
 }
