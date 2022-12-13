@@ -48,7 +48,6 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         initComponents();
         setTitle("Đặt phòng");
         setLocationRelativeTo(null);
-      
         fillCombo1();
 	
     }
@@ -74,13 +73,11 @@ public class DatPhongJDialog extends javax.swing.JDialog {
         txtTenKH.setEnabled(false);
     }
     void insert(){
-      
         try{
             DatPhong dp= readForm();
             dao.insert(dp);
 //            List<Phong> list4= dao3.setTrangThaiDatPhong(mp);
-            MsgBox.alert(this, "Đặt phòng thành công!");
-	    
+            MsgBox.alert(this, "Đặt phòng thành công!");    
             list.removeAll(list);
             list.addAll(dao.selectAll());
         }catch(Exception e){

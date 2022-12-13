@@ -54,30 +54,6 @@ public class ThongKeJDialog extends javax.swing.JDialog {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        kGradientPanel2 = new keeptoo.KGradientPanel();
-        txt = new javax.swing.JTextField();
-        jPanel9 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        dateStart = new com.toedter.calendar.JDateChooser();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        dateEnd = new com.toedter.calendar.JDateChooser();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        lblDoanhThu = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        lblMax = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        lblMin = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        lblAVG = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cboThongKeNam = new javax.swing.JComboBox<>();
@@ -90,263 +66,6 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        txt.setText("jTextField1");
-
-        jPanel9.setLayout(new java.awt.GridLayout(1, 2));
-
-        jLabel12.setText("Bắt đầu: ");
-
-        dateStart.setDateFormatString("dd-MM-yyyy");
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(dateStart, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dateStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
-        );
-
-        jPanel9.add(jPanel10);
-
-        jLabel13.setText("Kết thúc:");
-
-        dateEnd.setDateFormatString("dd-MM-yyyy");
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(dateEnd, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dateEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
-        );
-
-        jPanel9.add(jPanel11);
-
-        jPanel4.setLayout(new java.awt.GridLayout(2, 2, 8, 8));
-
-        jPanel5.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("DOANH THU:");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblDoanhThu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDoanhThu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-
-        jPanel4.add(jPanel5);
-
-        jPanel6.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setText("ĐƠN HÀNG CAO NHẤT:");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel6Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(lblMax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel6Layout.createSequentialGroup()
-                    .addGap(53, 53, 53)
-                    .addComponent(lblMax, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(53, Short.MAX_VALUE)))
-        );
-
-        jPanel4.add(jPanel6);
-
-        jPanel7.setBackground(new java.awt.Color(102, 153, 255));
-        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("ĐƠN HÀNG THẤP NHẤT:");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel7Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(lblMin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel7Layout.createSequentialGroup()
-                    .addGap(53, 53, 53)
-                    .addComponent(lblMin, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(53, Short.MAX_VALUE)))
-        );
-
-        jPanel4.add(jPanel7);
-
-        jPanel8.setBackground(new java.awt.Color(255, 102, 102));
-        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("ĐƠN HÀNG TRUNG BÌNH:");
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel8Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(lblAVG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
-            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel8Layout.createSequentialGroup()
-                    .addGap(53, 53, 53)
-                    .addComponent(lblAVG, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(53, Short.MAX_VALUE)))
-        );
-
-        jPanel4.add(jPanel8);
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("TÌNH TRẠNG KINH DOANH");
-
-        javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
-        kGradientPanel2.setLayout(kGradientPanel2Layout);
-        kGradientPanel2Layout.setHorizontalGroup(
-            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 852, Short.MAX_VALUE)
-            .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGap(106, 106, 106))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(427, 427, 427))
-                        .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap()))
-        );
-        kGradientPanel2Layout.setVerticalGroup(
-            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-            .addGroup(kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(10, 10, 10)
-                    .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Tổng quan", jPanel3);
 
         jLabel1.setText("Thống Kê Theo");
 
@@ -462,148 +181,145 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        List<TKDichVu> list = dao.getDichVu();
+        try {
+            XSSFWorkbook workbook = new XSSFWorkbook();
+            XSSFSheet sheet = workbook.createSheet("ListDichVu");
+            XSSFRow row = null;
+            Cell cell = null;
+            row = sheet.createRow(1);
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellValue("MaDV");
+
+            cell = row.createCell(1, CellType.STRING);
+            cell.setCellValue("TenDV");
+
+            cell = row.createCell(2, CellType.STRING);
+            cell.setCellValue("SoLuong");
+
+            cell = row.createCell(3, CellType.STRING);
+            cell.setCellValue("TongTien");
+
+            for (int i = 0; i < list.size(); i++) {
+                row = sheet.createRow(2 + i);
+
+                //            cell = row.createCell(0,CellType.BLANK);
+                //            cell.setCellValue(list.get(i).getMaDV());
+                //		XSSFCellStyle cellStyle = workbook.createCellStyle();
+                //		CreationHelper createHelper = workbook.getCreationHelper();
+                //		cellStyle.setDataFormat(
+                    //		createHelper.createDataFormat().getFormat("d/m/yyyy "));
+                //		cell = row.createCell(0);
+                //		cell.setCellValue(list.get(i).);
+                //		cell.setCellStyle(cellStyle);
+
+                cell = row.createCell(1, CellType.STRING);
+                cell.setCellValue(list.get(i).getTenDV());
+
+                cell = row.createCell(2, CellType.STRING);
+                cell.setCellValue(list.get(i).getSoLuong());
+
+                cell = row.createCell(3, CellType.STRING);
+                cell.setCellValue(list.get(i).getTongTien());
+
+            }
+
+            //	    File file = new File("F://DanhsachDV.xlsx");
+            File file = new File("E://DanhsachDV.xlsx");
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                workbook.write(fos);
+                fos.close();
+                MsgBox.alert(this, "Xuat file thanh cong!");
+            } catch (Exception e) {
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String nam = (String) cboThongKeNam.getSelectedItem();
+        List<ThongKe> list = dao.getDoanhThu(nam);
+        try {
+            XSSFWorkbook workbook = new XSSFWorkbook();
+            XSSFSheet sheet = workbook.createSheet("List");
+            XSSFRow row = null;
+            Cell cell = null;
+            row = sheet.createRow(1);
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellValue("NgayGD");
+
+            cell = row.createCell(1, CellType.STRING);
+            cell.setCellValue("MaHD");
+
+            cell = row.createCell(2, CellType.STRING);
+            cell.setCellValue("TenKH");
+
+            cell = row.createCell(3, CellType.STRING);
+            cell.setCellValue("MaPhong");
+            cell = row.createCell(4, CellType.STRING);
+            cell.setCellValue("TongTien");
+            cell = row.createCell(5, CellType.STRING);
+            cell.setCellValue("NhanVien");
+            sheet.setColumnWidth(0, 3300);
+            sheet.setColumnWidth(1, 3300);
+            sheet.setColumnWidth(2, 9000);
+            sheet.setColumnWidth(3, 3300);
+            sheet.setColumnWidth(4, 3300);
+            sheet.setColumnWidth(5, 3300);
+            for (int i = 0; i < list.size(); i++) {
+                row = sheet.createRow(2 + i);
+
+                //            cell = row.createCell(0,CellType.BLANK);
+                //            cell.setCellValue(list.get(i).getNgayXuat());
+                XSSFCellStyle cellStyle = workbook.createCellStyle();
+                CreationHelper createHelper = workbook.getCreationHelper();
+                cellStyle.setDataFormat(
+                    createHelper.createDataFormat().getFormat("d/m/yyyy "));
+                cell = row.createCell(0);
+                cell.setCellValue(list.get(i).getNgayXuat());
+                cell.setCellStyle(cellStyle);
+
+                cell = row.createCell(1, CellType.STRING);
+                cell.setCellValue(list.get(i).getMaHD());
+
+                cell = row.createCell(2, CellType.STRING);
+                cell.setCellValue(list.get(i).getTenKH());
+
+                cell = row.createCell(3, CellType.STRING);
+                cell.setCellValue(list.get(i).getPhong());
+
+                cell = row.createCell(4, CellType.STRING);
+                cell.setCellValue(list.get(i).getDoanhThu());
+
+                cell = row.createCell(5, CellType.STRING);
+                cell.setCellValue(list.get(i).getMaNV());
+            }
+
+            //	    File file = new File("F://Danhsach12.xlsx");
+            File file = new File("E://Danhsach12.xlsx");
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                workbook.write(fos);
+                fos.close();
+                MsgBox.alert(this, "Xuat file thanh cong!");
+            } catch (Exception e) {
+            }
+        } catch (Exception e) {
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void cboThongKeNamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboThongKeNamActionPerformed
         fillTableDoanhThu();
     }//GEN-LAST:event_cboThongKeNamActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String nam = (String) cboThongKeNam.getSelectedItem();
-        List<ThongKe> list = dao.getDoanhThu(nam);
-	try {
-	    XSSFWorkbook workbook = new XSSFWorkbook();
-	    XSSFSheet sheet = workbook.createSheet("List");
-	    XSSFRow row = null;
-	    Cell cell = null;
-	    row = sheet.createRow(1);
-	    cell = row.createCell(0, CellType.STRING);
-	    cell.setCellValue("NgayGD");
-
-	    cell = row.createCell(1, CellType.STRING);
-	    cell.setCellValue("MaHD");
-
-	    cell = row.createCell(2, CellType.STRING);
-	    cell.setCellValue("TenKH");
-
-	    cell = row.createCell(3, CellType.STRING);
-	    cell.setCellValue("MaPhong");
-	    cell = row.createCell(4, CellType.STRING);
-	    cell.setCellValue("TongTien");
-	    cell = row.createCell(5, CellType.STRING);
-	    cell.setCellValue("NhanVien");
-	    sheet.setColumnWidth(0, 3300);
-	    sheet.setColumnWidth(1, 3300);
-	    sheet.setColumnWidth(2, 9000);
-	    sheet.setColumnWidth(3, 3300);
-	    sheet.setColumnWidth(4, 3300);
-	    sheet.setColumnWidth(5, 3300);
-	    for (int i = 0; i < list.size(); i++) {
-		row = sheet.createRow(2 + i);
-
-//            cell = row.createCell(0,CellType.BLANK);
-//            cell.setCellValue(list.get(i).getNgayXuat());
-		XSSFCellStyle cellStyle = workbook.createCellStyle();
-		CreationHelper createHelper = workbook.getCreationHelper();
-		cellStyle.setDataFormat(
-			createHelper.createDataFormat().getFormat("d/m/yyyy "));
-		cell = row.createCell(0);
-		cell.setCellValue(list.get(i).getNgayXuat());
-		cell.setCellStyle(cellStyle);
-
-		cell = row.createCell(1, CellType.STRING);
-		cell.setCellValue(list.get(i).getMaHD());
-
-		cell = row.createCell(2, CellType.STRING);
-		cell.setCellValue(list.get(i).getTenKH());
-
-		cell = row.createCell(3, CellType.STRING);
-		cell.setCellValue(list.get(i).getPhong());
-
-		cell = row.createCell(4, CellType.STRING);
-		cell.setCellValue(list.get(i).getDoanhThu());
-
-		cell = row.createCell(5, CellType.STRING);
-		cell.setCellValue(list.get(i).getMaNV());
-	    }
-
-//	    File file = new File("F://Danhsach12.xlsx");
-            File file = new File("E://Danhsach12.xlsx");
-	    try {
-		FileOutputStream fos = new FileOutputStream(file);
-		workbook.write(fos);
-		fos.close();
-		MsgBox.alert(this, "Xuat file thanh cong!");
-	    } catch (Exception e) {
-	    }
-	} catch (Exception e) {
-	}
-	
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       List<TKDichVu> list = dao.getDichVu();
-	try {
-	    XSSFWorkbook workbook = new XSSFWorkbook();
-	    XSSFSheet sheet = workbook.createSheet("ListDichVu");
-	    XSSFRow row = null;
-	    Cell cell = null;
-	    row = sheet.createRow(1);
-	    cell = row.createCell(0, CellType.STRING);
-	    cell.setCellValue("MaDV");
-
-	    cell = row.createCell(1, CellType.STRING);
-	    cell.setCellValue("TenDV");
-
-	    cell = row.createCell(2, CellType.STRING);
-	    cell.setCellValue("SoLuong");
-
-	    cell = row.createCell(3, CellType.STRING);
-	    cell.setCellValue("TongTien");
-	  
-	    
-
-	    for (int i = 0; i < list.size(); i++) {
-		row = sheet.createRow(2 + i);
-
-//            cell = row.createCell(0,CellType.BLANK);
-//            cell.setCellValue(list.get(i).getMaDV());
-//		XSSFCellStyle cellStyle = workbook.createCellStyle();
-//		CreationHelper createHelper = workbook.getCreationHelper();
-//		cellStyle.setDataFormat(
-//		createHelper.createDataFormat().getFormat("d/m/yyyy "));
-//		cell = row.createCell(0);
-//		cell.setCellValue(list.get(i).);
-//		cell.setCellStyle(cellStyle);
-
-		cell = row.createCell(1, CellType.STRING);
-		cell.setCellValue(list.get(i).getTenDV());
-
-		cell = row.createCell(2, CellType.STRING);
-		cell.setCellValue(list.get(i).getSoLuong());
-
-		cell = row.createCell(3, CellType.STRING);
-		cell.setCellValue(list.get(i).getTongTien());
-
-		
-	    }
-
-//	    File file = new File("F://DanhsachDV.xlsx");
-            File file = new File("E://DanhsachDV.xlsx");
-	    try {
-		FileOutputStream fos = new FileOutputStream(file);
-		workbook.write(fos);
-		fos.close();
-		MsgBox.alert(this, "Xuat file thanh cong!");
-	    } catch (Exception e) {
-	    }
-	} catch (Exception e) {
-	}
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -676,40 +392,16 @@ public class ThongKeJDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cboThongKeNam;
-    private com.toedter.calendar.JDateChooser dateEnd;
-    private com.toedter.calendar.JDateChooser dateStart;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private keeptoo.KGradientPanel kGradientPanel2;
-    private javax.swing.JLabel lblAVG;
-    private javax.swing.JLabel lblDoanhThu;
-    private javax.swing.JLabel lblMax;
-    private javax.swing.JLabel lblMin;
     private javax.swing.JTable tblDoanhThu;
     private javax.swing.JTable tblThongKeDichVu;
-    private javax.swing.JTextField txt;
     // End of variables declaration//GEN-END:variables
 
 }
