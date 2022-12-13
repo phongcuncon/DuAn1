@@ -400,6 +400,7 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
                     rs.getString(7), // DatCoc
                     rs.getString(8), // GiamGia
                 };
+                txtTienTraLai.setEditable(false);
                 lblTitle.setText("Phòng " + rs.getString(1));
                 lblTienPhong.setText(rs.getString(4));
                 lblTienDV.setText(rs.getString(5));
