@@ -385,7 +385,7 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
 
     private void init() {
         String searchValue = lblTitle.getText();
-        String query = "  select * from CTHDPhong WHERE MaPhong like 'P105'";
+        String query = "  select * from CTHDPhong WHERE MaPhong like '"+MaPhong+"'";
         System.out.println(MaPhong);
         try {
             ResultSet rs = JdbcHelper.query(query);
