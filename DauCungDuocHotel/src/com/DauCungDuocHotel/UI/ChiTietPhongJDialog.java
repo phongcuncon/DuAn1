@@ -731,6 +731,7 @@ public class ChiTietPhongJDialog extends javax.swing.JDialog {
            
             
         }
+        MsgBox.alert(this, "Thêm thành công!");
     }
 
     class handleChangeAmount implements TableModelListener {

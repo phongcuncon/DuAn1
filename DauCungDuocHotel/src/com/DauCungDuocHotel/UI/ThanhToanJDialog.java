@@ -5,10 +5,12 @@
 package com.DauCungDuocHotel.UI;
 
 import com.DauCungDuocHotel.DAO.ChiTietHoaDonDAO;
+import com.DauCungDuocHotel.DAO.DatPhongDAO;
 import com.DauCungDuocHotel.DAO.HoaDonDAO;
 import com.DauCungDuocHotel.Entity.ChiTietHoaDon;
 import com.DauCungDuocHotel.Entity.HoaDon;
 import com.DauCungDuocHotel.Untils.*;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.sql.ResultSet;
@@ -455,13 +457,15 @@ public class ThanhToanJDialog extends javax.swing.JDialog {
         total = (sum + (sum * (thue) / 100)) * (100 - discount) / 100 - datcoc;
         lblTotal.setText(total + "");
     }
-
+    DatPhongDAO dpdao = new DatPhongDAO();
     private void thanhToan() {
         HoaDon hd = readForm();
         try {
             hddao.insert(hd);
             insertCTHD();
-            MsgBox.alert(this, "Thanh toan thanh cong");
+            MsgBox.alert(this, "Thanh toán thành công");
+            dpdao.delete(MaPhong);
+            
             this.dispose();
         } catch (Exception e) {
             System.out.println("Có lỗi " + e.getMessage());

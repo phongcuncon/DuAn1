@@ -13,6 +13,7 @@ import com.DauCungDuocHotel.Entity.HoaDon;
 import com.DauCungDuocHotel.Entity.KhachHang;
 import com.DauCungDuocHotel.Entity.LoaiPhong;
 import com.DauCungDuocHotel.Entity.Phong;
+import static com.DauCungDuocHotel.Untils.JdbcHelper.sp_dp;
 import com.DauCungDuocHotel.Untils.MsgBox;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.text.DateFormat;
@@ -22,7 +23,7 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.UIManager;
-import static com.DauCungDuocHotel.Untils.JdbcHelper.sp_dp;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -81,7 +82,7 @@ public class DatPhongJDialog extends javax.swing.JDialog {
             MsgBox.alert(this, "Đặt phòng thành công!");    
             list.removeAll(list);
             list.addAll(dao.selectAll());
-            this.dispose();
+            dispose();
         }catch(Exception e){
             MsgBox.alert(this, "Lỗi");
         }

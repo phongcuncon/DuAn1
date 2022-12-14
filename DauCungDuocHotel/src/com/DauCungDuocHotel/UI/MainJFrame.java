@@ -5,6 +5,7 @@ import com.DauCungDuocHotel.DAO.PhongDAO;
 import com.DauCungDuocHotel.Entity.DichVu;
 import com.DauCungDuocHotel.Entity.Phong;
 import com.DauCungDuocHotel.Untils.*;
+
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -14,11 +15,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -1736,7 +1740,7 @@ public class MainJFrame extends javax.swing.JFrame {
             tenPhong[i].setText(list.get(i).getMaPhong());
             trangThai[i].setText(list.get(i).getTrangThai());
             if (list.get(i).getMaLoaiPhong().equals("1")) {
-                loaiPhong[i].setText("Thuong");
+                loaiPhong[i].setText("Thường");
             } else {
                 loaiPhong[i].setText("VIP");
             }
@@ -1787,8 +1791,8 @@ public class MainJFrame extends javax.swing.JFrame {
 	JMenuItem aItem;
 
 	public showKhongCoNguoi() {
-	    anItem = new JMenuItem("Dat Phong");
-	    aItem = new JMenuItem("Sua");
+	    anItem = new JMenuItem("Đặt phòng");
+	    aItem = new JMenuItem("Sửa");
 	    add(anItem);
 	    add(aItem);
 	    anItem.addActionListener(new ActionListener() {
@@ -1989,6 +1993,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         }).start();
         new Log_in(this, true).setVisible(true);
+        
     }
 
     void openDoiMatKhau() {
